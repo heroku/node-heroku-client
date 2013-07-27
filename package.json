@@ -1,0 +1,23 @@
+{
+  "name": "heroku",
+  "version": "0.0.0",
+  "description": "A wrapper for the Heroku API",
+  "main": "./lib/heroku/heroku.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jclem/node-heroku"
+  },
+  "author": "Jonathan Clem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jclem/node-heroku/issues"
+  },
+  "dependencies": {
+    "q": "~0.9.6",
+    "underscore": "~1.5.1",
+    "memjs": "~0.6.0"
+  }
+}
