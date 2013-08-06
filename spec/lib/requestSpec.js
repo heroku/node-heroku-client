@@ -1,5 +1,7 @@
 var https        = require("https"),
-    request      = require('../../lib/request'),
+    client       = require('../../lib/request'),
+    memjs        = require('memjs'),
+    MockCache    = require('../helpers/mockCache'),
     MockRequest  = require('../helpers/mockRequest'),
     MockResponse = require('../helpers/mockResponse'),
     requestOptions;
@@ -52,7 +54,7 @@ describe('request', function() {
 
     it('resolves a promise when successful', function(done) {
       makeRequest('/apps', {}).then(function(body) {
-        expect(body).toEqual(JSON.parse('{ "message": "ok" }'));
+        expect(body).toEqual({ "message": "ok" });
         done()
       });
     });
@@ -115,10 +117,57 @@ describe('request', function() {
       });
     });
   });
+
+  describe('caching', function() {
+    var cache = new MockCache();
+
+    beforeEach(function() {
+      spyOn(memjs.Client, 'create').andReturn(cache);
+      client.connectCacheClient();
+    });
+
+    it('sends an etag from the cache', function(done) {
+      makeRequest('/apps', {}, function(err, body) {
+        expect(requestOptions.headers['If-None-Match']).toEqual('123');
+        done();
+      }, { response: { statusCode: 304 } });
+    });
+
+    it('gets with a postfix', function(done) {
+      spyOn(cache, 'get').andCallThrough();
+
+      makeRequest('/apps', { cacheKeyPostfix: '123' }, function(err, body) {
+        expect(cache.get).toHaveBeenCalledWith('/apps-123', jasmine.any(Function));
+        done();
+      });
+    });
+
+    it('returns a cached body', function(done) {
+      makeRequest('/apps', {}, function(err, body) {
+        expect(body).toEqual({ cachedFoo: 'bar' });
+        done();
+      }, { response: { statusCode: 304 } });
+    });
+
+    it('writes to the cache when necessary', function(done) {
+      spyOn(cache, 'set');
+
+      makeRequest('/apps', { cacheKeyPostfix: '123' }, function(err, body) {
+        var expectedCache = JSON.stringify({
+          body: { message: 'ok' },
+          etag: '123'
+        });
+
+        expect(cache.set).toHaveBeenCalledWith('/apps-123', expectedCache);
+        done();
+      }, { response: { headers: { etag: '123' } } });
+    });
+  });
 });
 
 function makeRequest(path, options, callback, testOptions) {
   testOptions || (testOptions = {});
+  options.path = path;
 
   spyOn(https, "request").andCallFake(function(options, httpsCallback) {
     var req = new MockRequest();
@@ -134,7 +183,7 @@ function makeRequest(path, options, callback, testOptions) {
     return req;
   });
 
-  return request(path, options, function(err, body) {
+  return client.request(path, options, function(err, body) {
     requestOptions = https.request.mostRecentCall.args[0];
     if (callback) callback(err, body);
   });

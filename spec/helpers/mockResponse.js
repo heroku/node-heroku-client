@@ -4,6 +4,7 @@ module.exports = MockResponse;
 
 function MockResponse(options) {
   this.statusCode = 200;
+  this.headers = {};
 
   for (var key in options) {
     this[key] = options[key];
