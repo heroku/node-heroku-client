@@ -23,7 +23,8 @@ heroku.app.create({ name: 'my-new-app' }, function (err, app) {
   console.log(app);
 });
 
-heroku.addOn.update('my-app', 'papertrail', { plan: { name: 'papertrail:fixa' } }, function (err, addOn) {
+var newPlan = { plan: { name: 'papertrail:fixa' } };
+heroku.addOn.update('my-app', 'papertrail', newPlan, function (err, addOn) {
   console.log(addOn);
 });
 ```
