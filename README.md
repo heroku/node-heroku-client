@@ -77,4 +77,4 @@ $ npm test
 [platform-api-reference]: https://devcenter.heroku.com/articles/platform-api-reference
 [q]: https://github.com/kriskowal/q
 [memjs]: https://github.com/alevy/memjs
-[jasmien-node]: https://github.com/mhevery/jasmine-node
+[jasmine-node]: https://github.com/mhevery/jasmine-node
