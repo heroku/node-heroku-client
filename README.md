@@ -5,9 +5,7 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
 ## Usage
 
 ```javascript
-/* Create a new client and give it an API token
- * as well as a cache key postfix.
- */
+// Create a new client and give it an API token
 var Heroku = require('heroku').Heroku;
 heroku = new Heroku({ token: user.apiToken });
 
