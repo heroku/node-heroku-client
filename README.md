@@ -12,27 +12,19 @@ var Heroku = require('heroku').Heroku;
 heroku = new Heroku({ token: user.apiToken });
 
 heroku.app.list(function (err, apps) {
-
   console.log(apps);
-
 });
 
 heroku.app.info('my-app', function (err, app) {
-
   console.log(app);
-
 });
 
 heroku.app.create({ name: 'my-new-app' }, function (err, app) {
-
   console.log(app);
-
 });
 
 heroku.addOn.update('my-app', 'papertrail', { plan: { name: 'papertrail:fixa' } }, function (err, addOn) {
-
   console.log(addOn);
-
 });
 ```
 
