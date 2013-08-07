@@ -1,4 +1,4 @@
-# node-heroku
+# node-heroku [![Build Status](https://travis-ci.org/jclem/node-heroku.png?branch=development)](https://travis-ci.org/jclem/node-heroku)
 
 A wrapper around the [v3 Heroku API][platform-api-reference].
 
