@@ -3,20 +3,19 @@ var https        = require("https"),
     memjs        = require('memjs'),
     MockCache    = require('../helpers/mockCache'),
     MockRequest  = require('../helpers/mockRequest'),
-    MockResponse = require('../helpers/mockResponse'),
-    requestOptions;
+    MockResponse = require('../helpers/mockResponse');
 
 describe('request', function() {
   it('uses the v3 API', function(done) {
     makeRequest('/apps', {}, function() {
-      expect(requestOptions.headers['Accept']).toEqual('application/vnd.heroku+json; version=3');
+      expect(https.request.mostRecentCall.args[0].headers['Accept']).toEqual('application/vnd.heroku+json; version=3');
       done();
     });
   });
 
   it('makes a request to a given path', function(done) {
     makeRequest('/apps', {}, function() {
-      expect(requestOptions.path).toEqual("/apps");
+      expect(https.request.mostRecentCall.args[0].path).toEqual("/apps");
       done();
     });
   });
@@ -33,6 +32,15 @@ describe('request', function() {
 
     makeRequest('/apps', { body: { foo: 'bar' } }, function() {
       expect(MockRequest.prototype.write).toHaveBeenCalledWith(JSON.stringify({ foo: 'bar' }));
+      done();
+    });
+  });
+
+  it('sets the Content-length when a body is present', function(done) {
+    spyOn(MockRequest.prototype, 'setHeader');
+
+    makeRequest('/apps', { body: { foo: 'bar' } }, function() {
+      expect(MockRequest.prototype.setHeader).toHaveBeenCalledWith('Content-length', JSON.stringify({ foo: 'bar' }).length);
       done();
     });
   });
@@ -70,21 +78,21 @@ describe('request', function() {
   describe('options', function() {
     it('accepts an auth string', function(done) {
       makeRequest('/apps', { key: 'api-token' }, function() {
-        expect(requestOptions.auth).toEqual(':api-token');
+        expect(https.request.mostRecentCall.args[0].auth).toEqual(':api-token');
         done();
       });
     });
 
     it('GETs by default', function(done) {
       makeRequest('/apps', {}, function() {
-        expect(requestOptions.method).toEqual('GET');
+        expect(https.request.mostRecentCall.args[0].method).toEqual('GET');
         done();
       });
     });
 
     it('accepts a method', function(done) {
       makeRequest('/apps', { method: 'POST' }, function() {
-        expect(requestOptions.method).toEqual('POST');
+        expect(https.request.mostRecentCall.args[0].method).toEqual('POST');
         done();
       });
     });
@@ -92,11 +100,12 @@ describe('request', function() {
     it('extends the default headers with custom headers', function(done) {
       var expectedHeaders = {
         'Arbitrary': 'header',
-        'Accept': 'application/vnd.heroku+json; version=3'
+        'Accept': 'application/vnd.heroku+json; version=3',
+        'Content-type': 'application/json'
       }
 
       makeRequest('/apps', { headers: { 'Arbitrary': 'header' } }, function() {
-        expect(requestOptions.headers).toEqual(expectedHeaders);
+        expect(https.request.mostRecentCall.args[0].headers).toEqual(expectedHeaders);
         done();
       });
     });
@@ -128,7 +137,7 @@ describe('request', function() {
 
     it('sends an etag from the cache', function(done) {
       makeRequest('/apps', {}, function(err, body) {
-        expect(requestOptions.headers['If-None-Match']).toEqual('123');
+        expect(https.request.mostRecentCall.args[0].headers['If-None-Match']).toEqual('123');
         done();
       }, { response: { statusCode: 304 } });
     });
@@ -169,7 +178,7 @@ function makeRequest(path, options, callback, testOptions) {
   testOptions || (testOptions = {});
   options.path = path;
 
-  spyOn(https, "request").andCallFake(function(options, httpsCallback) {
+  spyOn(https, 'request').andCallFake(function(options, httpsCallback) {
     var req = new MockRequest();
     var res = new MockResponse(testOptions.response || {});
 
@@ -183,8 +192,8 @@ function makeRequest(path, options, callback, testOptions) {
     return req;
   });
 
+
   return client.request(path, options, function(err, body) {
-    requestOptions = https.request.mostRecentCall.args[0];
     if (callback) callback(err, body);
   });
-}
+};

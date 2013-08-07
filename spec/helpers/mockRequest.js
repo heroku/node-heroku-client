@@ -17,6 +17,9 @@ MockRequest.prototype.setTimeout = function(timeout, callback) {
   setTimeout(callback, timeout);
 };
 
+MockRequest.prototype.setHeader = function() {
+};
+
 MockRequest.prototype.abort = function() {
   this.isAborted = true;
 };
