@@ -76,8 +76,8 @@ describe('request', function() {
   });
 
   describe('options', function() {
-    it('accepts an auth string', function(done) {
-      makeRequest('/apps', { key: 'api-token' }, function() {
+    it('uses an auth string', function(done) {
+      makeRequest('/apps', { token: 'api-token' }, function() {
         expect(https.request.mostRecentCall.args[0].auth).toEqual(':api-token');
         done();
       });
