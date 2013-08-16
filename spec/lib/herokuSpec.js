@@ -9,6 +9,20 @@ describe('Heroku', function() {
     });
   });
 
+  it('passes its method into the request', function(done) {
+    heroku.apps('my-app').create({}, function() {
+      expect(client.request.mostRecentCall.args[0].method).toEqual('POST');
+      done();
+    });
+  });
+
+  it('passes its expected status into the request', function(done) {
+    heroku.apps('my-app').dynos().list(function() {
+      expect(client.request.mostRecentCall.args[0].expectedStatus).toEqual([200, 206]);
+      done();
+    });
+  });
+
   describe('requests with no body', function() {
     it('can perform a request with no parameters', function(done) {
       heroku.apps().list(function() {
