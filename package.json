@@ -1,23 +1,30 @@
 {
-  "name": "heroku",
-  "version": "0.0.0",
-  "description": "A wrapper for the Heroku API",
-  "main": "./lib/heroku/heroku.js",
+  "name": "heroku-client",
+  "version": "0.0.1",
+  "description": "A wrapper for the Heroku v3 API",
+  "main": "./lib/heroku.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jasmine-node/bin/jasmine-node spec"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jclem/node-heroku"
   },
+  "keywords": [
+    "heroku"
+  ],
   "author": "Jonathan Clem",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jclem/node-heroku/issues"
   },
+  "devDependencies": {
+    "jasmine-node": "~1.11.0"
+  },
   "dependencies": {
     "q": "~0.9.6",
+    "memjs": "~0.6.0",
     "underscore": "~1.5.1",
-    "memjs": "~0.6.0"
+    "inflection": "~1.2.6"
   }
 }
