@@ -193,7 +193,7 @@ function makeRequest(path, options, callback, testOptions) {
   });
 
 
-  return client.request(path, options, function(err, body) {
+  return client.request(options, function(err, body) {
     if (callback) callback(err, body);
   });
 };
