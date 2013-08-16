@@ -8,24 +8,24 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
 /* Create a new client and give it an API token
  * as well as a cache key postfix.
  */
-var Heroku = require('heroku').Heroku;
+var Heroku = require('heroku-client').Heroku;
 heroku = new Heroku({ token: user.apiToken });
 
-heroku.app.list(function (err, apps) {
+heroku.apps().list(function (err, apps) {
   console.log(apps);
 });
 
-heroku.app.info('my-app', function (err, app) {
+heroku.apps('my-app').info(function (err, app) {
   console.log(app);
 });
 
-heroku.app.create({ name: 'my-new-app' }, function (err, app) {
+heroku.apps().create({ name: 'my-new-app' }, function (err, app) {
   console.log(app);
 });
 
 var newPlan = { plan: { name: 'papertrail:fixa' } };
-heroku.addOn.update('my-app', 'papertrail', newPlan, function (err, addOn) {
-  console.log(addOn);
+heroku.apps('my-app').addons('papertrail').update(newPlan, function (err, addon) {
+  console.log(addon);
 });
 ```
 
@@ -37,10 +37,10 @@ node-heroku works with Node-style callbacks, but also implements promises with t
 var q = require('q');
 
 // Fetches dynos for all of my apps.
-heroku.app.list().then(function (apps) {
+heroku.apps().list().then(function (apps) {
 
   return q.all(apps.map(function (app) {
-    return heroku.dyno.list(app.name);
+    return heroku.apps(app.name).dynos().list();
   }));
 
 }).then(function (dynos) {
