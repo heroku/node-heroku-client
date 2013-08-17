@@ -6,8 +6,8 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
 
 ```javascript
 // Create a new client and give it an API token
-var Heroku = require('heroku-client').Heroku;
-heroku = new Heroku({ token: user.apiToken });
+var Heroku = require('heroku-client')
+  , heroku = new Heroku({ token: user.apiToken });
 
 heroku.apps().list(function (err, apps) {
   console.log(apps);
