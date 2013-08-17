@@ -1,6 +1,6 @@
-var client       = require('../../lib/request'),
-    herokuModule = require('../../lib/heroku'),
-    heroku       = new herokuModule.Heroku({ key: '12345' });
+var client = require('../../lib/request'),
+    Heroku = require('../../lib/heroku'),
+    heroku = new Heroku({ token: '12345' });
 
 describe('Heroku', function() {
   beforeEach(function() {
