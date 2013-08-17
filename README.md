@@ -2,6 +2,12 @@
 
 A wrapper around the [v3 Heroku API][platform-api-reference].
 
+## Install
+
+```sh
+$ npm install heroku-client --save
+```
+
 ## Usage
 
 ```javascript
