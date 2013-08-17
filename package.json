@@ -24,7 +24,7 @@
   "dependencies": {
     "q": "~0.9.6",
     "memjs": "~0.6.0",
-    "underscore": "~1.5.1",
-    "inflection": "~1.2.6"
+    "inflection": "~1.2.6",
+    "underscore": "~1.5.1"
   }
 }
