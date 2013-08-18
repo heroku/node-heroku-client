@@ -1,5 +1,5 @@
 var https        = require("https"),
-    client       = require('../../lib/request'),
+    Request      = require('../../lib/request'),
     memjs        = require('memjs'),
     MockCache    = require('../helpers/mockCache'),
     MockRequest  = require('../helpers/mockRequest'),
@@ -153,7 +153,7 @@ describe('request', function() {
 
     beforeEach(function() {
       spyOn(memjs.Client, 'create').andReturn(cache);
-      client.connectCacheClient();
+      Request.connectCacheClient();
     });
 
     it('sends an etag from the cache', function(done) {
@@ -199,13 +199,13 @@ function makeRequest(path, options, callback, testOptions) {
   testOptions || (testOptions = {});
   options.path = path;
 
-  spyOn(https, 'request').andCallFake(function(options, httpsCallback) {
-    var req = new MockRequest();
-    var res = new MockResponse(testOptions.response || {});
+  spyOn(https, 'request').andCallFake(function (options, httpsCallback) {
+    var req = new MockRequest(),
+        res = new MockResponse(testOptions.response || {});
 
     httpsCallback(res);
 
-    setTimeout(function() {
+    setTimeout(function () {
       res.emit('data', '{ "message": "ok" }');
       if (!req.isAborted) res.emit('end');
     }, testOptions.timeout || 0);
@@ -214,7 +214,7 @@ function makeRequest(path, options, callback, testOptions) {
   });
 
 
-  return client.request(options, function(err, body) {
+  return Request.request(options, function (err, body) {
     if (callback) callback(err, body);
   });
 };
