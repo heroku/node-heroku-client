@@ -8,6 +8,10 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
 $ npm install heroku-client --save
 ```
 
+## Documentation
+
+Docs are auto-generated and live in the [docs directory](https://github.com/heroku/node-heroku-client/tree/development/docs).
+
 ## Usage
 
 `heroku-client` works by providing functions that return proxy objects for
