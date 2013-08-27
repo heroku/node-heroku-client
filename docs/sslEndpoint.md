@@ -65,7 +65,7 @@ DELETE | /apps/{app_id_or_name}/ssl-endpoints/{ssl_endpoint_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
------BEGIN CERTIFICATE----- ... | true | string
+`-----BEGIN CERTIFICATE----- ...` | true | string
 
 ### `cname`
 
@@ -73,7 +73,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-example.herokussl.com | true | string
+`example.herokussl.com` | true | string
 
 ### `created_at`
 
@@ -81,7 +81,7 @@ example.herokussl.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00-00:00 | true | datetime
+`2012-01-01T12:00:00-00:00` | true | datetime
 
 ### `id`
 
@@ -89,7 +89,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -97,7 +97,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-tokyo-1234 | true | string
+`tokyo-1234` | true | string
 
 ### `private_key`
 
@@ -105,7 +105,7 @@ tokyo-1234 | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
------BEGIN RSA PRIVATE KEY----- ... | false | string
+`-----BEGIN RSA PRIVATE KEY----- ...` | false | string
 
 ### `rollback`
 
@@ -113,7 +113,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-true | false | boolean
+`true` | false | boolean
 
 ### `updated_at`
 
@@ -121,5 +121,5 @@ true | false | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00-00:00 | true | datetime
+`2012-01-01T12:00:00-00:00` | true | datetime
 

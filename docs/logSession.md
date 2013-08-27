@@ -28,7 +28,7 @@ POST | /apps/{app_id_or_name}/log-sessions | 201
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `dyno`
 
@@ -36,7 +36,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-web.1 | false | string
+`web.1` | false | string
 
 ### `id`
 
@@ -44,7 +44,7 @@ web.1 | false | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `lines`
 
@@ -52,7 +52,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-10 | false | number
+`10` | false | number
 
 ### `logplex_url`
 
@@ -60,7 +60,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-https://logplex.heroku.com/sessions/01234567-89ab-cdef-0123-456789abcdef?srv=1325419200 | true | string
+`https://logplex.heroku.com/sessions/01234567-89ab-cdef-0123-456789abcdef?srv=1325419200` | true | string
 
 ### `source`
 
@@ -68,7 +68,7 @@ https://logplex.heroku.com/sessions/01234567-89ab-cdef-0123-456789abcdef?srv=132
 
 Example | Serialized? | Type
 --- | --- | ---
-app | false | string
+`app` | false | string
 
 ### `tail`
 
@@ -76,7 +76,7 @@ app | false | string
 
 Example | Serialized? | Type
 --- | --- | ---
-true | false | boolean
+`true` | false | boolean
 
 ### `updated_at`
 
@@ -84,5 +84,5 @@ true | false | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

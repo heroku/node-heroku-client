@@ -65,7 +65,7 @@ DELETE | /account/app-transfers/{transfer_id} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `app:id`
 
@@ -73,7 +73,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `app:name`
 
@@ -81,7 +81,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-example | true | string
+`example` | true | string
 
 ### `id`
 
@@ -89,7 +89,7 @@ example | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `owner:id`
 
@@ -97,7 +97,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `owner:email`
 
@@ -105,7 +105,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-username@example.com | true | string
+`username@example.com` | true | string
 
 ### `recipient:id`
 
@@ -113,7 +113,7 @@ username@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `recipient:email`
 
@@ -121,7 +121,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-username@example.com | true | string
+`username@example.com` | true | string
 
 ### `state`
 
@@ -129,7 +129,7 @@ username@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-pending | true | string
+`pending` | true | string
 
 ### `updated_at`
 
@@ -137,5 +137,5 @@ pending | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

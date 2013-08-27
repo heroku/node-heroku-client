@@ -42,7 +42,7 @@ PATCH | /apps/{app_id_or_name}/formation/{formation_id_or_type} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-bundle exec rails server -p $PORT | true | string
+`bundle exec rails server -p $PORT` | true | string
 
 ### `created_at`
 
@@ -50,7 +50,7 @@ bundle exec rails server -p $PORT | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -58,7 +58,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `quantity`
 
@@ -66,7 +66,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-1 | true | number
+`1` | true | number
 
 ### `size`
 
@@ -74,7 +74,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-1 | true | number
+`1` | true | number
 
 ### `type`
 
@@ -82,7 +82,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-web | true | string
+`web` | true | string
 
 ### `updated_at`
 
@@ -90,5 +90,5 @@ web | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

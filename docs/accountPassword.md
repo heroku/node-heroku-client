@@ -26,7 +26,7 @@ PUT | /account/password | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-0123456789abcdef | false | string
+`0123456789abcdef` | false | string
 
 ### `password`
 
@@ -34,5 +34,5 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-abcdef0123456789 | false | string
+`abcdef0123456789` | false | string
 

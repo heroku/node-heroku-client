@@ -51,7 +51,7 @@ DELETE | /apps/{app_id_or_name}/collaborators/{collaborator_id_or_email} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -59,7 +59,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `silent`
 
@@ -67,7 +67,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-false | false | boolean
+`false` | false | boolean
 
 ### `updated_at`
 
@@ -75,7 +75,7 @@ false | false | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `user:email`
 
@@ -83,7 +83,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-collaborator@example.com | true | string
+`collaborator@example.com` | true | string
 
 ### `user:id`
 
@@ -91,5 +91,5 @@ collaborator@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 

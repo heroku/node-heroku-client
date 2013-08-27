@@ -64,7 +64,7 @@ DELETE | /oauth/clients/{client_id} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -72,7 +72,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -80,7 +80,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-example | true | string
+`example` | true | string
 
 ### `redirect_uri`
 
@@ -88,7 +88,7 @@ example | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-https://example.com/auth/heroku/callback | true | string
+`https://example.com/auth/heroku/callback` | true | string
 
 ### `secret`
 
@@ -96,7 +96,7 @@ https://example.com/auth/heroku/callback | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `updated_at`
 
@@ -104,5 +104,5 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

@@ -66,7 +66,7 @@ DELETE | /apps/{app_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `buildpack_provided_description`
 
@@ -74,7 +74,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-Ruby/Rack | true | string
+`Ruby/Rack` | true | string
 
 ### `created_at`
 
@@ -82,7 +82,7 @@ Ruby/Rack | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `git_url`
 
@@ -90,7 +90,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-git@heroku.com/example.git | true | string
+`git@heroku.com/example.git` | true | string
 
 ### `id`
 
@@ -98,7 +98,7 @@ git@heroku.com/example.git | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `maintenance`
 
@@ -106,7 +106,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-false | true | boolean
+`false` | true | boolean
 
 ### `name`
 
@@ -114,7 +114,7 @@ false | true | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-example | true | string
+`example` | true | string
 
 ### `owner:email`
 
@@ -122,7 +122,7 @@ example | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-username@example.com | true | string
+`username@example.com` | true | string
 
 ### `owner:id`
 
@@ -130,7 +130,7 @@ username@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `region:id`
 
@@ -138,7 +138,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `region:name`
 
@@ -146,7 +146,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-us | true | string
+`us` | true | string
 
 ### `released_at`
 
@@ -154,7 +154,7 @@ us | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `repo_size`
 
@@ -162,7 +162,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-1024 | true | number
+`1024` | true | number
 
 ### `slug_size`
 
@@ -170,7 +170,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-512 | true | number
+`512` | true | number
 
 ### `stack`
 
@@ -178,7 +178,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-cedar | true | string
+`cedar` | true | string
 
 ### `updated_at`
 
@@ -186,7 +186,7 @@ cedar | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `web_url`
 
@@ -194,5 +194,5 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-http://example.herokuapp.com | true | string
+`http://example.herokuapp.com` | true | string
 

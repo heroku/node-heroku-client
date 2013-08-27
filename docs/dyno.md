@@ -53,7 +53,7 @@ DELETE | /apps/{app_id_or_name}/dynos/{dyno_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-true | false | boolean
+`true` | false | boolean
 
 ### `attach_url`
 
@@ -61,7 +61,7 @@ true | false | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-rendezvous://rendezvous.runtime.heroku.com:5000/{rendezvous-id} | true | string
+`rendezvous://rendezvous.runtime.heroku.com:5000/{rendezvous-id}` | true | string
 
 ### `command`
 
@@ -69,7 +69,7 @@ rendezvous://rendezvous.runtime.heroku.com:5000/{rendezvous-id} | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-bash | true | string
+`bash` | true | string
 
 ### `created_at`
 
@@ -77,7 +77,7 @@ bash | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -93,7 +93,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-run.1 | true | string
+`run.1` | true | string
 
 ### `release:id`
 
@@ -101,7 +101,7 @@ run.1 | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `release:version`
 
@@ -109,7 +109,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-456 | true | number
+`456` | true | number
 
 ### `size`
 
@@ -117,7 +117,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-1 | true | number
+`1` | true | number
 
 ### `state`
 
@@ -125,7 +125,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-up | true | string
+`up` | true | string
 
 ### `type`
 
@@ -133,7 +133,7 @@ up | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-run | true | string
+`run` | true | string
 
 ### `updated_at`
 
@@ -141,5 +141,5 @@ run | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

@@ -49,7 +49,7 @@ DELETE | /apps/{app_id_or_name}/log-drains/{drain_id_or_url} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `created_at`
 
@@ -57,7 +57,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -65,7 +65,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `updated_at`
 
@@ -73,7 +73,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `url`
 
@@ -81,5 +81,5 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-https://example.com/drain | true | string
+`https://example.com/drain` | true | string
 

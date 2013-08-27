@@ -28,7 +28,7 @@ GET | /addon-services/{addon_service_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -36,7 +36,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -44,7 +44,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-heroku-postgresql | true | string
+`heroku-postgresql` | true | string
 
 ### `updated_at`
 
@@ -52,5 +52,5 @@ heroku-postgresql | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

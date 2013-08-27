@@ -49,7 +49,7 @@ DELETE | /account/keys/{key_id_or_fingerprint} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `email`
 
@@ -57,7 +57,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-username@example.com | true | string
+`username@example.com` | true | string
 
 ### `fingerprint`
 
@@ -65,7 +65,7 @@ username@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-17:63:a4:ba:24:d3:7f:af:17:c8:94:82:7e:80:56:bf | true | string
+`17:63:a4:ba:24:d3:7f:af:17:c8:94:82:7e:80:56:bf` | true | string
 
 ### `id`
 
@@ -73,7 +73,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `public_key`
 
@@ -81,7 +81,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-ssh-rsa AAAAB3NzaC1ycVc/../839Uv username@example.com | true | string
+`ssh-rsa AAAAB3NzaC1ycVc/../839Uv username@example.com` | true | string
 
 ### `updated_at`
 
@@ -89,5 +89,5 @@ ssh-rsa AAAAB3NzaC1ycVc/../839Uv username@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

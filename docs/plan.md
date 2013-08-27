@@ -28,7 +28,7 @@ GET | /addon-services/{addon_service_id_or_name}/plans/{plan_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `description`
 
@@ -36,7 +36,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-Heroku Postgres Dev | true | string
+`Heroku Postgres Dev` | true | string
 
 ### `id`
 
@@ -44,7 +44,7 @@ Heroku Postgres Dev | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -52,7 +52,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-heroku-postgresql:dev | true | string
+`heroku-postgresql:dev` | true | string
 
 ### `price:cents`
 
@@ -60,7 +60,7 @@ heroku-postgresql:dev | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-0 | true | number
+`0` | true | number
 
 ### `price:unit`
 
@@ -68,7 +68,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-month | true | string
+`month` | true | string
 
 ### `state`
 
@@ -76,7 +76,7 @@ month | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-public | true | string
+`public` | true | string
 
 ### `updated_at`
 
@@ -84,5 +84,5 @@ public | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

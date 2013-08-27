@@ -34,7 +34,7 @@ PATCH | /account | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-true | true | boolean
+`true` | true | boolean
 
 ### `beta`
 
@@ -42,7 +42,7 @@ true | true | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-false | true | boolean
+`false` | true | boolean
 
 ### `created_at`
 
@@ -50,7 +50,7 @@ false | true | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `email`
 
@@ -58,7 +58,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-username@example.com | true | string
+`username@example.com` | true | string
 
 ### `id`
 
@@ -66,7 +66,7 @@ username@example.com | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `last_login`
 
@@ -74,7 +74,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `updated_at`
 
@@ -82,7 +82,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `verified`
 
@@ -90,5 +90,5 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-false | true | boolean
+`false` | true | boolean
 

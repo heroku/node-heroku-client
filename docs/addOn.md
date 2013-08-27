@@ -66,7 +66,7 @@ DELETE | /apps/{app_id_or_name}/addons/{addon_id} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-[object Object] | false | object
+`[object Object]` | false | object
 
 ### `created_at`
 
@@ -74,7 +74,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `id`
 
@@ -82,7 +82,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `plan:id`
 
@@ -90,7 +90,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `plan:name`
 
@@ -98,7 +98,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-heroku-postgresql:dev | true | string
+`heroku-postgresql:dev` | true | string
 
 ### `updated_at`
 
@@ -106,5 +106,5 @@ heroku-postgresql:dev | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

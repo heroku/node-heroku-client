@@ -30,5 +30,5 @@ PATCH | /apps/{app_id_or_name}/config-vars | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-{value} | true | string
+`{value}` | true | string
 

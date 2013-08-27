@@ -53,7 +53,7 @@ DELETE | /oauth/authorizations/{authorization_id} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-7200 | true | number
+`7200` | true | number
 
 ### `access_token:id`
 
@@ -61,7 +61,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `access_token:token`
 
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `client:id`
 
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `client:name`
 
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-example | true | string
+`example` | true | string
 
 ### `client:redirect_uri`
 
@@ -93,7 +93,7 @@ example | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-https://example.com/auth/heroku/callback | true | string
+`https://example.com/auth/heroku/callback` | true | string
 
 ### `created_at`
 
@@ -101,7 +101,7 @@ https://example.com/auth/heroku/callback | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `description`
 
@@ -109,7 +109,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-sample authorization | true | string
+`sample authorization` | true | string
 
 ### `grant:code`
 
@@ -117,7 +117,7 @@ sample authorization | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `grant:expires_in`
 
@@ -125,7 +125,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `grant:id`
 
@@ -133,7 +133,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `id`
 
@@ -141,7 +141,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `refresh_token:expires_in`
 
@@ -149,7 +149,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-7200 | true | number
+`7200` | true | number
 
 ### `refresh_token:id`
 
@@ -157,7 +157,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `refresh_token:token`
 
@@ -165,7 +165,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `scope`
 
@@ -173,7 +173,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-global | true | array[string]
+`global` | true | array[string]
 
 ### `updated_at`
 
@@ -181,5 +181,5 @@ global | true | array[string]
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 

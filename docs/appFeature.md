@@ -41,7 +41,7 @@ PATCH | /apps/{app_id_or_name}/features/{feature_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00-00:00 | true | datetime
+`2012-01-01T12:00:00-00:00` | true | datetime
 
 ### `description`
 
@@ -49,7 +49,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-Causes app to example. | true | string
+`Causes app to example.` | true | string
 
 ### `doc_url`
 
@@ -57,7 +57,7 @@ Causes app to example. | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-http://devcenter.heroku.com/articles/example | true | string
+`http://devcenter.heroku.com/articles/example` | true | string
 
 ### `enabled`
 
@@ -65,7 +65,7 @@ http://devcenter.heroku.com/articles/example | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-true | true | boolean
+`true` | true | boolean
 
 ### `id`
 
@@ -73,7 +73,7 @@ true | true | boolean
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -81,7 +81,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-example | true | string
+`example` | true | string
 
 ### `updated_at`
 
@@ -89,5 +89,5 @@ example | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00-00:00 | true | datetime
+`2012-01-01T12:00:00-00:00` | true | datetime
 

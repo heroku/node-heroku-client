@@ -20,5 +20,5 @@ GET | /account/rate-limits | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2399 | true | number
+`2399` | true | number
 

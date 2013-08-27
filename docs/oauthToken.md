@@ -30,7 +30,7 @@ POST | /oauth/tokens | 201
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `access_token:expires_in`
 
@@ -38,7 +38,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2592000 | true | number
+`2592000` | true | number
 
 ### `access_token:id`
 
@@ -46,7 +46,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `access_token:token`
 
@@ -54,7 +54,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `client:secret`
 
@@ -62,7 +62,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | false | string
+`01234567-89ab-cdef-0123-456789abcdef` | false | string
 
 ### `created_at`
 
@@ -70,7 +70,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `grant:code`
 
@@ -78,7 +78,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | false | string
+`01234567-89ab-cdef-0123-456789abcdef` | false | string
 
 ### `grant:type`
 
@@ -86,7 +86,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-authorization_code | false | string
+`authorization_code` | false | string
 
 ### `id`
 
@@ -94,7 +94,7 @@ authorization_code | false | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `refresh_token:expires_in`
 
@@ -102,7 +102,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2592000 | true | number
+`2592000` | true | number
 
 ### `refresh_token:id`
 
@@ -110,7 +110,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `refresh_token:token`
 
@@ -118,7 +118,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `session:id`
 
@@ -126,7 +126,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | string
+`01234567-89ab-cdef-0123-456789abcdef` | true | string
 
 ### `updated_at`
 
@@ -134,7 +134,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `user:id`
 
@@ -142,5 +142,5 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 

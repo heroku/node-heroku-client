@@ -28,7 +28,7 @@ GET | /regions/{region_id_or_name} | 200
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
 ### `description`
 
@@ -36,7 +36,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-United States | true | string
+`United States` | true | string
 
 ### `id`
 
@@ -44,7 +44,7 @@ United States | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-01234567-89ab-cdef-0123-456789abcdef | true | uuid
+`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
 
 ### `name`
 
@@ -52,7 +52,7 @@ Example | Serialized? | Type
 
 Example | Serialized? | Type
 --- | --- | ---
-us | true | string
+`us` | true | string
 
 ### `updated_at`
 
@@ -60,5 +60,5 @@ us | true | string
 
 Example | Serialized? | Type
 --- | --- | ---
-2012-01-01T12:00:00Z | true | datetime
+`2012-01-01T12:00:00Z` | true | datetime
 
