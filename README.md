@@ -10,33 +10,32 @@ $ npm install heroku-client --save
 
 ## Usage
 
+`heroku-client` works by providing functions that return proxy objects for
+interacting with different resources through the Heroku API.
+
+To begin, require the Heroku module and create a client, passing in an API
+token:
+
 ```javascript
-/*
- * `heroku-client` works by providing functions that return proxy objects for
- * interacting with different resources through the Heroku API.
- * 
- * To begin, require the Heroku module and create a client, passing in an API
- * token:
- */
 var Heroku = require('heroku-client'),
     heroku = new Heroku({ token: process.env.HEROKU_API_TOKEN });
+```
 
+The simplest example is listing a user's apps. First, we call `heroku.apps()`,
+which returns a proxy object to the /apps endpoint, then we call `list()` to
+actually perform the API call:
 
-/*
- * The simplest example is listing a user's apps. First, we call `heroku.apps()`,
- * which returns a proxy object to the /apps endpoint, then we call `list()` to
- * actually perform the API call:
- */
+```javascript
 heroku.apps().list(function (err, apps) {
   // `apps` is a parsed JSON response from the API
 });
+```
 
+The advantage of using proxy objects is that they are reusable. Let's get the
+info for the user's app "my-app", get the dynos for the app, and
+remove a collaborator:
 
-/*
- * The advantage of using proxy objects is that they are reusable. Let's get the
- * info for the user's app "my-app", then get the dynos for the app, then
- * remove a collaborator:
- */
+```javascript
 var app = heroku.apps('my-app');
 
 app.info(function (err, app) {
@@ -50,12 +49,12 @@ app.dynos().list(function (err, dynos) {
 app.collaborators('user@example.com').delete(function (err, collaborator) {
   // The `collaborator` has been removed unless `err`
 });
+```
 
+Requests that require a body are easy, as well. Let's add a collaborator to
+the user's app "another-app":
 
-/*
- * Requests that require a body are easy, as well. Let's add a collaborator to
- * the user's app "another-app":
- */
+```javascript
 var app  = heroku.apps('another-app'),
     user = { email: 'new-user@example.com' };
 
