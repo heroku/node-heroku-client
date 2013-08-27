@@ -61,7 +61,7 @@ DELETE | /account/app-transfers/{transfer_id} | 200
 
 ### `created_at`
 
-*When the transfer was created.*
+*when the transfer was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `app:id`
 
-*Unique identifier of the app being transferred.*
+*unique identifier of the app being transferred.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 ### `app:name`
 
-*Name of the app being transferred.*
+*name of the app being transferred.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this transfer.*
+*unique identifier of this transfer.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -93,7 +93,7 @@ Example | Serialized? | Type
 
 ### `owner:id`
 
-*Unique identifier of the sending user.*
+*unique identifier of the sending user.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -101,7 +101,7 @@ Example | Serialized? | Type
 
 ### `owner:email`
 
-*Email of the sending user.*
+*email of the sending user.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -109,7 +109,7 @@ Example | Serialized? | Type
 
 ### `recipient:id`
 
-*Unique identifier of the receiving user.*
+*unique identifier of the receiving user.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -117,7 +117,7 @@ Example | Serialized? | Type
 
 ### `recipient:email`
 
-*Email of the receiving user.*
+*email of the receiving user.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -125,7 +125,7 @@ Example | Serialized? | Type
 
 ### `state`
 
-*New state of the transfer; accepted/declined/pending.*
+*new state of the transfer; accepted/declined/pending.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -133,7 +133,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When the transfer was updated.*
+*when the transfer was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

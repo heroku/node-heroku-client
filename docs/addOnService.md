@@ -24,7 +24,7 @@ GET | /addon-services/{addon_service_id_or_name} | 200
 
 ### `created_at`
 
-*When add-on service was created.*
+*when add-on service was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -32,7 +32,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of service.*
+*unique identifier of service.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -40,7 +40,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*Unique name for add-on service.*
+*unique name for add-on service.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -48,7 +48,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When add-on service was updated.*
+*when add-on service was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

@@ -45,7 +45,7 @@ DELETE | /apps/{app_id_or_name}/log-drains/{drain_id_or_url} | 200
 
 ### `addon:id`
 
-*Unique identifier of the addon that provides the drain.*
+*unique identifier of the addon that provides the drain.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -53,7 +53,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When log drain was created.*
+*when log drain was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -61,7 +61,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this log drain.*
+*unique identifier of this log drain.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When log session was updated.*
+*when log session was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 ### `url`
 
-*Url associated with the log drain.*
+*url associated with the log drain.*
 
 Example | Serialized? | Type
 --- | --- | ---

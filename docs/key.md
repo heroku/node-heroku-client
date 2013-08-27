@@ -45,7 +45,7 @@ DELETE | /account/keys/{key_id_or_fingerprint} | 200
 
 ### `created_at`
 
-*When key was created.*
+*when key was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -53,7 +53,7 @@ Example | Serialized? | Type
 
 ### `email`
 
-*Email address provided in key contents.*
+*email address provided in key contents.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -61,7 +61,7 @@ Example | Serialized? | Type
 
 ### `fingerprint`
 
-*A unique identifying string based on contents.*
+*a unique identifying string based on contents.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this key.*
+*unique identifier of this key.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 ### `public_key`
 
-*Full public_key as uploaded.*
+*full public_key as uploaded.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When key was updated.*
+*when key was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

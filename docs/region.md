@@ -24,7 +24,7 @@ GET | /regions/{region_id_or_name} | 200
 
 ### `created_at`
 
-*When region was created.*
+*when region was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -32,7 +32,7 @@ Example | Serialized? | Type
 
 ### `description`
 
-*Description of the region.*
+*description of the region.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -40,7 +40,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this region.*
+*unique identifier of this region.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -48,7 +48,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*Unique name of the region.*
+*unique name of the region.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -56,7 +56,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When region was updated.*
+*when region was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

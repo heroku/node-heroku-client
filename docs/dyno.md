@@ -49,7 +49,7 @@ DELETE | /apps/{app_id_or_name}/dynos/{dyno_id_or_name} | 200
 
 ### `attach`
 
-*Whether to stream output or not.*
+*whether to stream output or not.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -57,7 +57,7 @@ Example | Serialized? | Type
 
 ### `attach_url`
 
-*A url to stream output from for attached processes or null for non-attached processes.*
+*a URL to stream output from for attached processes or null for non-attached processes.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -65,7 +65,7 @@ Example | Serialized? | Type
 
 ### `command`
 
-*Command used to start this process.*
+*command used to start this process.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -73,7 +73,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When domain was created.*
+*when domain was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -81,7 +81,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this dyno.*
+*unique identifier of this dyno.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -89,7 +89,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*The name of this process on this app.*
+*the name of this process on this app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -97,7 +97,7 @@ Example | Serialized? | Type
 
 ### `release:id`
 
-*The unique identifier of the release this process was started with.*
+*the unique identifier of the release this process was started with.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -105,7 +105,7 @@ Example | Serialized? | Type
 
 ### `release:version`
 
-*The unique version of the release this process was started with.*
+*the unique version of the release this process was started with.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -113,7 +113,7 @@ Example | Serialized? | Type
 
 ### `size`
 
-*Dyno size (default: 1).*
+*dyno size (default: 1).*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -121,7 +121,7 @@ Example | Serialized? | Type
 
 ### `state`
 
-*Current status of process (either: crashed, down, idle, starting, or up).*
+*current status of process (either: crashed, down, idle, starting, or up).*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -129,7 +129,7 @@ Example | Serialized? | Type
 
 ### `type`
 
-*Type of process.*
+*type of process.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -137,7 +137,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When process last changed state.*
+*when process last changed state.*
 
 Example | Serialized? | Type
 --- | --- | ---

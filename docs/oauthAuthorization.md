@@ -49,7 +49,7 @@ DELETE | /oauth/authorizations/{authorization_id} | 200
 
 ### `access_token:expires_in`
 
-*Seconds until oauth access token expires.*
+*seconds until OAuth access token expires.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -57,7 +57,7 @@ Example | Serialized? | Type
 
 ### `access_token:id`
 
-*Unique identifier of this authorization's oauth access token.*
+*unique identifier of this authorization's OAuth access token.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -65,7 +65,7 @@ Example | Serialized? | Type
 
 ### `access_token:token`
 
-*The actual oauth access token.*
+*the actual OAuth access token.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -73,7 +73,7 @@ Example | Serialized? | Type
 
 ### `client:id`
 
-*Unique identifier of this oauth authorization client.*
+*unique identifier of this OAuth authorization client.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -81,7 +81,7 @@ Example | Serialized? | Type
 
 ### `client:name`
 
-*Oauth authorization client name.*
+*OAuth authorization client name.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -89,7 +89,7 @@ Example | Serialized? | Type
 
 ### `client:redirect_uri`
 
-*Endpoint for redirection after authorization with oauth authorization client.*
+*endpoint for redirection after authorization with OAuth authorization client.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -97,7 +97,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When oauth authorization was created.*
+*when OAuth authorization was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -105,7 +105,7 @@ Example | Serialized? | Type
 
 ### `description`
 
-*Human-friendly description of this oauth authorization.*
+*human-friendly description of this OAuth authorization.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -113,7 +113,7 @@ Example | Serialized? | Type
 
 ### `grant:code`
 
-*Code for the oauth authorization grant.*
+*code for the OAuth authorization grant.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -121,7 +121,7 @@ Example | Serialized? | Type
 
 ### `grant:expires_in`
 
-*Date in which this authorization grant is no longer valid.*
+*date in which this authorization grant is no longer valid.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -129,7 +129,7 @@ Example | Serialized? | Type
 
 ### `grant:id`
 
-*Unique identifier for this authorization's grant.*
+*unique identifier for this authorization's grant.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -137,7 +137,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of oauth authorization.*
+*unique identifier of OAuth authorization.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -145,7 +145,7 @@ Example | Serialized? | Type
 
 ### `refresh_token:expires_in`
 
-*Seconds until oauth refresh token expires; may be `null` for a refresh token with indefinite lifetime.*
+*seconds until OAuth refresh token expires; may be `null` for a refresh token with indefinite lifetime.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -153,7 +153,7 @@ Example | Serialized? | Type
 
 ### `refresh_token:id`
 
-*Unique identifier of this authorization's oauth refresh token.*
+*unique identifier of this authorization's OAuth refresh token.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -161,7 +161,7 @@ Example | Serialized? | Type
 
 ### `refresh_token:token`
 
-*The actual oauth refresh token.*
+*the actual OAuth refresh token.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -169,7 +169,7 @@ Example | Serialized? | Type
 
 ### `scope`
 
-*The scope of access oauth authorization allows.*
+*The scope of access OAuth authorization allows.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -177,7 +177,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When oauth authorization was updated.*
+*when OAuth authorization was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

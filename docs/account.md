@@ -30,7 +30,7 @@ PATCH | /account | 200
 
 ### `allow_tracking`
 
-*Whether to allow web activity tracking with third-party services like google analytics.*
+*whether to allow web activity tracking with third-party services like Google Analytics.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -38,7 +38,7 @@ Example | Serialized? | Type
 
 ### `beta`
 
-*Whether to utilize beta heroku features.*
+*whether to utilize beta Heroku features.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -46,7 +46,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When account was created.*
+*when account was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -54,7 +54,7 @@ Example | Serialized? | Type
 
 ### `email`
 
-*Email address of account.*
+*email address of account.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -62,7 +62,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of account.*
+*unique identifier of account.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -70,7 +70,7 @@ Example | Serialized? | Type
 
 ### `last_login`
 
-*When account last authorized with heroku.*
+*when account last authorized with Heroku.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -78,7 +78,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When account was updated.*
+*when account was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -86,7 +86,7 @@ Example | Serialized? | Type
 
 ### `verified`
 
-*Whether the account has been verified with billing information.*
+*whether the account has been verified with billing information.*
 
 Example | Serialized? | Type
 --- | --- | ---

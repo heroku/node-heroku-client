@@ -22,7 +22,7 @@ PUT | /account/password | 200
 
 ### `current_password`
 
-*Existing password value.*
+*existing password value.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -30,7 +30,7 @@ Example | Serialized? | Type
 
 ### `password`
 
-*New password value.*
+*new password value.*
 
 Example | Serialized? | Type
 --- | --- | ---

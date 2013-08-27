@@ -24,7 +24,7 @@ GET | /apps/{app_id_or_name}/releases/{release_id_or_version} | 200
 
 ### `created_at`
 
-*When release was created.*
+*when release was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -32,7 +32,7 @@ Example | Serialized? | Type
 
 ### `description`
 
-*Description of changes in this release.*
+*description of changes in this release.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -40,7 +40,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this release.*
+*unique identifier of this release.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -48,7 +48,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When region was updated.*
+*when region was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -56,7 +56,7 @@ Example | Serialized? | Type
 
 ### `user:email`
 
-*Email address of user that created the release.*
+*email address of user that created the release.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -64,7 +64,7 @@ Example | Serialized? | Type
 
 ### `user:id`
 
-*Unique identifier of the user that created the release.*
+*unique identifier of the user that created the release.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -72,7 +72,7 @@ Example | Serialized? | Type
 
 ### `version`
 
-*Unique version assigned to the release.*
+*unique version assigned to the release.*
 
 Example | Serialized? | Type
 --- | --- | ---

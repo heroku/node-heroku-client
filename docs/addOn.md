@@ -62,7 +62,7 @@ DELETE | /apps/{app_id_or_name}/addons/{addon_id} | 200
 
 ### `config`
 
-*Additional add-on service specific configuration.*
+*additional add-on service specific configuration.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -70,7 +70,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When add-on was created.*
+*when add-on was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -78,7 +78,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this add-on.*
+*unique identifier of this add-on.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -86,7 +86,7 @@ Example | Serialized? | Type
 
 ### `plan:id`
 
-*Unique identifier for plan.*
+*unique identifier for plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -94,7 +94,7 @@ Example | Serialized? | Type
 
 ### `plan:name`
 
-*Unique name for plan.*
+*unique name for plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -102,7 +102,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When add-on was updated.*
+*when add-on was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

@@ -60,7 +60,7 @@ DELETE | /oauth/clients/{client_id} | 200
 
 ### `created_at`
 
-*When oauth client was created.*
+*when OAuth client was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -68,7 +68,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this oauth client.*
+*unique identifier of this OAuth client.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -76,7 +76,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*Oauth client name.*
+*OAuth client name.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -84,7 +84,7 @@ Example | Serialized? | Type
 
 ### `redirect_uri`
 
-*Endpoint for redirection after authorization with oauth client.*
+*endpoint for redirection after authorization with OAuth client.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -92,7 +92,7 @@ Example | Serialized? | Type
 
 ### `secret`
 
-*Secret used to obtain oauth authorizations under this client.*
+*secret used to obtain OAuth authorizations under this client.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -100,7 +100,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When oauth client was updated.*
+*when OAuth client was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

@@ -38,7 +38,7 @@ PATCH | /apps/{app_id_or_name}/formation/{formation_id_or_type} | 200
 
 ### `command`
 
-*Command to use for process type.*
+*command to use for process type.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -46,7 +46,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When domain was created.*
+*when domain was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -54,7 +54,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of this process type.*
+*unique identifier of this process type.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -62,7 +62,7 @@ Example | Serialized? | Type
 
 ### `quantity`
 
-*Number of processes to maintain.*
+*number of processes to maintain.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -70,7 +70,7 @@ Example | Serialized? | Type
 
 ### `size`
 
-*Dyno size (default: 1).*
+*dyno size (default: 1).*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -78,7 +78,7 @@ Example | Serialized? | Type
 
 ### `type`
 
-*Type of process to maintain.*
+*type of process to maintain.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -86,7 +86,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When dyno type was updated.*
+*when dyno type was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

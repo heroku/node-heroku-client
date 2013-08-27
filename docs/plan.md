@@ -24,7 +24,7 @@ GET | /addon-services/{addon_service_id_or_name}/plans/{plan_id_or_name} | 200
 
 ### `created_at`
 
-*When plan was created.*
+*when plan was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -32,7 +32,7 @@ Example | Serialized? | Type
 
 ### `description`
 
-*Description of plan.*
+*description of plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -40,7 +40,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of plan.*
+*unique identifier of plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -48,7 +48,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*Unique name for plan.*
+*unique name for plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -56,7 +56,7 @@ Example | Serialized? | Type
 
 ### `price:cents`
 
-*Price in cents per unit of plan.*
+*price in cents per unit of plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -64,7 +64,7 @@ Example | Serialized? | Type
 
 ### `price:unit`
 
-*Unit of price for plan.*
+*unit of price for plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -72,7 +72,7 @@ Example | Serialized? | Type
 
 ### `state`
 
-*Release status for plan.*
+*release status for plan.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -80,7 +80,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When plan was updated.*
+*when plan was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

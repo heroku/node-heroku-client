@@ -146,7 +146,7 @@ function addAttributes (file, attributes) {
 function addAttribute (file, attributeName, attribute) {
   fs.appendFileSync(file, '### `' + attributeName + '`\n\n');
 
-  fs.appendFileSync(file, '*' + inflection.capitalize(attribute.description) + '.*\n\n');
+  fs.appendFileSync(file, '*' + attribute.description + '.*\n\n');
 
   fs.appendFileSync(file, 'Example | ');
   fs.appendFileSync(file, 'Serialized? | ');

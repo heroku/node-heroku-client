@@ -37,7 +37,7 @@ PATCH | /apps/{app_id_or_name}/features/{feature_id_or_name} | 200
 
 ### `created_at`
 
-*When app feature was created.*
+*when app feature was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -45,7 +45,7 @@ Example | Serialized? | Type
 
 ### `description`
 
-*Description of app feature.*
+*description of app feature.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -53,7 +53,7 @@ Example | Serialized? | Type
 
 ### `doc_url`
 
-*Documentation url of app feature.*
+*documentation URL of app feature.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -61,7 +61,7 @@ Example | Serialized? | Type
 
 ### `enabled`
 
-*Whether or not app feature has been enabled.*
+*whether or not app feature has been enabled.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of app feature.*
+*unique identifier of app feature.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*Unique name of app feature.*
+*unique name of app feature.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When app feature was updated.*
+*when app feature was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---

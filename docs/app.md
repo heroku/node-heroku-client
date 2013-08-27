@@ -62,7 +62,7 @@ DELETE | /apps/{app_id_or_name} | 200
 
 ### `archived_at`
 
-*When app was archived.*
+*when app was archived.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -70,7 +70,7 @@ Example | Serialized? | Type
 
 ### `buildpack_provided_description`
 
-*Description from buildpack of app.*
+*description from buildpack of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -78,7 +78,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*When app was created.*
+*when app was created.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -86,7 +86,7 @@ Example | Serialized? | Type
 
 ### `git_url`
 
-*Git repo url of app.*
+*git repo URL of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -94,7 +94,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*Unique identifier of app.*
+*unique identifier of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -102,7 +102,7 @@ Example | Serialized? | Type
 
 ### `maintenance`
 
-*Maintenance status of app.*
+*maintenance status of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -110,7 +110,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*Unique name of app.*
+*unique name of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -118,7 +118,7 @@ Example | Serialized? | Type
 
 ### `owner:email`
 
-*Email address of app owner.*
+*email address of app owner.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -126,7 +126,7 @@ Example | Serialized? | Type
 
 ### `owner:id`
 
-*Unique identifier of app owner.*
+*unique identifier of app owner.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -134,7 +134,7 @@ Example | Serialized? | Type
 
 ### `region:id`
 
-*Unique identifier of app region.*
+*unique identifier of app region.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -142,7 +142,7 @@ Example | Serialized? | Type
 
 ### `region:name`
 
-*Name of app region.*
+*name of app region.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -150,7 +150,7 @@ Example | Serialized? | Type
 
 ### `released_at`
 
-*When app was last released.*
+*when app was last released.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -158,7 +158,7 @@ Example | Serialized? | Type
 
 ### `repo_size`
 
-*App git repo size in bytes.*
+*app git repo size in bytes.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -166,7 +166,7 @@ Example | Serialized? | Type
 
 ### `slug_size`
 
-*App slug size in bytes.*
+*app slug size in bytes.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -174,7 +174,7 @@ Example | Serialized? | Type
 
 ### `stack`
 
-*Stack of app.*
+*stack of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -182,7 +182,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*When app was updated.*
+*when app was updated.*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -190,7 +190,7 @@ Example | Serialized? | Type
 
 ### `web_url`
 
-*Web url of app.*
+*web URL of app.*
 
 Example | Serialized? | Type
 --- | --- | ---
