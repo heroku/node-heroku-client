@@ -16,7 +16,7 @@ GET | /account/rate-limits | 200
 
 ### `remaining`
 
-*allowed requests remaining in current interval.*
+*allowed requests remaining in current interval*
 
 Example | Serialized? | Type
 --- | --- | ---

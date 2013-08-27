@@ -47,7 +47,7 @@ DELETE | /apps/{app_id_or_name}/collaborators/{collaborator_id_or_email} | 200
 
 ### `created_at`
 
-*when collaborator was created.*
+*when collaborator was created*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -55,7 +55,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*unique identifier of this collaborator.*
+*unique identifier of this collaborator*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -63,7 +63,7 @@ Example | Serialized? | Type
 
 ### `silent`
 
-*when true, suppresses the invitation to collaborate e-mail.*
+*when true, suppresses the invitation to collaborate e-mail*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -71,7 +71,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*when collaborator was updated.*
+*when collaborator was updated*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -79,7 +79,7 @@ Example | Serialized? | Type
 
 ### `user:email`
 
-*collaborator email address.*
+*collaborator email address*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -87,7 +87,7 @@ Example | Serialized? | Type
 
 ### `user:id`
 
-*unique identifier of the user.*
+*unique identifier of the user*
 
 Example | Serialized? | Type
 --- | --- | ---

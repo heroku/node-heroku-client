@@ -61,7 +61,7 @@ DELETE | /apps/{app_id_or_name}/ssl-endpoints/{ssl_endpoint_id_or_name} | 200
 
 ### `certificate_chain`
 
-*raw contents of the public certificate chain (eg: .crt or .pem file).*
+*raw contents of the public certificate chain (eg: .crt or .pem file)*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `cname`
 
-*canonical name record, the address to point a domain at.*
+*canonical name record, the address to point a domain at*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*when endpoint was created.*
+*when endpoint was created*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*unique identifier of this SSL endpoint.*
+*unique identifier of this SSL endpoint*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -93,7 +93,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*unique name for SSL endpoint.*
+*unique name for SSL endpoint*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -101,7 +101,7 @@ Example | Serialized? | Type
 
 ### `private_key`
 
-*contents of the private key (eg .key file).*
+*contents of the private key (eg .key file)*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -109,7 +109,7 @@ Example | Serialized? | Type
 
 ### `rollback`
 
-*indicates that a rollback should be performed.*
+*indicates that a rollback should be performed*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -117,7 +117,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*when endpoint was updated.*
+*when endpoint was updated*
 
 Example | Serialized? | Type
 --- | --- | ---

@@ -45,7 +45,7 @@ DELETE | /apps/{app_id_or_name}/domains/{domain_id_or_hostname} | 200
 
 ### `created_at`
 
-*when domain was created.*
+*when domain was created*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -53,7 +53,7 @@ Example | Serialized? | Type
 
 ### `hostname`
 
-*full hostname.*
+*full hostname*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -61,7 +61,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*unique identifier of this domain.*
+*unique identifier of this domain*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*when domain was updated.*
+*when domain was updated*
 
 Example | Serialized? | Type
 --- | --- | ---

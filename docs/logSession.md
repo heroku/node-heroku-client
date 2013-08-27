@@ -24,7 +24,7 @@ POST | /apps/{app_id_or_name}/log-sessions | 201
 
 ### `created_at`
 
-*when log connection was created.*
+*when log connection was created*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -32,7 +32,7 @@ Example | Serialized? | Type
 
 ### `dyno`
 
-*dyno to limit results to.*
+*dyno to limit results to*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -40,7 +40,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*unique identifier of this log session.*
+*unique identifier of this log session*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -48,7 +48,7 @@ Example | Serialized? | Type
 
 ### `lines`
 
-*number of log lines to stream at once.*
+*number of log lines to stream at once*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -56,7 +56,7 @@ Example | Serialized? | Type
 
 ### `logplex_url`
 
-*URL for log streaming session.*
+*URL for log streaming session*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -64,7 +64,7 @@ Example | Serialized? | Type
 
 ### `source`
 
-*log source to limit results to.*
+*log source to limit results to*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -72,7 +72,7 @@ Example | Serialized? | Type
 
 ### `tail`
 
-*whether to stream ongoing logs.*
+*whether to stream ongoing logs*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -80,7 +80,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*when log session was updated.*
+*when log session was updated*
 
 Example | Serialized? | Type
 --- | --- | ---

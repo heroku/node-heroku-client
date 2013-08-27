@@ -26,7 +26,7 @@ PATCH | /apps/{app_id_or_name}/config-vars | 200
 
 ### `{key}`
 
-*key/value pair for dyno env.*
+*key/value pair for dyno env*
 
 Example | Serialized? | Type
 --- | --- | ---

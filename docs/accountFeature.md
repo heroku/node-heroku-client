@@ -37,7 +37,7 @@ PATCH | /account/features/{feature_id_or_name} | 200
 
 ### `created_at`
 
-*when account feature was created.*
+*when account feature was created*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -45,7 +45,7 @@ Example | Serialized? | Type
 
 ### `description`
 
-*description of account feature.*
+*description of account feature*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -53,7 +53,7 @@ Example | Serialized? | Type
 
 ### `doc_url`
 
-*documentation URL of account feature.*
+*documentation URL of account feature*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -61,7 +61,7 @@ Example | Serialized? | Type
 
 ### `enabled`
 
-*whether or not account feature has been enabled.*
+*whether or not account feature has been enabled*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -69,7 +69,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*unique identifier of account feature.*
+*unique identifier of account feature*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -77,7 +77,7 @@ Example | Serialized? | Type
 
 ### `name`
 
-*unique name of account feature.*
+*unique name of account feature*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -85,7 +85,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*when account feature was updated.*
+*when account feature was updated*
 
 Example | Serialized? | Type
 --- | --- | ---

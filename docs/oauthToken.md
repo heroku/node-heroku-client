@@ -26,7 +26,7 @@ POST | /oauth/tokens | 201
 
 ### `authorization:id`
 
-*unique identifier of OAuth token authorization.*
+*unique identifier of OAuth token authorization*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -34,7 +34,7 @@ Example | Serialized? | Type
 
 ### `access_token:expires_in`
 
-*seconds until OAuth access token expires.*
+*seconds until OAuth access token expires*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -42,7 +42,7 @@ Example | Serialized? | Type
 
 ### `access_token:id`
 
-*unique identifier of OAuth access token.*
+*unique identifier of OAuth access token*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -50,7 +50,7 @@ Example | Serialized? | Type
 
 ### `access_token:token`
 
-*content of OAuth access token.*
+*content of OAuth access token*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -58,7 +58,7 @@ Example | Serialized? | Type
 
 ### `client:secret`
 
-*OAuth client secret used to obtain token.*
+*OAuth client secret used to obtain token*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -66,7 +66,7 @@ Example | Serialized? | Type
 
 ### `created_at`
 
-*when OAuth token was created.*
+*when OAuth token was created*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -74,7 +74,7 @@ Example | Serialized? | Type
 
 ### `grant:code`
 
-*grant code recieved from OAuth web application authorization.*
+*grant code recieved from OAuth web application authorization*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -82,7 +82,7 @@ Example | Serialized? | Type
 
 ### `grant:type`
 
-*type of grant requested, one of `authorization_code` or `refresh_token`.*
+*type of grant requested, one of `authorization_code` or `refresh_token`*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -90,7 +90,7 @@ Example | Serialized? | Type
 
 ### `id`
 
-*unique identifier of OAuth token.*
+*unique identifier of OAuth token*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -98,7 +98,7 @@ Example | Serialized? | Type
 
 ### `refresh_token:expires_in`
 
-*seconds until OAuth refresh token expires; may be `null` for a refresh token with indefinite lifetime.*
+*seconds until OAuth refresh token expires; may be `null` for a refresh token with indefinite lifetime*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -106,7 +106,7 @@ Example | Serialized? | Type
 
 ### `refresh_token:id`
 
-*unique identifier of OAuth refresh token.*
+*unique identifier of OAuth refresh token*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -114,7 +114,7 @@ Example | Serialized? | Type
 
 ### `refresh_token:token`
 
-*content of OAuth refresh token.*
+*content of OAuth refresh token*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -122,7 +122,7 @@ Example | Serialized? | Type
 
 ### `session:id`
 
-*unique identifier of OAuth token session.*
+*unique identifier of OAuth token session*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -130,7 +130,7 @@ Example | Serialized? | Type
 
 ### `updated_at`
 
-*when OAuth token was updated.*
+*when OAuth token was updated*
 
 Example | Serialized? | Type
 --- | --- | ---
@@ -138,7 +138,7 @@ Example | Serialized? | Type
 
 ### `user:id`
 
-*unique identifier of the user.*
+*unique identifier of the user*
 
 Example | Serialized? | Type
 --- | --- | ---
