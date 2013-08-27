@@ -102,7 +102,7 @@ This ensures that API responses are cached and properly scoped to the user that 
 
 ### Updating resources
 
-When a new resource manifest is available, download it into the repo, run tests, generate documentation, and bump the version number accordingly.
+When a new resource manifest is available, download it into the repo, run tests, generate documentation, and [bump the version number accordingly](http://semver.org/).
 
 ### Generating documentation
 
