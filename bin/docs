@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
-var fs         = require('fs'),
-    path       = require('path'),
+var assert     = require('assert'),
+    fs         = require('fs'),
+    Heroku     = require('../lib/heroku'),
+    heroku     = new Heroku({}),
     inflection = require('inflection'),
+    path       = require('path'),
     resources  = require('../lib/resources').resources,
     resource,
     resourceName;
@@ -14,6 +17,8 @@ for (resourceName in resources) {
 
 function createDocumentation (resourceName, resource) {
   var file = createFile(resourceName);
+
+  process.stdout.write('\nBuilding docs for ' + resourceName + ':\n');
 
   fs.appendFileSync(file, '# ' + resourceName + '\n\n');
   fs.appendFileSync(file, resource.description + '\n\n');
@@ -42,10 +47,13 @@ function createFile (resourceName) {
 function addActions (file, actions) {
   var action, actionName;
 
+  process.stdout.write('  Building actions:');
   fs.appendFileSync(file, '## Actions\n\n');
 
   for (actionName in actions) {
     action = actions[actionName];
+
+    process.stdout.write('\n    ' + actionName);
     addAction(file, actionName, action);
   }
 }
@@ -63,6 +71,8 @@ function addAction (file, actionName, action) {
   fs.appendFileSync(file, action.path + ' | ');
   fs.appendFileSync(file, action.statuses.join(', ') + '\n\n');
   addActionAttributes(file, action);
+
+  checkAction(actionName, action);
 }
 
 function getFunctionCall (actionName, action) {
@@ -124,6 +134,7 @@ function addAttributes (file, attributes) {
 
   if (!attributes) return;
 
+  process.stdout.write('\n  Building attributes\n');
   fs.appendFileSync(file, '## Attributes\n\n');
 
   for (attributeName in attributes) {
@@ -146,4 +157,10 @@ function addAttribute (file, attributeName, attribute) {
   fs.appendFileSync(file, '`' + attribute.example + '` | ');
   fs.appendFileSync(file, attribute.serialized + ' | ');
   fs.appendFileSync(file, attribute.type + '\n\n');
+}
+
+function checkAction (actionName, action) {
+  var functionToTest = getFunctionCall(actionName, action).replace(/{.*}/g, '').slice(0, -3)
+  assert.equal(eval('typeof ' + functionToTest), 'function', functionToTest + ' is not a Function');
+  process.stdout.write(' ' + String.fromCharCode(0x2713));
 }

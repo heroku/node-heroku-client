@@ -1,6 +1,6 @@
 {
   "name": "heroku-client",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A wrapper for the Heroku v3 API",
   "main": "./lib/heroku.js",
   "scripts": {
