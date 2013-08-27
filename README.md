@@ -113,6 +113,8 @@ Docs are generated like so:
 $ bin/docs
 ```
 
+Generating docs also runs a cursory test, ensuring that every documented function *is* a function that can be called.
+
 ### Running tests
 
 node-heroku uses [jasmine-node][jasmine-node] for tests:
