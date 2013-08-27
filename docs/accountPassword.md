@@ -1,7 +1,5 @@
 # Account Password
 
-undefined
-
 ## Actions
 
 ### `update`

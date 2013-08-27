@@ -21,7 +21,7 @@ function createDocumentation (resourceName, resource) {
   process.stdout.write('\nBuilding docs for ' + resourceName + ':\n');
 
   fs.appendFileSync(file, '# ' + resourceName + '\n\n');
-  fs.appendFileSync(file, resource.description + '\n\n');
+  if (resource.description) fs.appendFileSync(file, resource.description + '\n\n');
 
   addActions(file, resource.actions);
   addAttributes(file, resource.attributes);
