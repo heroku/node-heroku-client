@@ -10,7 +10,7 @@ describe('Heroku', function() {
   });
 
   it('passes its method into the request', function(done) {
-    heroku.apps('my-app').create({}, function() {
+    heroku.apps().create({}, function() {
       expect(Request.request.mostRecentCall.args[0].method).toEqual('POST');
       done();
     });
@@ -20,6 +20,14 @@ describe('Heroku', function() {
     heroku.apps('my-app').dynos().list(function() {
       expect(Request.request.mostRecentCall.args[0].expectedStatus).toEqual([200, 206]);
       done();
+    });
+  });
+
+  describe('requests with the wrong number of parameters', function() {
+    it('throws an error', function() {
+      expect(function () {
+        heroku.apps('my-app').list();
+      }).toThrow(new Error('Invalid number of params in path (expected 0, got 1).'));
     });
   });
 
