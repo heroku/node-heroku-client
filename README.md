@@ -28,9 +28,7 @@ var Heroku = require('heroku-client'),
  * actually perform the API call:
  */
 heroku.apps().list(function (err, apps) {
-
   // `apps` is a parsed JSON response from the API
-
 });
 
 
@@ -42,21 +40,15 @@ heroku.apps().list(function (err, apps) {
 var app = heroku.apps('my-app');
 
 app.info(function (err, app) {
-
   // Details about the `app`
-
 });
 
 app.dynos().list(function (err, dynos) {
-
   // List of the app's `dynos`
-
 });
 
 app.collaborators('user@example.com').delete(function (err, collaborator) {
-
   // The `collaborator` has been removed unless `err`
-
 });
 
 
@@ -68,9 +60,7 @@ var app  = heroku.apps('another-app'),
     user = { email: 'new-user@example.com' };
 
 app.collaborators().create({ user: user }, function (err, collaborator) {
-
   // `collaborator` is the newly added collaborator unless `err`
-
 });
 ```
 
