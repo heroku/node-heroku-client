@@ -107,13 +107,17 @@ When a new resource manifest is available, download it into the repo, run tests,
 ### Generating documentation
 
 Documentation for node-heroku is auto-generated from [the resources manifest](https://github.com/heroku/node-heroku-client/blob/development/lib/resources.js).
-It can be generated with `bin/docs`.
+Docs are generated like so:
+
+```bash
+$ bin/docs
+```
 
 ### Running tests
 
 node-heroku uses [jasmine-node][jasmine-node] for tests:
 
-```javascript
+```bash
 $ npm test
 ```
 
