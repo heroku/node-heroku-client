@@ -28,6 +28,7 @@ Method | Path | Expected Status(es)
 --- | --- | ---
 PATCH | /apps/{app_id_or_name}/features/{feature_id_or_name} | 200
 
+
 #### Required Attributes
 
 - enabled

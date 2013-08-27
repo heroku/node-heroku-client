@@ -12,6 +12,7 @@ Method | Path | Expected Status(es)
 --- | --- | ---
 POST | /account/keys | 201
 
+
 #### Required Attributes
 
 - public_key

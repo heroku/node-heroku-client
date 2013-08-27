@@ -21,6 +21,7 @@ Method | Path | Expected Status(es)
 PATCH | /apps/{app_id_or_name}/config-vars | 200
 
 
+
 ## Attributes
 
 ### `{key}`

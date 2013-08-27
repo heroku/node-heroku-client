@@ -25,6 +25,7 @@ PATCH | /account | 200
 - allow_tracking
 - email
 
+
 ## Attributes
 
 ### `allow_tracking`

@@ -12,6 +12,7 @@ Method | Path | Expected Status(es)
 --- | --- | ---
 POST | /apps/{app_id_or_name}/domains | 201
 
+
 #### Required Attributes
 
 - hostname

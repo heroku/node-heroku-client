@@ -12,6 +12,7 @@ Method | Path | Expected Status(es)
 --- | --- | ---
 PUT | /account/password | 200
 
+
 #### Required Attributes
 
 - current_password

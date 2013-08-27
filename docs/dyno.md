@@ -16,6 +16,7 @@ POST | /apps/{app_id_or_name}/dynos | 201
 
 - attach
 - size
+
 #### Required Attributes
 
 - command

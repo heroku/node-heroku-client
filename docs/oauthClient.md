@@ -12,6 +12,7 @@ Method | Path | Expected Status(es)
 --- | --- | ---
 POST | /oauth/clients | 201
 
+
 #### Required Attributes
 
 - name
@@ -45,6 +46,7 @@ PATCH | /oauth/clients/{client_id} | 200
 
 - name
 - redirect_uri
+
 
 ### `delete`
 

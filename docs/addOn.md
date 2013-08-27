@@ -18,6 +18,7 @@ POST | /apps/{app_id_or_name}/addons | 201
 - plan:id
 - plan:name
 
+
 ### `list`
 
 `heroku.apps({app_id_or_name}).addons().list({callback});`
@@ -47,6 +48,7 @@ PATCH | /apps/{app_id_or_name}/addons/{addon_id} | 200
 - config
 - plan:id
 - plan:name
+
 
 ### `delete`
 

@@ -103,8 +103,9 @@ function addActionAttributes (file, action) {
   if (!action.attributes) return;
 
   addActionAttributeGroup(file, action.attributes.optional, 'Optional');
-  addActionAttributeGroup(file, action.attributes.required, 'Required');
+  fs.appendFileSync(file, '\n');
 
+  addActionAttributeGroup(file, action.attributes.required, 'Required');
   fs.appendFileSync(file, '\n');
 }
 

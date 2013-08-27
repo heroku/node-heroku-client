@@ -17,6 +17,7 @@ POST | /oauth/tokens | 201
 - client:secret
 - grant:code
 - refresh_token:token
+
 #### Required Attributes
 
 - grant:type

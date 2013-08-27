@@ -12,6 +12,7 @@ Method | Path | Expected Status(es)
 --- | --- | ---
 POST | /apps/{app_id_or_name}/ssl-endpoints | 201
 
+
 #### Required Attributes
 
 - certificate_chain
@@ -46,6 +47,7 @@ PATCH | /apps/{app_id_or_name}/ssl-endpoints/{ssl_endpoint_id_or_name} | 200
 - certificate_chain
 - private_key
 - rollback
+
 
 ### `delete`
 

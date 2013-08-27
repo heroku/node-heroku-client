@@ -19,6 +19,7 @@ POST | /apps | 201
 - region:name
 - stack
 
+
 ### `list`
 
 `heroku.apps().list({callback});`
@@ -47,6 +48,7 @@ PATCH | /apps/{app_id_or_name} | 200
 
 - maintenance
 - name
+
 
 ### `delete`
 

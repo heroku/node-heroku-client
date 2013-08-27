@@ -18,6 +18,7 @@ POST | /apps/{app_id_or_name}/collaborators | 201
 - user:email
 - user:id
 
+
 ### `list`
 
 `heroku.apps({app_id_or_name}).collaborators().list({callback});`

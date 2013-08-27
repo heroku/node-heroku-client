@@ -19,6 +19,7 @@ POST | /apps/{app_id_or_name}/log-sessions | 201
 - source
 - tail
 
+
 ## Attributes
 
 ### `created_at`

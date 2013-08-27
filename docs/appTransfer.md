@@ -19,6 +19,7 @@ POST | /account/app-transfers | 201
 - recipient:email
 - recipient:id
 
+
 ### `list`
 
 `heroku.account().appTransfers().list({callback});`
@@ -42,6 +43,7 @@ GET | /account/app-transfers/{transfer_id} | 200
 Method | Path | Expected Status(es)
 --- | --- | ---
 PATCH | /account/app-transfers/{transfer_id} | 200
+
 
 #### Required Attributes
 

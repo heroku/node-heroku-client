@@ -16,6 +16,7 @@ POST | /oauth/authorizations | 201
 
 - client:id
 - description
+
 #### Required Attributes
 
 - scope
