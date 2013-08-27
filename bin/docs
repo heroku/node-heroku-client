@@ -1,0 +1,148 @@
+#!/usr/bin/env node
+
+var fs         = require('fs'),
+    path       = require('path'),
+    inflection = require('inflection'),
+    resources  = require('../lib/resources').resources,
+    resource,
+    resourceName;
+
+for (resourceName in resources) {
+  resource = resources[resourceName];
+  createDocumentation(resourceName, resource);
+}
+
+function createDocumentation (resourceName, resource) {
+  var file = createFile(resourceName);
+
+  fs.appendFileSync(file, '# ' + resourceName + '\n\n');
+  fs.appendFileSync(file, resource.description + '\n\n');
+
+  addActions(file, resource.actions);
+  addAttributes(file, resource.attributes);
+}
+
+function getName(name) {
+  name = name.toLowerCase();
+  name = inflection.dasherize(name).replace(/-/g, '_');
+  name = inflection.camelize(name, true);
+
+  return name;
+}
+
+function createFile (resourceName) {
+  var fileName = getName(resourceName),
+      file     = path.join(__dirname, '../docs/' + fileName + '.md');
+
+  fs.writeFileSync(file, '');
+
+  return file;
+}
+
+function addActions (file, actions) {
+  var action, actionName;
+
+  fs.appendFileSync(file, '## Actions\n\n');
+
+  for (actionName in actions) {
+    action = actions[actionName];
+    addAction(file, actionName, action);
+  }
+}
+
+function addAction (file, actionName, action) {
+  fs.appendFileSync(file, '### `' + getName(actionName) + '`\n\n');
+  fs.appendFileSync(file, '`' + getFunctionCall(actionName, action) + '`\n\n');
+  fs.appendFileSync(file, 'Method | ');
+  fs.appendFileSync(file, 'Path | ');
+  fs.appendFileSync(file, 'Expected Status(es)\n');
+  fs.appendFileSync(file, '--- | ');
+  fs.appendFileSync(file, '--- | ');
+  fs.appendFileSync(file, '---\n');
+  fs.appendFileSync(file, action.method + ' | ');
+  fs.appendFileSync(file, action.path + ' | ');
+  fs.appendFileSync(file, action.statuses.join(', ') + '\n\n');
+  addActionAttributes(file, action);
+}
+
+function getFunctionCall (actionName, action) {
+  var path = action.path.split(/\//),
+      segments = path.slice(1, path.length),
+      functionCall = 'heroku',
+      i,
+      segment;
+
+  for (i = 0; i < segments.length; i ++) {
+    segment = segments[i];
+
+    if (segment.match(/{.*}/)) {
+      continue;
+    } else {
+      functionCall += '.' + getName(segment);
+
+      if (segments[i + 1] && segments[i + 1].match(/{.*}/)) {
+        functionCall += '(' + segments[i + 1] + ')';
+      } else {
+        functionCall += '()';
+      }
+    }
+  }
+
+  functionCall += '.' + getName(actionName) + '(';
+
+  if (['PATCH', 'POST', 'PUT'].indexOf(action.method) > -1) {
+    functionCall += '{attributes}, ';
+  }
+
+  functionCall += '{callback});';
+
+  return functionCall;
+}
+
+function addActionAttributes (file, action) {
+  if (!action.attributes) return;
+
+  addActionAttributeGroup(file, action.attributes.optional, 'Optional');
+  addActionAttributeGroup(file, action.attributes.required, 'Required');
+
+  fs.appendFileSync(file, '\n');
+}
+
+function addActionAttributeGroup (file, attributes, type) {
+  if (!attributes) return;
+
+  fs.appendFileSync(file, '#### ' + type + ' Attributes\n\n');
+
+  attributes.forEach(function (attribute) {
+    fs.appendFileSync(file, '- ' + attribute + '\n');
+  });
+}
+
+function addAttributes (file, attributes) {
+  var attributeName, attribute;
+
+  if (!attributes) return;
+
+  fs.appendFileSync(file, '## Attributes\n\n');
+
+  for (attributeName in attributes) {
+    attribute = attributes[attributeName];
+    addAttribute(file, attributeName, attribute);
+  }
+}
+
+function addAttribute (file, attributeName, attribute) {
+  fs.appendFileSync(file, '### `' + attributeName + '`\n\n');
+
+  fs.appendFileSync(file, '*' + inflection.capitalize(attribute.description) + '.*\n\n');
+
+  fs.appendFileSync(file, 'Example | ');
+  fs.appendFileSync(file, 'Serialized? | ');
+  fs.appendFileSync(file, 'Type\n');
+  fs.appendFileSync(file, '--- | ');
+  fs.appendFileSync(file, '--- | ');
+  fs.appendFileSync(file, '---\n');
+  fs.appendFileSync(file, attribute.example + ' | ');
+  fs.appendFileSync(file, attribute.serialized + ' | ');
+  fs.appendFileSync(file, attribute.type + '\n\n');
+}
