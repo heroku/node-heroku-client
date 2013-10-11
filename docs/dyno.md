@@ -1,4 +1,4 @@
-# Dyno
+# dyno
 
 Dynos encapsulate running processes of an app on Heroku.
 
@@ -6,140 +6,32 @@ Dynos encapsulate running processes of an app on Heroku.
 
 ### `create`
 
-`heroku.apps({app_id_or_name}).dynos().create({attributes}, {callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{app_id_or_name}/dynos | 201
+POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos | ### `restartDyno`
 
-#### Optional Attributes
-
-- attach
-- size
-
-#### Required Attributes
-
-- command
-
-### `list`
-
-`heroku.apps({app_id_or_name}).dynos().list({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos({(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)}).restartDyno({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/dynos | 200, 206
+DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos/{(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)} | ### `restartAllDynos`
 
-### `info`
-
-`heroku.apps({app_id_or_name}).dynos({dyno_id_or_name}).info({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos().restartAllDynos({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/dynos/{dyno_id_or_name} | 200
+DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos | ### `info`
 
-### `delete`
-
-`heroku.apps({app_id_or_name}).dynos({dyno_id_or_name}).delete({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos({(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | /apps/{app_id_or_name}/dynos/{dyno_id_or_name} | 200
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos/{(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)} | ### `list`
 
-## Attributes
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos().list({callback});`
 
-### `attach`
-
-*whether to stream output or not*
-
-Example | Serialized? | Type
+Method | Path | Expected Status(es)
 --- | --- | ---
-`true` | false | boolean
-
-### `attach_url`
-
-*a URL to stream output from for attached processes or null for non-attached processes*
-
-Example | Serialized? | Type
---- | --- | ---
-`rendezvous://rendezvous.runtime.heroku.com:5000/{rendezvous-id}` | true | string
-
-### `command`
-
-*command used to start this process*
-
-Example | Serialized? | Type
---- | --- | ---
-`bash` | true | string
-
-### `created_at`
-
-*when domain was created*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
-### `id`
-
-*unique identifier of this dyno*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `name`
-
-*the name of this process on this app*
-
-Example | Serialized? | Type
---- | --- | ---
-`run.1` | true | string
-
-### `release:id`
-
-*the unique identifier of the release this process was started with*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `release:version`
-
-*the unique version of the release this process was started with*
-
-Example | Serialized? | Type
---- | --- | ---
-`456` | true | number
-
-### `size`
-
-*dyno size (default: 1)*
-
-Example | Serialized? | Type
---- | --- | ---
-`1` | true | number
-
-### `state`
-
-*current status of process (either: crashed, down, idle, starting, or up)*
-
-Example | Serialized? | Type
---- | --- | ---
-`up` | true | string
-
-### `type`
-
-*type of process*
-
-Example | Serialized? | Type
---- | --- | ---
-`run` | true | string
-
-### `updated_at`
-
-*when process last changed state*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos | 

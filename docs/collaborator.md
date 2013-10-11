@@ -1,95 +1,31 @@
-# Collaborator
+# collaborator
 
-Collaborators are other users who have been given access to an app on Heroku.
+A collaborator represents an account that has been given access to an app on Heroku.
 
 ## Actions
 
 ### `create`
 
-`heroku.apps({app_id_or_name}).collaborators().create({attributes}, {callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{app_id_or_name}/collaborators | 201
+POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators | ### `delete`
 
-#### Optional Attributes
-
-- silent
-- user:email
-- user:id
-
-
-### `list`
-
-`heroku.apps({app_id_or_name}).collaborators().list({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators({(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/collaborators | 200, 206
+DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators/{(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)} | ### `info`
 
-### `info`
-
-`heroku.apps({app_id_or_name}).collaborators({collaborator_id_or_email}).info({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators({(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/collaborators/{collaborator_id_or_email} | 200
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators/{(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)} | ### `list`
 
-### `delete`
-
-`heroku.apps({app_id_or_name}).collaborators({collaborator_id_or_email}).delete({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | /apps/{app_id_or_name}/collaborators/{collaborator_id_or_email} | 200
-
-## Attributes
-
-### `created_at`
-
-*when collaborator was created*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
-### `id`
-
-*unique identifier of this collaborator*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `silent`
-
-*when true, suppresses the invitation to collaborate e-mail*
-
-Example | Serialized? | Type
---- | --- | ---
-`false` | false | boolean
-
-### `updated_at`
-
-*when collaborator was updated*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
-### `user:email`
-
-*collaborator email address*
-
-Example | Serialized? | Type
---- | --- | ---
-`collaborator@example.com` | true | string
-
-### `user:id`
-
-*unique identifier of the user*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators | 

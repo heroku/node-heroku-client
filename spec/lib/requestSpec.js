@@ -113,39 +113,11 @@ describe('request', function() {
   });
 
   describe('status codes', function() {
-    it('expects a 200 response by default', function(done) {
+    it('expects a 2xx response by default', function(done) {
       makeRequest('/apps', {}, function(err) {
         expect(err.message).toEqual('Expected response to be successful, got 404');
         done();
       }, { response: { statusCode: 404 } })
-    });
-
-    it('accepts a single expected status code', function(done) {
-      makeRequest('/apps', { expectedStatus: 201 }, function(err, body) {
-        expect(err.message).toEqual('Expected response 201, got 200');
-        done();
-      });
-    });
-
-    it('accepts an array of expected status codes (failure)', function(done) {
-      makeRequest('/apps', { expectedStatus: [201, 204] }, function(err, body) {
-        expect(err.message).toEqual('Expected response [201,204], got 200');
-        done();
-      }, { response: { statusCode: 200 } });
-    });
-
-    it('accepts an array of expected status codes (success, first)', function(done) {
-      makeRequest('/apps', { expectedStatus: [201, 204] }, function(err, body) {
-        expect(err).toEqual(null);
-        done();
-      }, { response: { statusCode: 201 } });
-    });
-
-    it('accepts an array of expected status codes (success, last)', function(done) {
-      makeRequest('/apps', { expectedStatus: [201, 204] }, function(err, body) {
-        expect(err).toEqual(null);
-        done();
-      }, { response: { statusCode: 204 } });
     });
   });
 

@@ -1,4 +1,4 @@
-# Add-on
+# addon
 
 Add-ons represent add-ons that have been provisioned for an app.
 
@@ -6,105 +6,32 @@ Add-ons represent add-ons that have been provisioned for an app.
 
 ### `create`
 
-`heroku.apps({app_id_or_name}).addons().create({attributes}, {callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{app_id_or_name}/addons | 201
+POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons | ### `delete`
 
-#### Optional Attributes
-
-- config
-- plan:id
-- plan:name
-
-
-### `list`
-
-`heroku.apps({app_id_or_name}).addons().list({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons({(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/addons | 200, 206
+DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons/{(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)} | ### `info`
 
-### `info`
-
-`heroku.apps({app_id_or_name}).addons({addon_id}).info({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons({(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/addons/{addon_id} | 200
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons/{(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)} | ### `list`
 
-### `update`
-
-`heroku.apps({app_id_or_name}).addons({addon_id}).update({attributes}, {callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /apps/{app_id_or_name}/addons/{addon_id} | 200
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons | ### `update`
 
-#### Optional Attributes
-
-- config
-- plan:id
-- plan:name
-
-
-### `delete`
-
-`heroku.apps({app_id_or_name}).addons({addon_id}).delete({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons({(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | /apps/{app_id_or_name}/addons/{addon_id} | 200
-
-## Attributes
-
-### `config`
-
-*additional add-on service specific configuration*
-
-Example | Serialized? | Type
---- | --- | ---
-`[object Object]` | false | object
-
-### `created_at`
-
-*when add-on was created*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
-### `id`
-
-*unique identifier of this add-on*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `plan:id`
-
-*unique identifier for plan*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `plan:name`
-
-*unique name for plan*
-
-Example | Serialized? | Type
---- | --- | ---
-`heroku-postgresql:dev` | true | string
-
-### `updated_at`
-
-*when add-on was updated*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
+PATCH | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons/{(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)} | 

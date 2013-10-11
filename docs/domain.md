@@ -1,4 +1,4 @@
-# Domain
+# domain
 
 Domains define what web routes should be routed to an app on Heroku.
 
@@ -6,72 +6,26 @@ Domains define what web routes should be routed to an app on Heroku.
 
 ### `create`
 
-`heroku.apps({app_id_or_name}).domains().create({attributes}, {callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{app_id_or_name}/domains | 201
+POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains | ### `delete`
 
-
-#### Required Attributes
-
-- hostname
-
-### `list`
-
-`heroku.apps({app_id_or_name}).domains().list({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains({(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/domains | 200, 206
+DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains/{(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)} | ### `info`
 
-### `info`
-
-`heroku.apps({app_id_or_name}).domains({domain_id_or_hostname}).info({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains({(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/domains/{domain_id_or_hostname} | 200
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains/{(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)} | ### `list`
 
-### `delete`
-
-`heroku.apps({app_id_or_name}).domains({domain_id_or_hostname}).delete({callback});`
+`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | /apps/{app_id_or_name}/domains/{domain_id_or_hostname} | 200
-
-## Attributes
-
-### `created_at`
-
-*when domain was created*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
-### `hostname`
-
-*full hostname*
-
-Example | Serialized? | Type
---- | --- | ---
-`subdomain.example.com` | true | string
-
-### `id`
-
-*unique identifier of this domain*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `updated_at`
-
-*when domain was updated*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
+GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains | 

@@ -1,93 +1,25 @@
-# Account Feature
+# account-feature
 
 An account feature represents a Heroku labs capability that can be enabled or disabled for an account on Heroku.
 
 ## Actions
 
-### `list`
+### `info`
+
+`heroku.account().features({(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)}).info({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | /account/features/{(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)} | ### `list`
 
 `heroku.account().features().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /account/features | 200, 206
+GET | /account/features | ### `update`
 
-### `info`
-
-`heroku.account().features({feature_id_or_name}).info({callback});`
+`heroku.account().features({(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /account/features/{feature_id_or_name} | 200
-
-### `update`
-
-`heroku.account().features({feature_id_or_name}).update({attributes}, {callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-PATCH | /account/features/{feature_id_or_name} | 200
-
-
-#### Required Attributes
-
-- enabled
-
-## Attributes
-
-### `created_at`
-
-*when account feature was created*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00-00:00` | true | datetime
-
-### `description`
-
-*description of account feature*
-
-Example | Serialized? | Type
---- | --- | ---
-`Causes account to example.` | true | string
-
-### `doc_url`
-
-*documentation URL of account feature*
-
-Example | Serialized? | Type
---- | --- | ---
-`http://devcenter.heroku.com/articles/example` | true | string
-
-### `enabled`
-
-*whether or not account feature has been enabled*
-
-Example | Serialized? | Type
---- | --- | ---
-`true` | true | boolean
-
-### `id`
-
-*unique identifier of account feature*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `name`
-
-*unique name of account feature*
-
-Example | Serialized? | Type
---- | --- | ---
-`example` | true | string
-
-### `updated_at`
-
-*when account feature was updated*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00-00:00` | true | datetime
-
+PATCH | /account/features/{(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)} | 
