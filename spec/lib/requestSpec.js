@@ -149,6 +149,30 @@ describe('request', function() {
     });
   });
 
+  describe('handling Range headers', function() {
+    it('sends a default Range header', function() {
+      makeRequest('/apps', {}, function (err, body) {
+        expect(https.request.mostRecentCall.args[0].headers['Range']).toEqual('id ]..; max=1000');
+      });
+    });
+
+    describe('when receiving a Next-Range header', function() {
+      it('sends the Next-Range header on the next request', function(done) {
+        makeRequest('/apps', {}, function (err, body) {
+          expect(https.request.mostRecentCall.args[0].headers['Range']).toEqual('id abcdefg..; max=1000');
+          done();
+        }, { response: { headers: { 'next-range': 'id abcdefg..; max=1000' } } });
+      });
+
+      it('aggregates response bodies', function(done) {
+        makeRequest('/apps', {}, function (err, body) {
+          expect(body).toEqual([{ message: 'ok' }, { message: 'ok' }]);
+          done();
+        }, { returnArray: true, response: { headers: { 'next-range': 'id abcdefg..; max=1000' } } });
+      });
+    });
+  });
+
   describe('caching', function() {
     var cache = new MockCache();
 
@@ -201,13 +225,22 @@ function makeRequest(path, options, callback, testOptions) {
   options.path = path;
 
   spyOn(https, 'request').andCallFake(function (options, httpsCallback) {
+    if (options.headers.Range !== 'id ]..; max=1000') {
+      testOptions.response.headers['next-range'] = undefined;
+    }
+
     var req = new MockRequest(),
         res = new MockResponse(testOptions.response || {});
 
     httpsCallback(res);
 
     setTimeout(function () {
-      res.emit('data', '{ "message": "ok" }');
+      if (testOptions.returnArray) {
+        res.emit('data', '[{ "message": "ok" }]');
+      } else {
+        res.emit('data', '{ "message": "ok" }');
+      }
+
       if (!req.isAborted) res.emit('end');
     }, testOptions.timeout || 0);
 
