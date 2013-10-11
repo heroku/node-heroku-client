@@ -101,7 +101,8 @@ describe('request', function() {
       var expectedHeaders = {
         'Arbitrary': 'header',
         'Accept': 'application/vnd.heroku+json; version=3',
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
+        'Range': 'id ]..; max=1000'
       }
 
       makeRequest('/apps', { headers: { 'Arbitrary': 'header' } }, function() {
@@ -167,7 +168,7 @@ describe('request', function() {
       spyOn(cache, 'get').andCallThrough();
 
       makeRequest('/apps', { cacheKeyPostfix: '123' }, function(err, body) {
-        expect(cache.get).toHaveBeenCalledWith('/apps-123', jasmine.any(Function));
+        expect(cache.get).toHaveBeenCalledWith('/apps-id ]..; max=1000-123', jasmine.any(Function));
         done();
       });
     });
@@ -188,7 +189,7 @@ describe('request', function() {
           etag: '123'
         });
 
-        expect(cache.set).toHaveBeenCalledWith('/apps-123', expectedCache);
+        expect(cache.set).toHaveBeenCalledWith('/apps-id ]..; max=1000-123', expectedCache);
         done();
       }, { response: { headers: { etag: '123' } } });
     });
