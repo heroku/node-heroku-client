@@ -8,24 +8,31 @@ OAuth authorizations represent clients that a Heroku user has authorized to auto
 
 `heroku.oauth().authorizations().create({attributes}, {callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-POST | /oauth/authorizations | ### `delete`
+Method | Path
+--- | ---
+POST | /oauth/authorizations
+
+### `delete`
 
 `heroku.oauth().authorizations({oauth-authorization_id}).delete({callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /oauth/authorizations/{oauth-authorization_id} | ### `info`
+Method | Path
+--- | ---
+DELETE | /oauth/authorizations/{oauth-authorization_id}
+
+### `info`
 
 `heroku.oauth().authorizations({oauth-authorization_id}).info({callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /oauth/authorizations/{oauth-authorization_id} | ### `list`
+Method | Path
+--- | ---
+GET | /oauth/authorizations/{oauth-authorization_id}
+
+### `list`
 
 `heroku.oauth().authorizations().list({callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /oauth/authorizations | 
+Method | Path
+--- | ---
+GET | /oauth/authorizations
+

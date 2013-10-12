@@ -8,6 +8,7 @@ OAuth tokens provide access for authorized clients to act on behalf of a Heroku 
 
 `heroku.oauth().tokens().create({attributes}, {callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-POST | /oauth/tokens | 
+Method | Path
+--- | ---
+POST | /oauth/tokens
+

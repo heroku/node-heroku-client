@@ -8,30 +8,39 @@
 
 `heroku.apps({app_id_or_name}).sslEndpoints().create({attributes}, {callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-POST | /apps/{app_id_or_name}/ssl-endpoints | ### `delete`
+Method | Path
+--- | ---
+POST | /apps/{app_id_or_name}/ssl-endpoints
+
+### `delete`
 
 `heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).delete({callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name} | ### `info`
+Method | Path
+--- | ---
+DELETE | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name}
+
+### `info`
 
 `heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).info({callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name} | ### `list`
+Method | Path
+--- | ---
+GET | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name}
+
+### `list`
 
 `heroku.apps({app_id_or_name}).sslEndpoints().list({callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{app_id_or_name}/ssl-endpoints | ### `update`
+Method | Path
+--- | ---
+GET | /apps/{app_id_or_name}/ssl-endpoints
+
+### `update`
 
 `heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).update({attributes}, {callback});`
 
-Method | Path | Expected Status(es)
---- | --- | ---
-PATCH | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name} | 
+Method | Path
+--- | ---
+PATCH | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name}
+

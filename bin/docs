@@ -64,13 +64,11 @@ function addAction (file, actionName, action) {
   fs.appendFileSync(file, '### `' + getName(actionName) + '`\n\n');
   fs.appendFileSync(file, '`' + getFunctionCall(actionName, action) + '`\n\n');
   fs.appendFileSync(file, 'Method | ');
-  fs.appendFileSync(file, 'Path | ');
-  fs.appendFileSync(file, 'Expected Status(es)\n');
-  fs.appendFileSync(file, '--- | ');
+  fs.appendFileSync(file, 'Path\n');
   fs.appendFileSync(file, '--- | ');
   fs.appendFileSync(file, '---\n');
   fs.appendFileSync(file, action.method + ' | ');
-  fs.appendFileSync(file, prettifyHref(action.href) + ' | ');
+  fs.appendFileSync(file, prettifyHref(action.href) + '\n\n');
   addActionAttributes(file, action);
 
   checkAction(actionName, action);
