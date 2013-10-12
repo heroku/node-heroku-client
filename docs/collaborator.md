@@ -6,26 +6,26 @@ A collaborator represents an account that has been given access to an app on Her
 
 ### `create`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators().create({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).collaborators().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators | ### `delete`
+POST | apps/{app_id_or_name}/collaborators | ### `delete`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators({(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators/{(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)} | ### `info`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators({(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).collaborators({collaborator_email_or_id}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators/{(%23%2Fdefinitions%2Fcollaborator%2Fdefinitions%2Fidentity)} | ### `list`
+DELETE | apps/{app_id_or_name}/collaborators/{collaborator_email_or_id} | ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).collaborators().list({callback});`
+`heroku.apps({app_id_or_name}).collaborators({collaborator_email_or_id}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/collaborators | 
+GET | apps/{app_id_or_name}/collaborators/{collaborator_email_or_id} | ### `list`
+
+`heroku.apps({app_id_or_name}).collaborators().list({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/collaborators | 

@@ -6,32 +6,32 @@ Add-ons represent add-ons that have been provisioned for an app.
 
 ### `create`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons().create({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).addons().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons | ### `delete`
+POST | apps/{app_id_or_name}/addons | ### `delete`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons({(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons/{(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)} | ### `info`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons({(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).addons({addon_id}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons/{(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)} | ### `list`
+DELETE | apps/{app_id_or_name}/addons/{addon_id} | ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons().list({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons | ### `update`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).addons({(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).addons({addon_id}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/addons/{(%23%2Fdefinitions%2Faddon%2Fdefinitions%2Fidentity)} | 
+GET | apps/{app_id_or_name}/addons/{addon_id} | ### `list`
+
+`heroku.apps({app_id_or_name}).addons().list({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/addons | ### `update`
+
+`heroku.apps({app_id_or_name}).addons({addon_id}).update({attributes}, {callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+PATCH | apps/{app_id_or_name}/addons/{addon_id} | 

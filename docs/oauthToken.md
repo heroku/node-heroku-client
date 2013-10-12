@@ -10,4 +10,4 @@ OAuth tokens provide access for authorized clients to act on behalf of a Heroku 
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /oauth/tokens | 
+POST | oauth/tokens | 

@@ -6,20 +6,20 @@ The formation of processes that should be maintained for your application. Comma
 
 ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).formation({(%23%2Fdefinitions%2Fformation%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).formation({formation_id_or_type}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formation/{(%23%2Fdefinitions%2Fformation%2Fdefinitions%2Fidentity)} | ### `list`
+GET | apps/{app_id_or_name}/formation/{formation_id_or_type} | ### `list`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).formation().list({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formation | ### `update`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).formation({(%23%2Fdefinitions%2Fformation%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).formation().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formation/{(%23%2Fdefinitions%2Fformation%2Fdefinitions%2Fidentity)} | 
+GET | apps/{app_id_or_name}/formation | ### `update`
+
+`heroku.apps({app_id_or_name}).formation({formation_id_or_type}).update({attributes}, {callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+PATCH | apps/{app_id_or_name}/formation/{formation_id_or_type} | 

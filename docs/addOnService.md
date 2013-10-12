@@ -6,14 +6,14 @@ Add-on services represent add-ons that may be provisioned for apps.
 
 ### `info`
 
-`heroku.addonServices({(%23%2Fdefinitions%2Faddon-service%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.addonServices({addon-service_id_or_name}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /addon-services/{(%23%2Fdefinitions%2Faddon-service%2Fdefinitions%2Fidentity)} | ### `list`
+GET | addon-services/{addon-service_id_or_name} | ### `list`
 
 `heroku.addonServices().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /addon-services | 
+GET | addon-services | 

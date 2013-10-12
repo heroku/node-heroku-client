@@ -10,4 +10,4 @@ Rate Limit represents the number of request tokens each account holds. Requests 
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /account/rate-limits | 
+GET | account/rate-limits | 

@@ -6,14 +6,14 @@ A region represents a geographic location in which your application may run.
 
 ### `info`
 
-`heroku.regions({(%23%2Fdefinitions%2Fregion%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.regions({region_id_or_name}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /regions/{(%23%2Fdefinitions%2Fregion%2Fdefinitions%2Fidentity)} | ### `list`
+GET | regions/{region_id_or_name} | ### `list`
 
 `heroku.regions().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /regions | 
+GET | regions | 

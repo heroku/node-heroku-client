@@ -10,28 +10,28 @@ An app represents the program that you would like to deploy and run on Heroku.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps | ### `delete`
+POST | apps | ### `delete`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)} | ### `info`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)} | ### `list`
+DELETE | apps/{app_id_or_name} | ### `info`
+
+`heroku.apps({app_id_or_name}).info({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name} | ### `list`
 
 `heroku.apps().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps | ### `update`
+GET | apps | ### `update`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).update({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)} | 
+PATCH | apps/{app_id_or_name} | 

@@ -6,32 +6,32 @@ Dynos encapsulate running processes of an app on Heroku.
 
 ### `create`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos().create({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).dynos().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos | ### `restartDyno`
+POST | apps/{app_id_or_name}/dynos | ### `restartDyno`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos({(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)}).restartDyno({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos/{(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)} | ### `restartAllDynos`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos().restartAllDynos({callback});`
+`heroku.apps({app_id_or_name}).dynos({dyno_id_or_name}).restartDyno({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos | ### `info`
+DELETE | apps/{app_id_or_name}/dynos/{dyno_id_or_name} | ### `restartAllDynos`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos({(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)}).info({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos/{(%23%2Fdefinitions%2Fdyno%2Fdefinitions%2Fidentity)} | ### `list`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).dynos().list({callback});`
+`heroku.apps({app_id_or_name}).dynos().restartAllDynos({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/dynos | 
+DELETE | apps/{app_id_or_name}/dynos | ### `info`
+
+`heroku.apps({app_id_or_name}).dynos({dyno_id_or_name}).info({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/dynos/{dyno_id_or_name} | ### `list`
+
+`heroku.apps({app_id_or_name}).dynos().list({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/dynos | 

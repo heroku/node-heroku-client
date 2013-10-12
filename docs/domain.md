@@ -6,26 +6,26 @@ Domains define what web routes should be routed to an app on Heroku.
 
 ### `create`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains().create({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).domains().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains | ### `delete`
+POST | apps/{app_id_or_name}/domains | ### `delete`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains({(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains/{(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)} | ### `info`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains({(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).domains({domain_hostname_or_id}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains/{(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)} | ### `list`
+DELETE | apps/{app_id_or_name}/domains/{domain_hostname_or_id} | ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).domains().list({callback});`
+`heroku.apps({app_id_or_name}).domains({domain_hostname_or_id}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains | 
+GET | apps/{app_id_or_name}/domains/{domain_hostname_or_id} | ### `list`
+
+`heroku.apps({app_id_or_name}).domains().list({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/domains | 

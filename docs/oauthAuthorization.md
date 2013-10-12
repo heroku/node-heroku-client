@@ -10,22 +10,22 @@ OAuth authorizations represent clients that a Heroku user has authorized to auto
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /oauth/authorizations | ### `delete`
+POST | oauth/authorizations | ### `delete`
 
-`heroku.oauth().authorizations({(%23%2Fdefinitions%2Foauth-authorization%2Fdefinitions%2Fidentity)}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /oauth/authorizations/{(%23%2Fdefinitions%2Foauth-authorization%2Fdefinitions%2Fidentity)} | ### `info`
-
-`heroku.oauth().authorizations({(%23%2Fdefinitions%2Foauth-authorization%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.oauth().authorizations({oauth-authorization_id}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /oauth/authorizations/{(%23%2Fdefinitions%2Foauth-authorization%2Fdefinitions%2Fidentity)} | ### `list`
+DELETE | oauth/authorizations/{oauth-authorization_id} | ### `info`
+
+`heroku.oauth().authorizations({oauth-authorization_id}).info({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | oauth/authorizations/{oauth-authorization_id} | ### `list`
 
 `heroku.oauth().authorizations().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /oauth/authorizations | 
+GET | oauth/authorizations | 

@@ -7,6 +7,7 @@ var assert     = require('assert'),
     inflection = require('inflection'),
     path       = require('path'),
     resources  = require('../lib/schema').definitions,
+    _          = require('lodash'),
     resource,
     resourceName;
 
@@ -69,7 +70,7 @@ function addAction (file, actionName, action) {
   fs.appendFileSync(file, '--- | ');
   fs.appendFileSync(file, '---\n');
   fs.appendFileSync(file, action.method + ' | ');
-  fs.appendFileSync(file, action.href + ' | ');
+  fs.appendFileSync(file, prettifyHref(action.href) + ' | ');
   addActionAttributes(file, action);
 
   checkAction(actionName, action);
@@ -91,7 +92,7 @@ function getFunctionCall (actionName, action) {
       functionCall += '.' + getName(segment);
 
       if (segments[i + 1] && segments[i + 1].match(/{[^}]+}/)) {
-        functionCall += '(' + segments[i + 1] + ')';
+        functionCall += '(' + prettifySegment(segments[i + 1]) + ')';
       } else {
         functionCall += '()';
       }
@@ -107,6 +108,44 @@ function getFunctionCall (actionName, action) {
   functionCall += '{callback});';
 
   return functionCall;
+}
+
+function prettifyHref (href) {
+  var segments = href.split(/\//);
+  segments = segments.slice(1, segments.length);
+  segments = segments.map(prettifySegment)
+  href = segments.join('/');
+  return href;
+}
+
+function prettifySegment (segment) {
+  var unescaped = unescape(segment),
+      identities;
+
+  if (unescaped === segment) {
+    return segment;
+  }
+
+  identities = getIdentitiesFromParam(unescaped);
+  return '{' + identities[0] + '_' + identities.slice(1, identities.length).sort().join('_or_') + '}';
+}
+
+function getIdentitiesFromParam(param) {
+  var identities = param.replace(/[{}()#]/g, '').split("/"),
+      resourceName;
+
+  identities = identities.slice(1, identities.length);
+  identities = resources[identities[1]].definitions.identity.oneOf;
+
+  identities = _.collect(identities, function (identity) {
+    var parts = identity.$ref.split('/');
+    resourceName = parts[2];
+    return parts.slice(-1)[0]
+  })
+
+  identities.unshift(resourceName);
+
+  return identities;
 }
 
 function addActionAttributes (file, action) {

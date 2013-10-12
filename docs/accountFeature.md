@@ -6,20 +6,20 @@ An account feature represents a Heroku labs capability that can be enabled or di
 
 ### `info`
 
-`heroku.account().features({(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.account().features({account-feature_id_or_name}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /account/features/{(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)} | ### `list`
+GET | account/features/{account-feature_id_or_name} | ### `list`
 
 `heroku.account().features().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /account/features | ### `update`
+GET | account/features | ### `update`
 
-`heroku.account().features({(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
+`heroku.account().features({account-feature_id_or_name}).update({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /account/features/{(%23%2Fdefinitions%2Faccount-feature%2Fdefinitions%2Fidentity)} | 
+PATCH | account/features/{account-feature_id_or_name} | 

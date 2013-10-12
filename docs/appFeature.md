@@ -6,20 +6,20 @@ An app feature represents a Heroku labs capability that can be enabled or disabl
 
 ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).features({(%23%2Fdefinitions%2Fapp-feature%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).features({app_id_or_name}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/features/{(%23%2Fdefinitions%2Fapp-feature%2Fdefinitions%2Fidentity)} | ### `list`
+GET | apps/{app_id_or_name}/features/{app_id_or_name} | ### `list`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).features().list({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/features | ### `update`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).features({(%23%2Fdefinitions%2Fapp-feature%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).features().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/features/{(%23%2Fdefinitions%2Fapp-feature%2Fdefinitions%2Fidentity)} | 
+GET | apps/{app_id_or_name}/features | ### `update`
+
+`heroku.apps({app_id_or_name}).features({app_id_or_name}).update({attributes}, {callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+PATCH | apps/{app_id_or_name}/features/{app_id_or_name} | 

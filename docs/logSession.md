@@ -6,8 +6,8 @@ A log session is a reference to the http based log stream for an app.
 
 ### `create`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).logSessions().create({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).logSessions().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/log-sessions | 
+POST | apps/{app_id_or_name}/log-sessions | 

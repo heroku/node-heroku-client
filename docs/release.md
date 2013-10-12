@@ -6,20 +6,20 @@ A release represents a combination of code, config vars and add-ons for an app o
 
 ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).releases({(%23%2Fdefinitions%2Frelease%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).releases({release_id_or_version}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/releases/{(%23%2Fdefinitions%2Frelease%2Fdefinitions%2Fidentity)} | ### `list`
+GET | apps/{app_id_or_name}/releases/{release_id_or_version} | ### `list`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).releases().list({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/releases | ### `rollback`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).releases().rollback({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).releases().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/releases | 
+GET | apps/{app_id_or_name}/releases | ### `rollback`
+
+`heroku.apps({app_id_or_name}).releases().rollback({attributes}, {callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+POST | apps/{app_id_or_name}/releases | 

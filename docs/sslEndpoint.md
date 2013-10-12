@@ -6,32 +6,32 @@
 
 ### `create`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).sslEndpoints().create({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).sslEndpoints().create({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/ssl-endpoints | ### `delete`
+POST | apps/{app_id_or_name}/ssl-endpoints | ### `delete`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).sslEndpoints({(%23%2Fdefinitions%2Fssl-endpoint%2Fdefinitions%2Fidentity)}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/ssl-endpoints/{(%23%2Fdefinitions%2Fssl-endpoint%2Fdefinitions%2Fidentity)} | ### `info`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).sslEndpoints({(%23%2Fdefinitions%2Fssl-endpoint%2Fdefinitions%2Fidentity)}).info({callback});`
+`heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/ssl-endpoints/{(%23%2Fdefinitions%2Fssl-endpoint%2Fdefinitions%2Fidentity)} | ### `list`
+DELETE | apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name} | ### `info`
 
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).sslEndpoints().list({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/ssl-endpoints | ### `update`
-
-`heroku.apps({(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}).sslEndpoints({(%23%2Fdefinitions%2Fssl-endpoint%2Fdefinitions%2Fidentity)}).update({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | /apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/ssl-endpoints/{(%23%2Fdefinitions%2Fssl-endpoint%2Fdefinitions%2Fidentity)} | 
+GET | apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name} | ### `list`
+
+`heroku.apps({app_id_or_name}).sslEndpoints().list({callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/ssl-endpoints | ### `update`
+
+`heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).update({attributes}, {callback});`
+
+Method | Path | Expected Status(es)
+--- | --- | ---
+PATCH | apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name} | 
