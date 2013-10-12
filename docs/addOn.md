@@ -1,4 +1,4 @@
-# Add-on
+# addon
 
 Add-ons represent add-ons that have been provisioned for an app.
 
@@ -10,101 +10,28 @@ Add-ons represent add-ons that have been provisioned for an app.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{app_id_or_name}/addons | 201
-
-#### Optional Attributes
-
-- config
-- plan:id
-- plan:name
-
-
-### `list`
-
-`heroku.apps({app_id_or_name}).addons().list({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{app_id_or_name}/addons | 200, 206
-
-### `info`
-
-`heroku.apps({app_id_or_name}).addons({addon_id}).info({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{app_id_or_name}/addons/{addon_id} | 200
-
-### `update`
-
-`heroku.apps({app_id_or_name}).addons({addon_id}).update({attributes}, {callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-PATCH | /apps/{app_id_or_name}/addons/{addon_id} | 200
-
-#### Optional Attributes
-
-- config
-- plan:id
-- plan:name
-
-
-### `delete`
+POST | apps/{app_id_or_name}/addons | ### `delete`
 
 `heroku.apps({app_id_or_name}).addons({addon_id}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | /apps/{app_id_or_name}/addons/{addon_id} | 200
+DELETE | apps/{app_id_or_name}/addons/{addon_id} | ### `info`
 
-## Attributes
+`heroku.apps({app_id_or_name}).addons({addon_id}).info({callback});`
 
-### `config`
-
-*additional add-on service specific configuration*
-
-Example | Serialized? | Type
+Method | Path | Expected Status(es)
 --- | --- | ---
-`[object Object]` | false | object
+GET | apps/{app_id_or_name}/addons/{addon_id} | ### `list`
 
-### `created_at`
+`heroku.apps({app_id_or_name}).addons().list({callback});`
 
-*when add-on was created*
-
-Example | Serialized? | Type
+Method | Path | Expected Status(es)
 --- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
+GET | apps/{app_id_or_name}/addons | ### `update`
 
-### `id`
+`heroku.apps({app_id_or_name}).addons({addon_id}).update({attributes}, {callback});`
 
-*unique identifier of this add-on*
-
-Example | Serialized? | Type
+Method | Path | Expected Status(es)
 --- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `plan:id`
-
-*unique identifier for plan*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `plan:name`
-
-*unique name for plan*
-
-Example | Serialized? | Type
---- | --- | ---
-`heroku-postgresql:dev` | true | string
-
-### `updated_at`
-
-*when add-on was updated*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
+PATCH | apps/{app_id_or_name}/addons/{addon_id} | 

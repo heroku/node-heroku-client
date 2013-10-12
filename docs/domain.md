@@ -1,4 +1,4 @@
-# Domain
+# domain
 
 Domains define what web routes should be routed to an app on Heroku.
 
@@ -10,68 +10,22 @@ Domains define what web routes should be routed to an app on Heroku.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | /apps/{app_id_or_name}/domains | 201
+POST | apps/{app_id_or_name}/domains | ### `delete`
 
+`heroku.apps({app_id_or_name}).domains({domain_hostname_or_id}).delete({callback});`
 
-#### Required Attributes
+Method | Path | Expected Status(es)
+--- | --- | ---
+DELETE | apps/{app_id_or_name}/domains/{domain_hostname_or_id} | ### `info`
 
-- hostname
+`heroku.apps({app_id_or_name}).domains({domain_hostname_or_id}).info({callback});`
 
-### `list`
+Method | Path | Expected Status(es)
+--- | --- | ---
+GET | apps/{app_id_or_name}/domains/{domain_hostname_or_id} | ### `list`
 
 `heroku.apps({app_id_or_name}).domains().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | /apps/{app_id_or_name}/domains | 200, 206
-
-### `info`
-
-`heroku.apps({app_id_or_name}).domains({domain_id_or_hostname}).info({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-GET | /apps/{app_id_or_name}/domains/{domain_id_or_hostname} | 200
-
-### `delete`
-
-`heroku.apps({app_id_or_name}).domains({domain_id_or_hostname}).delete({callback});`
-
-Method | Path | Expected Status(es)
---- | --- | ---
-DELETE | /apps/{app_id_or_name}/domains/{domain_id_or_hostname} | 200
-
-## Attributes
-
-### `created_at`
-
-*when domain was created*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
-### `hostname`
-
-*full hostname*
-
-Example | Serialized? | Type
---- | --- | ---
-`subdomain.example.com` | true | string
-
-### `id`
-
-*unique identifier of this domain*
-
-Example | Serialized? | Type
---- | --- | ---
-`01234567-89ab-cdef-0123-456789abcdef` | true | uuid
-
-### `updated_at`
-
-*when domain was updated*
-
-Example | Serialized? | Type
---- | --- | ---
-`2012-01-01T12:00:00Z` | true | datetime
-
+GET | apps/{app_id_or_name}/domains | 

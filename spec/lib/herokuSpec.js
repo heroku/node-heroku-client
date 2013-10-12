@@ -16,13 +16,6 @@ describe('Heroku', function() {
     });
   });
 
-  it('passes its expected status into the request', function(done) {
-    heroku.apps('my-app').dynos().list(function() {
-      expect(Request.request.mostRecentCall.args[0].expectedStatus).toEqual([200, 206]);
-      done();
-    });
-  });
-
   describe('requests with the wrong number of parameters', function() {
     it('throws an error', function() {
       expect(function () {
