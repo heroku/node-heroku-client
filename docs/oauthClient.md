@@ -6,6 +6,8 @@ OAuth clients are applications that Heroku users can authorize to automate, cust
 
 ### `create`
 
+Create a new OAuth client.
+
 `heroku.oauth().clients().create({attributes}, {callback});`
 
 Method | Path
@@ -13,6 +15,8 @@ Method | Path
 POST | /oauth/clients
 
 ### `delete`
+
+Delete OAuth client.
 
 `heroku.oauth().clients({oauth-client_id}).delete({callback});`
 
@@ -22,6 +26,8 @@ DELETE | /oauth/clients/{oauth-client_id}
 
 ### `info`
 
+Info for an OAuth client
+
 `heroku.oauth().clients({oauth-client_id}).info({callback});`
 
 Method | Path
@@ -30,6 +36,8 @@ GET | /oauth/clients/{oauth-client_id}
 
 ### `list`
 
+List OAuth clients
+
 `heroku.oauth().clients().list({callback});`
 
 Method | Path
@@ -37,6 +45,8 @@ Method | Path
 GET | /oauth/clients
 
 ### `update`
+
+Update OAuth client
 
 `heroku.oauth().clients({oauth-client_id}).update({attributes}, {callback});`
 

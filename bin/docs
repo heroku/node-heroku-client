@@ -28,6 +28,16 @@ function createDocumentation (resourceName, resource) {
   addAttributes(file, resource.attributes);
 }
 
+function getActionName(action) {
+  var stdNames = ["Info", "List", "Create", "Update", "Delete"];
+
+  if (_.include(stdNames, action.title)) {
+    return action.title;
+  }
+
+  return action.method[0].toUpperCase() + action.method.slice(1, action.method.length);
+}
+
 function getName(name) {
   name = name.toLowerCase();
   name = inflection.dasherize(name).replace(/-/g, '_');
@@ -53,7 +63,7 @@ function addActions (file, actions) {
 
   for (i in actions) {
     action = actions[i];
-    actionName = action.title;
+    actionName = getActionName(action);
 
     process.stdout.write('\n    ' + actionName);
     addAction(file, actionName, action);
@@ -62,6 +72,7 @@ function addActions (file, actions) {
 
 function addAction (file, actionName, action) {
   fs.appendFileSync(file, '### `' + getName(actionName) + '`\n\n');
+  fs.appendFileSync(file, action.description + '\n\n');
   fs.appendFileSync(file, '`' + getFunctionCall(actionName, action) + '`\n\n');
   fs.appendFileSync(file, 'Method | ');
   fs.appendFileSync(file, 'Path\n');

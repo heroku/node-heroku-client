@@ -6,6 +6,8 @@
 
 ### `create`
 
+Create a new SSL endpoint.
+
 `heroku.apps({app_id_or_name}).sslEndpoints().create({attributes}, {callback});`
 
 Method | Path
@@ -13,6 +15,8 @@ Method | Path
 POST | /apps/{app_id_or_name}/ssl-endpoints
 
 ### `delete`
+
+Delete existing SSL endpoint.
 
 `heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).delete({callback});`
 
@@ -22,6 +26,8 @@ DELETE | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name}
 
 ### `info`
 
+Info for existing SSL endpoint.
+
 `heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).info({callback});`
 
 Method | Path
@@ -30,6 +36,8 @@ GET | /apps/{app_id_or_name}/ssl-endpoints/{ssl-endpoint_id_or_name}
 
 ### `list`
 
+List existing SSL endpoints.
+
 `heroku.apps({app_id_or_name}).sslEndpoints().list({callback});`
 
 Method | Path
@@ -37,6 +45,8 @@ Method | Path
 GET | /apps/{app_id_or_name}/ssl-endpoints
 
 ### `update`
+
+Update an existing SSL endpoint.
 
 `heroku.apps({app_id_or_name}).sslEndpoints({ssl-endpoint_id_or_name}).update({attributes}, {callback});`
 

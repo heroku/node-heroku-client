@@ -6,6 +6,8 @@ Stacks are the different application execution environment available in the Hero
 
 ### `info`
 
+Stack info.
+
 `heroku.stacks({stack_id_or_name}).info({callback});`
 
 Method | Path
@@ -13,6 +15,8 @@ Method | Path
 GET | /stacks/{stack_id_or_name}
 
 ### `list`
+
+List available stacks.
 
 `heroku.stacks().list({callback});`
 
