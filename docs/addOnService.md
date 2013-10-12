@@ -10,10 +10,10 @@ Add-on services represent add-ons that may be provisioned for apps.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | addon-services/{addon-service_id_or_name} | ### `list`
+GET | /addon-services/{addon-service_id_or_name} | ### `list`
 
 `heroku.addonServices().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | addon-services | 
+GET | /addon-services | 

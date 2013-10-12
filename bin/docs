@@ -114,7 +114,7 @@ function prettifyHref (href) {
   var segments = href.split(/\//);
   segments = segments.slice(1, segments.length);
   segments = segments.map(prettifySegment)
-  href = segments.join('/');
+  href = '/' + segments.join('/');
   return href;
 }
 

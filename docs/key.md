@@ -10,22 +10,22 @@ Keys represent public SSH keys associated with an account and are used to author
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | account/keys | ### `delete`
+POST | /account/keys | ### `delete`
 
 `heroku.account().keys({key_fingerprint_or_id}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | account/keys/{key_fingerprint_or_id} | ### `info`
+DELETE | /account/keys/{key_fingerprint_or_id} | ### `info`
 
 `heroku.account().keys({key_fingerprint_or_id}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | account/keys/{key_fingerprint_or_id} | ### `list`
+GET | /account/keys/{key_fingerprint_or_id} | ### `list`
 
 `heroku.account().keys().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | account/keys | 
+GET | /account/keys | 

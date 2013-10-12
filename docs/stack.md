@@ -10,10 +10,10 @@ Stacks are the different application execution environment available in the Hero
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | stacks/{stack_id_or_name} | ### `list`
+GET | /stacks/{stack_id_or_name} | ### `list`
 
 `heroku.stacks().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | stacks | 
+GET | /stacks | 

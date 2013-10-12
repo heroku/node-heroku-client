@@ -10,22 +10,22 @@ An account represents an individual signed up to use the Heroku platform.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | account | ### `update`
+GET | /account | ### `update`
 
 `heroku.account().update({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | account | ### `changeEmail`
+PATCH | /account | ### `changeEmail`
 
 `heroku.account().changeEmail({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | account | ### `changePassword`
+PATCH | /account | ### `changePassword`
 
 `heroku.account().changePassword({attributes}, {callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-PATCH | account | 
+PATCH | /account | 

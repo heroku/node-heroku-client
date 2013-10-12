@@ -10,22 +10,22 @@
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | apps/{app_id_or_name}/log-drains | ### `delete`
+POST | /apps/{app_id_or_name}/log-drains | ### `delete`
 
 `heroku.apps({app_id_or_name}).logDrains({log-drain_id_or_url}).delete({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-DELETE | apps/{app_id_or_name}/log-drains/{log-drain_id_or_url} | ### `info`
+DELETE | /apps/{app_id_or_name}/log-drains/{log-drain_id_or_url} | ### `info`
 
 `heroku.apps({app_id_or_name}).logDrains({log-drain_id_or_url}).info({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | apps/{app_id_or_name}/log-drains/{log-drain_id_or_url} | ### `list`
+GET | /apps/{app_id_or_name}/log-drains/{log-drain_id_or_url} | ### `list`
 
 `heroku.apps({app_id_or_name}).logDrains().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | apps/{app_id_or_name}/log-drains | 
+GET | /apps/{app_id_or_name}/log-drains | 

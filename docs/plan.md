@@ -10,10 +10,10 @@ Plans represent different configurations of add-ons that may be added to apps.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | addon-services/{addon-service_id_or_name}/plans/{plan_id_or_name} | ### `list`
+GET | /addon-services/{addon-service_id_or_name}/plans/{plan_id_or_name} | ### `list`
 
 `heroku.addonServices({addon-service_id_or_name}).plans().list({callback});`
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-GET | addon-services/{addon-service_id_or_name}/plans | 
+GET | /addon-services/{addon-service_id_or_name}/plans | 

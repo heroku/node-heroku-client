@@ -10,4 +10,4 @@ A log session is a reference to the http based log stream for an app.
 
 Method | Path | Expected Status(es)
 --- | --- | ---
-POST | apps/{app_id_or_name}/log-sessions | 
+POST | /apps/{app_id_or_name}/log-sessions | 
