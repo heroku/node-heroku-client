@@ -6,8 +6,6 @@ Domains define what web routes should be routed to an app on Heroku.
 
 ### `create`
 
-Create a new domain.
-
 `heroku.apps({app_id_or_name}).domains().create({attributes}, {callback});`
 
 Method | Path
@@ -15,8 +13,6 @@ Method | Path
 POST | /apps/{app_id_or_name}/domains
 
 ### `delete`
-
-Delete an existing domain
 
 `heroku.apps({app_id_or_name}).domains({domain_hostname_or_id}).delete({callback});`
 
@@ -26,8 +22,6 @@ DELETE | /apps/{app_id_or_name}/domains/{domain_hostname_or_id}
 
 ### `info`
 
-Info for existing domain.
-
 `heroku.apps({app_id_or_name}).domains({domain_hostname_or_id}).info({callback});`
 
 Method | Path
@@ -35,8 +29,6 @@ Method | Path
 GET | /apps/{app_id_or_name}/domains/{domain_hostname_or_id}
 
 ### `list`
-
-List existing domains.
 
 `heroku.apps({app_id_or_name}).domains().list({callback});`
 

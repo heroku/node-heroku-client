@@ -6,8 +6,6 @@ Rate Limit represents the number of request tokens each account holds. Requests 
 
 ### `info`
 
-Info for rate limits.
-
 `heroku.account().rateLimits().info({callback});`
 
 Method | Path

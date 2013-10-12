@@ -6,8 +6,6 @@ OAuth authorizations represent clients that a Heroku user has authorized to auto
 
 ### `create`
 
-Create a new OAuth authorization.
-
 `heroku.oauth().authorizations().create({attributes}, {callback});`
 
 Method | Path
@@ -15,8 +13,6 @@ Method | Path
 POST | /oauth/authorizations
 
 ### `delete`
-
-Delete OAuth authorization.
 
 `heroku.oauth().authorizations({oauth-authorization_id}).delete({callback});`
 
@@ -26,8 +22,6 @@ DELETE | /oauth/authorizations/{oauth-authorization_id}
 
 ### `info`
 
-Info for an OAuth authorization.
-
 `heroku.oauth().authorizations({oauth-authorization_id}).info({callback});`
 
 Method | Path
@@ -35,8 +29,6 @@ Method | Path
 GET | /oauth/authorizations/{oauth-authorization_id}
 
 ### `list`
-
-List OAuth authorizations.
 
 `heroku.oauth().authorizations().list({callback});`
 

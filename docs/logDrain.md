@@ -6,8 +6,6 @@
 
 ### `create`
 
-Create a new log drain.
-
 `heroku.apps({app_id_or_name}).logDrains().create({attributes}, {callback});`
 
 Method | Path
@@ -15,8 +13,6 @@ Method | Path
 POST | /apps/{app_id_or_name}/log-drains
 
 ### `delete`
-
-Delete an existing log drain.
 
 `heroku.apps({app_id_or_name}).logDrains({log-drain_id_or_url}).delete({callback});`
 
@@ -26,8 +22,6 @@ DELETE | /apps/{app_id_or_name}/log-drains/{log-drain_id_or_url}
 
 ### `info`
 
-Info for existing log drain.
-
 `heroku.apps({app_id_or_name}).logDrains({log-drain_id_or_url}).info({callback});`
 
 Method | Path
@@ -35,8 +29,6 @@ Method | Path
 GET | /apps/{app_id_or_name}/log-drains/{log-drain_id_or_url}
 
 ### `list`
-
-List existing log drains.
 
 `heroku.apps({app_id_or_name}).logDrains().list({callback});`
 

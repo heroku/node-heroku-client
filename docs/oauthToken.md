@@ -6,8 +6,6 @@ OAuth tokens provide access for authorized clients to act on behalf of a Heroku 
 
 ### `create`
 
-Create a new OAuth token.
-
 `heroku.oauth().tokens().create({attributes}, {callback});`
 
 Method | Path

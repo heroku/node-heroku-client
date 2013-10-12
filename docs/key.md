@@ -6,8 +6,6 @@ Keys represent public SSH keys associated with an account and are used to author
 
 ### `create`
 
-Create a new key.
-
 `heroku.account().keys().create({attributes}, {callback});`
 
 Method | Path
@@ -15,8 +13,6 @@ Method | Path
 POST | /account/keys
 
 ### `delete`
-
-Delete an existing key
 
 `heroku.account().keys({key_fingerprint_or_id}).delete({callback});`
 
@@ -26,8 +22,6 @@ DELETE | /account/keys/{key_fingerprint_or_id}
 
 ### `info`
 
-Info for existing key.
-
 `heroku.account().keys({key_fingerprint_or_id}).info({callback});`
 
 Method | Path
@@ -35,8 +29,6 @@ Method | Path
 GET | /account/keys/{key_fingerprint_or_id}
 
 ### `list`
-
-List existing keys.
 
 `heroku.account().keys().list({callback});`
 

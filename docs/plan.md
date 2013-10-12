@@ -6,8 +6,6 @@ Plans represent different configurations of add-ons that may be added to apps.
 
 ### `info`
 
-Info for existing plan.
-
 `heroku.addonServices({addon-service_id_or_name}).plans({plan_id_or_name}).info({callback});`
 
 Method | Path
@@ -15,8 +13,6 @@ Method | Path
 GET | /addon-services/{addon-service_id_or_name}/plans/{plan_id_or_name}
 
 ### `list`
-
-List existing plans.
 
 `heroku.addonServices({addon-service_id_or_name}).plans().list({callback});`
 
