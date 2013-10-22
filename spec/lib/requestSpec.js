@@ -1,4 +1,5 @@
 var https        = require("https"),
+    encryptor    = require('../../lib/encryptor');
     Request      = require('../../lib/request'),
     memjs        = require('memjs'),
     MockCache    = require('../helpers/mockCache'),
@@ -148,6 +149,8 @@ describe('request', function() {
   describe('caching', function() {
     var cache = new MockCache();
 
+    process.env.HEROKU_CLIENT_ENCRYPTION_SECRET = 'abcde';
+
     beforeEach(function() {
       spyOn(memjs.Client, 'create').andReturn(cache);
       Request.connectCacheClient();
@@ -163,8 +166,8 @@ describe('request', function() {
     it('gets with a postfix', function(done) {
       spyOn(cache, 'get').andCallThrough();
 
-      makeRequest('/apps', { cacheKeyPostfix: '123' }, function(err, body) {
-        expect(cache.get).toHaveBeenCalledWith('/apps-id ]..; max=1000-123', jasmine.any(Function));
+      makeRequest('/apps', { token: 'api-token' }, function(err, body) {
+        expect(cache.get).toHaveBeenCalledWith(encryptor.encrypt('/appsid ]..; max=1000api-token'), jasmine.any(Function));
         done();
       });
     });
@@ -179,13 +182,13 @@ describe('request', function() {
     it('writes to the cache when necessary', function(done) {
       spyOn(cache, 'set');
 
-      makeRequest('/apps', { cacheKeyPostfix: '123' }, function(err, body) {
+      makeRequest('/apps', { token: 'api-token' }, function(err, body) {
         var expectedCache = JSON.stringify({
           body: { message: 'ok' },
           etag: '123'
         });
 
-        expect(cache.set).toHaveBeenCalledWith('/apps-id ]..; max=1000-123', expectedCache);
+        expect(cache.set).toHaveBeenCalledWith(encryptor.encrypt('/appsid ]..; max=1000api-token'), encryptor.encrypt(expectedCache));
         done();
       }, { response: { headers: { etag: '123' } } });
     });
