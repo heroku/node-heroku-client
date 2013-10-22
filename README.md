@@ -90,17 +90,15 @@ heroku.apps().list().then(function (apps) {
 
 ## Caching
 
-When `NODE_ENV` is set to "production", heroku-client will create a memcached client using [memjs][memjs]. See the memjs repo for configuration instructions.
+heroku-client performs caching by creating a memcached client using [memjs][memjs]. See the memjs repo for environment-specific configuration instructions and details.
 
-For local development with caching, it's enough to start a memcached server and set `MEMCACHIER_SERVERS` to `0.0.0.0:11211` in your `.env` file.
-
-You will also need to pass an option called `cacheKeyPostfix` when creating your heroku-client client:
+To tell heroku-client to perform caching, call the `configure` function:
 
 ```javascript
-var heroku = new Heroku({ token: user.apiToken, cacheKeyPostfix: user.id });
+var Heroku = require('heroku').configure({ cache: true });
 ```
 
-This ensures that API responses are cached and properly scoped to the user that heroku-client is making requests on behalf of.
+This requires a `MEMCACHIER_SERVERS` environment variable, as well as a `HEROKU_CLIENT_ENCRYPTION_SECRET` environment variable that heroku-client uses to build cache keys and encrypt cache contents.
 
 ## Contributing
 
