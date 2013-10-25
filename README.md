@@ -127,6 +127,8 @@ heroku.apps().list().then(function (apps) {
 
 heroku-client performs caching by creating a memcached client using [memjs][memjs]. See the memjs repo for environment-specific configuration instructions and details.
 
+heroku-client will cache any response from the Heroku API that comes with an `ETag` header, and each response is cached individually (i.e. even though the client might make multiple calls for a user's apps and then aggregate them into a single JSON array, each required API call is individually cached). For each API request it performs, heroku-client sends an `If-None-Match` header if there is a cached response for the API request. If API returns a 304 response code, heroku-client returns the cached response. Otherwise, it writes the new API response to the cache and returns that.
+
 To tell heroku-client to perform caching, call the `configure` function:
 
 ```javascript
@@ -134,6 +136,10 @@ var Heroku = require('heroku').configure({ cache: true });
 ```
 
 This requires a `MEMCACHIER_SERVERS` environment variable, as well as a `HEROKU_CLIENT_ENCRYPTION_SECRET` environment variable that heroku-client uses to build cache keys and encrypt cache contents.
+
+`HEROKU_CLIENT_ENCRYPTION_SECRET` should be a long, random string of characters. heroku-client includes [`bin/secret`][bin_secret] as one way of generating values for this variable. **Do not publish this secret or commit it to source control. If it's compromised, flush your memcache and generate a new encryption secret.**
+
+`MEMCACHIER_SERVERS` can be a single `hostname:port` memache address, or a comma-separated list of memcache addresses, e.g. `example.com:11211,example.net:11211`. Note that while the environment variable that memjs looks for is [named for the MemCachier service it was originally built for][memcachier], it will work with any memcache server that speaks the binary protocol.
 
 ## Contributing
 
@@ -163,4 +169,6 @@ $ npm test
 [platform-api-reference]: https://devcenter.heroku.com/articles/platform-api-reference
 [q]: https://github.com/kriskowal/q
 [memjs]: https://github.com/alevy/memjs
+[bin_secret]: https://github.com/heroku/node-heroku-client/blob/development/bin/secret
+[memcachier]: https://www.memcachier.com
 [jasmine-node]: https://github.com/mhevery/jasmine-node
