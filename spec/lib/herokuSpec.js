@@ -9,10 +9,9 @@ describe('Heroku', function() {
     });
   });
 
-  it('passes its method into the request', function(done) {
+  it('passes its method into the request', function() {
     heroku.apps().create({}, function() {
       expect(Request.request.mostRecentCall.args[0].method).toEqual('POST');
-      done();
     });
   });
 
@@ -25,72 +24,135 @@ describe('Heroku', function() {
   });
 
   describe('requests with no body', function() {
-    it('can perform a request with no parameters', function(done) {
+    it('can perform a request with no parameters', function() {
       heroku.apps().list(function() {
         expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps');
-        done();
       });
     });
 
-    it('can perform a request with one parameter', function(done) {
+    it('can perform a request with one parameter', function() {
       heroku.apps('my-app').info(function() {
         expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps/my-app');
-        done();
       });
     });
 
-    it('can perform a request with multiple parameters', function(done) {
+    it('can perform a request with multiple parameters', function() {
       heroku.apps('my-app').collaborators('jonathan@heroku.com').info(function() {
         expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps/my-app/collaborators/jonathan@heroku.com');
-        done();
       });
     });
   });
 
   describe('requests with a body and no parameters', function() {
-    it('requests the correct path', function(done) {
+    it('requests the correct path', function() {
       heroku.apps().create({ name: 'my-app' }, function() {
         expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps');
-        done();
       });
     });
 
-    it('sends the request body', function(done) {
+    it('sends the request body', function() {
       heroku.apps().create({ name: 'my-new-app' }, function() {
         expect(Request.request.mostRecentCall.args[0].body).toEqual({ name: 'my-new-app' });
-        done();
       });
     });
   });
 
   describe('requests with a body and one parameter', function() {
-    it('requests the correct path', function(done) {
+    it('requests the correct path', function() {
       heroku.apps('my-app').addons().create({ name: 'papertrail:choklad' }, function() {
         expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps/my-app/addons');
-        done();
       });
     });
 
-    it('sends the request body', function(done) {
+    it('sends the request body', function() {
       heroku.apps('my-app').addons().create({ name: 'papertrail:choklad' }, function() {
         expect(Request.request.mostRecentCall.args[0].body).toEqual({ name: 'papertrail:choklad' });
-        done();
       });
     });
   });
 
   describe('requests with a body and multiple parameters', function() {
-    it('requests the correct path', function(done) {
+    it('requests the correct path', function() {
       heroku.apps('my-app').addons('papertrail:choklad').update({ name: 'papertrail:fixa' }, function() {
         expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps/my-app/addons/papertrail:choklad');
-        done();
       });
     });
 
-    it('sends the request body', function(done) {
+    it('sends the request body', function() {
       heroku.apps('my-app').addons('papertrail:choklad').update({ name: 'papertrail:fixa' }, function() {
         expect(Request.request.mostRecentCall.args[0].body).toEqual({ name: 'papertrail:fixa' });
-        done();
+      });
+    });
+  });
+
+  describe('#get', function() {
+    it('does a GET request', function() {
+      heroku.get('/apps', function () {
+        expect(Request.request.mostRecentCall.args[0].method).toEqual('GET');
+      });
+    });
+
+    it('requests the specified path', function() {
+      heroku.get('/apps', function () {
+        expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps');
+      });
+    });
+  });
+
+  describe('#post', function() {
+    it('does a POST request', function() {
+      heroku.post('/apps', function () {
+        expect(Request.request.mostRecentCall.args[0].method).toEqual('POST');
+      });
+    });
+
+    it('requests the specified path', function() {
+      heroku.post('/apps', function () {
+        expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps');
+      });
+    });
+
+    describe('when a body is supplied', function() {
+      it('sends the request body', function() {
+        heroku.post('/apps', { name: 'my-app' }, function () {
+          expect(Request.request.mostRecentCall.args[0].body).toEqual({ name: 'my-app' });
+        });
+      });
+    });
+  });
+
+  describe('#patch', function() {
+    it('does a PATCH request', function() {
+      heroku.patch('/apps', function () {
+        expect(Request.request.mostRecentCall.args[0].method).toEqual('PATCH');
+      });
+    });
+
+    it('requests the specified path', function() {
+      heroku.patch('/apps', function () {
+        expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps');
+      });
+    });
+
+    describe('when a body is supplied', function() {
+      it('sends the request body', function() {
+        heroku.patch('/apps', { name: 'my-app' }, function () {
+          expect(Request.request.mostRecentCall.args[0].body).toEqual({ name: 'my-app' });
+        });
+      });
+    });
+  });
+
+  describe('#delete', function() {
+    it('does a DELETE request', function() {
+      heroku.delete('/apps/my-app', function () {
+        expect(Request.request.mostRecentCall.args[0].method).toEqual('DELETE');
+      });
+    });
+
+    it('requests the specified path', function() {
+      heroku.delete('/apps/my-app', function () {
+        expect(Request.request.mostRecentCall.args[0].path).toEqual('/apps/my-app');
       });
     });
   });
