@@ -67,6 +67,41 @@ app.collaborators().create({ user: user }, function (err, collaborator) {
 });
 ```
 
+### Generic Requests
+
+heroku-client has `get`, `post`, `patch`, and `delete` functions which can make requests with the specified HTTP method to any endpoint:
+
+```javascript
+heroku.get('/apps', function (err, apps) {
+});
+
+// Request body is optional on both `post` and `patch`
+heroku.post('/apps', function (err, app) {
+});
+
+heroku.post('/apps', { name: 'my-new-app' }, function (err, app) {
+});
+
+heroku.patch('/apps/my-app', { name: 'my-renamed-app' }, function (err, app) {
+});
+
+heroku.delete('/apps/my-old-app', function (err, app) {
+});
+```
+
+There is also an even more generic `request` function that can accept many more options:
+
+```javascript
+heroku.request({
+  method: 'GET',
+  path: '/apps',
+  headers: {
+    'Foo': 'Bar'
+  }
+}, function (err, responseBody) {
+});
+```
+
 ### Promises
 
 heroku-client works with Node-style callbacks, but also implements promises with the [Q][q] library.
