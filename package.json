@@ -19,15 +19,11 @@
     "url": "https://github.com/jclem/node-heroku-client/issues"
   },
   "devDependencies": {
-    "jasmine-node": "~1.11.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-shell": "~0.4.0"
+    "jasmine-node": "~1.11.0"
   },
   "dependencies": {
     "q": "~0.9.6",
     "memjs": "~0.6.0",
-    "inflection": "~1.2.6",
-    "grunt": "~0.4.1"
+    "inflection": "~1.2.6"
   }
 }
