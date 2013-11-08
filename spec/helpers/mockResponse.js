@@ -1,4 +1,4 @@
-var EventEmitter = require("events").EventEmitter;
+var Stream = require('stream').Stream;
 
 module.exports = MockResponse;
 
@@ -11,6 +11,6 @@ function MockResponse(options) {
   }
 }
 
-for (var key in EventEmitter.prototype) {
-  MockResponse.prototype[key] = EventEmitter.prototype[key];
+for (var key in Stream.prototype) {
+  MockResponse.prototype[key] = Stream.prototype[key];
 }

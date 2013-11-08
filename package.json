@@ -1,6 +1,6 @@
 {
   "name": "heroku-client",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "description": "A wrapper for the Heroku v3 API",
   "main": "./lib/heroku.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "dependencies": {
     "q": "~0.9.6",
     "memjs": "~0.6.0",
-    "inflection": "~1.2.6"
+    "inflection": "~1.2.6",
+    "concat-stream": "~1.1.0"
   }
 }
