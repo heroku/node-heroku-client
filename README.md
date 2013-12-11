@@ -145,11 +145,13 @@ This requires a `MEMCACHIER_SERVERS` environment variable, as well as a `HEROKU_
 
 ### Updating resources
 
-When a new resource manifest is available, download it into the repo, run tests, generate documentation, and [bump the version number accordingly](http://semver.org/). The best way to get the current production schema is:
+To fetch the latest schema, generate documentation, and run the tests:
 
 ```sh
-curl -H "Accept: application/vnd.heroku+json; version=3" https://api.heroku.com/schema
+$ bin/update
 ```
+
+Inspect your changes, and [bump the version number accordingly](http://semver.org/) when cutting a release.
 
 ### Generating documentation
 
