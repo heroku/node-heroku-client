@@ -20,6 +20,14 @@ Method | Path
 --- | ---
 GET | /apps/{app_id_or_name}/releases
 
+### `create`
+
+`heroku.apps({app_id_or_name}).releases().create({attributes}, {callback});`
+
+Method | Path
+--- | ---
+POST | /apps/{app_id_or_name}/releases
+
 ### `rollback`
 
 `heroku.apps({app_id_or_name}).releases().rollback({attributes}, {callback});`

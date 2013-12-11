@@ -12,17 +12,17 @@ Method | Path
 --- | ---
 POST | /apps/{app_id_or_name}/dynos
 
-### `restartDyno`
+### `restart`
 
-`heroku.apps({app_id_or_name}).dynos({dyno_id_or_name}).restartDyno({callback});`
+`heroku.apps({app_id_or_name}).dynos({dyno_id_or_name}).restart({callback});`
 
 Method | Path
 --- | ---
 DELETE | /apps/{app_id_or_name}/dynos/{dyno_id_or_name}
 
-### `restartAllDynos`
+### `restartAll`
 
-`heroku.apps({app_id_or_name}).dynos().restartAllDynos({callback});`
+`heroku.apps({app_id_or_name}).dynos().restartAll({callback});`
 
 Method | Path
 --- | ---

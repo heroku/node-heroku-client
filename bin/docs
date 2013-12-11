@@ -132,7 +132,7 @@ function getIdentitiesFromParam(param) {
       resourceName;
 
   identities = identities.slice(1, identities.length);
-  identities = resources[identities[1]].definitions.identity.oneOf;
+  identities = resources[identities[1]].definitions.identity.anyOf;
 
   identities = identities.map(function (identity) {
     var parts = identity.$ref.split('/');

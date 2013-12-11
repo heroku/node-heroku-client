@@ -1,6 +1,6 @@
 # stack
 
-Stacks are the different application execution environment available in the Heroku platform.
+Stacks are the different application execution environments available in the Heroku platform.
 
 ## Actions
 
