@@ -1,6 +1,6 @@
 {
   "name": "heroku-client",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "A wrapper for the Heroku v3 API",
   "main": "./lib/heroku.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-heroku-client"
+    "url": "https://github.com/jclem/node-heroku-client"
   },
   "keywords": [
     "heroku"
@@ -16,7 +16,7 @@
   "author": "Jonathan Clem",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/heroku/node-heroku-client/issues"
+    "url": "https://github.com/jclem/node-heroku-client/issues"
   },
   "devDependencies": {
     "jasmine-node": "~1.11.0"
