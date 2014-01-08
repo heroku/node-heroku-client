@@ -1,4 +1,4 @@
-# heroku-client [![Build Status](https://travis-ci.org/jclem/node-heroku-client.png?branch=master)](https://travis-ci.org/heroku/node-heroku-client)
+# heroku-client [![Build Status](https://travis-ci.org/jclem/node-heroku-client.png?branch=master)](https://travis-ci.org/jclem/node-heroku-client)
 
 A wrapper around the [v3 Heroku API][platform-api-reference].
 
