@@ -25,6 +25,7 @@
     "q": "~0.9.6",
     "memjs": "~0.6.0",
     "inflection": "~1.2.6",
-    "concat-stream": "~1.1.0"
+    "concat-stream": "~1.1.0",
+    "path-proxy": "~1.0"
   }
 }
