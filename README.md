@@ -155,7 +155,7 @@ Inspect your changes, and [bump the version number accordingly](http://semver.or
 
 ### Generating documentation
 
-Documentation for heroku-client is auto-generated from [the resources manifest](https://github.com/heroku/node-heroku-client/blob/development/lib/resources.js).
+Documentation for heroku-client is auto-generated from [the API schema](https://github.com/jclem/node-heroku-client/blob/development/lib/schema.js).
 Docs are generated like so:
 
 ```bash
