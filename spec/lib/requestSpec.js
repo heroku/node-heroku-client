@@ -68,7 +68,13 @@ describe('request', function() {
       });
     });
 
-    it('rejects a promise when there is an error', function(done) {
+    it('rejects a promise when there is an error on the request object', function() {
+      makeRequest('/apps', {}, function (err, res) {
+        expect(err.message).toEqual('there was an error');
+      }, { emitError: 'there was an error' });
+    });
+
+    it('rejects a promise when there is an error from an unexpected response', function(done) {
       makeRequest('/apps', {}, null, { response: { statusCode: 404 } }).fail(function(err) {
         expect(err.message).toEqual('Expected response to be successful, got 404');
         done()
@@ -214,6 +220,11 @@ function makeRequest(path, options, callback, testOptions) {
         res.emit('data', '[{ "message": "ok" }]');
       } else {
         res.emit('data', '{ "message": "ok" }');
+      }
+
+      if (testOptions.emitError) {
+        req.emit('error', new Error(testOptions.emitError));
+        req.abort();
       }
 
       if (!req.isAborted) res.emit('end');
