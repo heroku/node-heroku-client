@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "q": "~0.9.6",
+    "lazy.js" : "~0.3.2",
     "memjs": "~0.6.0",
     "inflection": "~1.2.6",
     "concat-stream": "~1.1.0",
