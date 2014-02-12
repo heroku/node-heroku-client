@@ -1,4 +1,5 @@
-var https        = require("https"),
+var http         = require('http'),
+    https        = require('https'),
     encryptor    = require('../../lib/encryptor');
     Request      = require('../../lib/request'),
     memjs        = require('memjs'),
@@ -43,6 +44,79 @@ describe('request', function() {
     makeRequest('/apps', { body: { foo: 'bar' } }, function() {
       expect(MockRequest.prototype.setHeader).toHaveBeenCalledWith('Content-length', JSON.stringify({ foo: 'bar' }).length);
       done();
+    });
+  });
+
+  describe('when using an HTTP proxy', function() {
+    beforeEach(function() {
+      process.env.HEROKU_HTTP_PROXY='localhost:5000';
+    });
+
+    afterEach(function() {
+      delete process.env.HEROKU_HTTP_PROXY;
+    });
+
+    it('uses an http agent', function(done) {
+      makeRequest('/apps', {}, function() {
+        expect(http.request.mostRecentCall.args[0].host).toBeDefined();
+        done();
+      });
+    });
+
+    it('uses the proxy host', function(done) {
+      makeRequest('/apps', {}, function() {
+        expect(http.request.mostRecentCall.args[0].host).toEqual('localhost:5000');
+        done();
+      });
+    });
+
+    it('uses the full API URL as its path', function(done) {
+      makeRequest('/apps', {}, function() {
+        expect(http.request.mostRecentCall.args[0].path).toEqual('https://api.heroku.com/apps');
+        done();
+      });
+    });
+
+    describe('when a proxy port is defined', function() {
+      beforeEach(function() {
+        process.env.HEROKU_HTTP_PROXY_PORT='8000';
+      });
+
+      afterEach(function() {
+        delete process.env.HEROKU_HTTP_PROXY_PORT;
+      });
+
+      it('uses the defined port', function(done) {
+        makeRequest('/apps', {}, function() {
+          expect(http.request.mostRecentCall.args[0].port).toEqual('8000');;
+          done()
+        });
+      });
+    });
+
+    describe('when a proxy port is not defined', function() {
+      it('defaults to port 8080', function(done) {
+        makeRequest('/apps', {}, function() {
+          expect(http.request.mostRecentCall.args[0].port).toEqual(8080);;
+          done()
+        });
+      });
+    });
+  });
+
+  describe('when not using an HTTP proxy', function() {
+    it('uses the API host as its host', function(done) {
+      makeRequest('/apps', {}, function() {
+        expect(https.request.mostRecentCall.args[0].host).toEqual('api.heroku.com');
+        done();
+      });
+    });
+
+    it('makes a request to port 443', function(done) {
+      makeRequest('/apps', {}, function() {
+        expect(https.request.mostRecentCall.args[0].port).toEqual(443);
+        done()
+      });
     });
   });
 
@@ -205,7 +279,10 @@ function makeRequest(path, options, callback, testOptions) {
   testOptions || (testOptions = {});
   options.path = path;
 
-  spyOn(https, 'request').andCallFake(function (options, httpsCallback) {
+  spyOn(https, 'request').andCallFake(fakeRequest);
+  spyOn(http,  'request').andCallFake(fakeRequest);
+
+  function fakeRequest(options, requestCallback) {
     if (options.headers.Range !== 'id ]..; max=1000') {
       testOptions.response.headers['next-range'] = undefined;
     }
@@ -213,7 +290,7 @@ function makeRequest(path, options, callback, testOptions) {
     var req = new MockRequest(),
         res = new MockResponse(testOptions.response || {});
 
-    httpsCallback(res);
+    requestCallback(res);
 
     setTimeout(function () {
       if (testOptions.returnArray) {
@@ -231,8 +308,7 @@ function makeRequest(path, options, callback, testOptions) {
     }, testOptions.timeout || 0);
 
     return req;
-  });
-
+  }
 
   return Request.request(options, function (err, body) {
     if (callback) callback(err, body);
