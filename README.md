@@ -123,6 +123,10 @@ heroku.apps().list().then(function (apps) {
 });
 ```
 
+## HTTP Proxies
+
+If you'd like to make requests through an HTTP proxy, set the `HEROKU_HTTP_PROXY_HOST` environment variable with your proxy host, and `HEROKU_HTTP_PROXY_PORT` with the desired port (defaults to 8080). heroku-client will then make requests through this proxy instead of directly to api.heroku.com.
+
 ## Caching
 
 heroku-client performs caching by creating a memcached client using [memjs][memjs]. See the memjs repo for environment-specific configuration instructions and details.
