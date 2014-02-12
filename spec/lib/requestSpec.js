@@ -49,11 +49,11 @@ describe('request', function() {
 
   describe('when using an HTTP proxy', function() {
     beforeEach(function() {
-      process.env.HEROKU_HTTP_PROXY='localhost:5000';
+      process.env.HEROKU_HTTP_PROXY_HOST='localhost:5000';
     });
 
     afterEach(function() {
-      delete process.env.HEROKU_HTTP_PROXY;
+      delete process.env.HEROKU_HTTP_PROXY_HOST;
     });
 
     it('uses an http agent', function(done) {
