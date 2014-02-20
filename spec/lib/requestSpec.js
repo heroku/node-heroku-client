@@ -47,6 +47,15 @@ describe('request', function() {
     });
   });
 
+  it('sets the Content-length to 0 when a body is not present', function(done) {
+    spyOn(MockRequest.prototype, 'setHeader');
+
+    makeRequest('/apps/example/collaborators/bob%40example.com', { method: 'DELETE' }, function() {
+      expect(MockRequest.prototype.setHeader).toHaveBeenCalledWith('Content-length', 0);
+      done();
+    });
+  });
+
   describe('when using an HTTP proxy', function() {
     beforeEach(function() {
       process.env.HEROKU_HTTP_PROXY_HOST='localhost:5000';
