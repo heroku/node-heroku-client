@@ -14,19 +14,19 @@ POST | /account/app-transfers
 
 ### `delete`
 
-`heroku.account().appTransfers({app-transfer_id}).delete({callback});`
+`heroku.account().appTransfers({app_id_or_name}).delete({callback});`
 
 Method | Path
 --- | ---
-DELETE | /account/app-transfers/{app-transfer_id}
+DELETE | /account/app-transfers/{app_id_or_name}
 
 ### `info`
 
-`heroku.account().appTransfers({app-transfer_id}).info({callback});`
+`heroku.account().appTransfers({app_id_or_name}).info({callback});`
 
 Method | Path
 --- | ---
-GET | /account/app-transfers/{app-transfer_id}
+GET | /account/app-transfers/{app_id_or_name}
 
 ### `list`
 
@@ -38,9 +38,9 @@ GET | /account/app-transfers
 
 ### `update`
 
-`heroku.account().appTransfers({app-transfer_id}).update({attributes}, {callback});`
+`heroku.account().appTransfers({app_id_or_name}).update({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /account/app-transfers/{app-transfer_id}
+PATCH | /account/app-transfers/{app_id_or_name}
 
