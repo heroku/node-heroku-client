@@ -9,6 +9,11 @@ describe('Heroku', function() {
     });
   });
 
+  it('can create a client with .createClient', function() {
+    heroku = Heroku.createClient({ token: '12345' })
+    expect(heroku.constructor.name).toEqual('Heroku');
+  });
+
   it('passes its method into the request', function() {
     heroku.apps().create({}, function() {
       expect(Request.request.mostRecentCall.args[0].method).toEqual('POST');
