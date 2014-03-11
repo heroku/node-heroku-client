@@ -123,6 +123,39 @@ heroku.apps().list().then(function (apps) {
 });
 ```
 
+### Generators
+
+It's easy to get heroku-client working with [generators][generators]. In this
+example, I'll use the [co][co] library to wrap a function that will get the list
+of all of my apps, and then get the dynos for each of those apps:
+
+```javascript
+let co     = require('co');
+let heroku = require('heroku-client');
+let hk     = heroku.createClient({ token: process.env.HEROKU_API_KEY });
+
+let main = function* () {
+  let apps  = yield hk.apps().list();
+  let dynos = yield apps.map(getDynos);
+
+  console.log(dynos);
+
+  function getDynos(app) {
+    return hk.apps(app.name).dynos().list();
+  }
+};
+
+co(main)();
+```
+
+As long as you're using Node >= 0.11, you can run this script with:
+
+```sh
+$ node --harmony --use-strict file.js
+```
+
+Hooray, no callbacks or promises in sight!
+
 ### HTTP Proxies
 
 If you'd like to make requests through an HTTP proxy, set the `HEROKU_HTTP_PROXY_HOST` environment variable with your proxy host, and `HEROKU_HTTP_PROXY_PORT` with the desired port (defaults to 8080). heroku-client will then make requests through this proxy instead of directly to api.heroku.com.
@@ -182,3 +215,5 @@ $ npm test
 [bin_secret]: https://github.com/heroku/node-heroku-client/blob/development/bin/secret
 [memcachier]: https://www.memcachier.com
 [jasmine-node]: https://github.com/mhevery/jasmine-node
+[generators]: https://github.com/JustinDrake/node-es6-examples#generators
+[co]: https://github.com/visionmedia/co
