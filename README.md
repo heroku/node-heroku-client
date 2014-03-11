@@ -10,7 +10,8 @@ $ npm install heroku-client --save
 
 ## Documentation
 
-Docs are auto-generated and live in the [docs directory](https://github.com/heroku/node-heroku-client/tree/development/docs).
+Docs are auto-generated and live in the
+[docs directory](https://github.com/heroku/node-heroku-client/tree/development/docs).
 
 ## Usage
 
@@ -69,7 +70,8 @@ app.collaborators().create({ user: user }, function (err, collaborator) {
 
 ### Generic Requests
 
-heroku-client has `get`, `post`, `patch`, and `delete` functions which can make requests with the specified HTTP method to any endpoint:
+heroku-client has `get`, `post`, `patch`, and `delete` functions which can make
+requests with the specified HTTP method to any endpoint:
 
 ```javascript
 heroku.get('/apps', function (err, apps) {
@@ -89,7 +91,8 @@ heroku.delete('/apps/my-old-app', function (err, app) {
 });
 ```
 
-There is also an even more generic `request` function that can accept many more options:
+There is also an even more generic `request` function that can accept many more
+options:
 
 ```javascript
 heroku.request({
@@ -104,7 +107,8 @@ heroku.request({
 
 ### Promises
 
-heroku-client works with Node-style callbacks, but also implements promises with the [Q][q] library.
+heroku-client works with Node-style callbacks, but also implements promises with
+the [Q][q] library.
 
 ```javascript
 var q = require('q');
@@ -158,13 +162,26 @@ Hooray, no callbacks or promises in sight!
 
 ### HTTP Proxies
 
-If you'd like to make requests through an HTTP proxy, set the `HEROKU_HTTP_PROXY_HOST` environment variable with your proxy host, and `HEROKU_HTTP_PROXY_PORT` with the desired port (defaults to 8080). heroku-client will then make requests through this proxy instead of directly to api.heroku.com.
+If you'd like to make requests through an HTTP proxy, set the
+`HEROKU_HTTP_PROXY_HOST` environment variable with your proxy host, and
+`HEROKU_HTTP_PROXY_PORT` with the desired port (defaults to 8080). heroku-client
+will then make requests through this proxy instead of directly to
+api.heroku.com.
 
 ## Caching
 
-heroku-client performs caching by creating a memcached client using [memjs][memjs]. See the memjs repo for environment-specific configuration instructions and details.
+heroku-client performs caching by creating a memcached client using
+[memjs][memjs]. See the memjs repo for environment-specific configuration
+instructions and details.
 
-heroku-client will cache any response from the Heroku API that comes with an `ETag` header, and each response is cached individually (i.e. even though the client might make multiple calls for a user's apps and then aggregate them into a single JSON array, each required API call is individually cached). For each API request it performs, heroku-client sends an `If-None-Match` header if there is a cached response for the API request. If API returns a 304 response code, heroku-client returns the cached response. Otherwise, it writes the new API response to the cache and returns that.
+heroku-client will cache any response from the Heroku API that comes with an
+`ETag` header, and each response is cached individually (i.e. even though the
+client might make multiple calls for a user's apps and then aggregate them into
+a single JSON array, each required API call is individually cached). For each
+API request it performs, heroku-client sends an `If-None-Match` header if there
+is a cached response for the API request. If API returns a 304 response code,
+heroku-client returns the cached response. Otherwise, it writes the new API
+response to the cache and returns that.
 
 To tell heroku-client to perform caching, call the `configure` function:
 
@@ -172,11 +189,22 @@ To tell heroku-client to perform caching, call the `configure` function:
 var Heroku = require('heroku').configure({ cache: true });
 ```
 
-This requires a `MEMCACHIER_SERVERS` environment variable, as well as a `HEROKU_CLIENT_ENCRYPTION_SECRET` environment variable that heroku-client uses to build cache keys and encrypt cache contents.
+This requires a `MEMCACHIER_SERVERS` environment variable, as well as a
+`HEROKU_CLIENT_ENCRYPTION_SECRET` environment variable that heroku-client uses
+to build cache keys and encrypt cache contents.
 
-`HEROKU_CLIENT_ENCRYPTION_SECRET` should be a long, random string of characters. heroku-client includes [`bin/secret`][bin_secret] as one way of generating values for this variable. **Do not publish this secret or commit it to source control. If it's compromised, flush your memcache and generate a new encryption secret.**
+`HEROKU_CLIENT_ENCRYPTION_SECRET` should be a long, random string of characters.
+heroku-client includes [`bin/secret`][bin_secret] as one way of generating
+values for this variable. **Do not publish this secret or commit it to source
+control. If it's compromised, flush your memcache and generate a new encryption
+secret.**
 
-`MEMCACHIER_SERVERS` can be a single `hostname:port` memache address, or a comma-separated list of memcache addresses, e.g. `example.com:11211,example.net:11211`. Note that while the environment variable that memjs looks for is [named for the MemCachier service it was originally built for][memcachier], it will work with any memcache server that speaks the binary protocol.
+`MEMCACHIER_SERVERS` can be a single `hostname:port` memache address, or a
+comma-separated list of memcache addresses, e.g.
+`example.com:11211,example.net:11211`. Note that while the environment variable
+that memjs looks for is
+[named for the MemCachier service it was originally built for][memcachier], it
+will work with any memcache server that speaks the binary protocol.
 
 ## Contributing
 
@@ -188,18 +216,23 @@ To fetch the latest schema, generate documentation, and run the tests:
 $ bin/update
 ```
 
-Inspect your changes, and [bump the version number accordingly](http://semver.org/) when cutting a release.
+Inspect your changes, and
+[bump the version number accordingly](http://semver.org/) when cutting a
+release.
 
 ### Generating documentation
 
-Documentation for heroku-client is auto-generated from [the API schema](https://github.com/jclem/node-heroku-client/blob/development/lib/schema.js).
+Documentation for heroku-client is auto-generated from
+[the API schema](https://github.com/jclem/node-heroku-client/blob/development/lib/schema.js).
+
 Docs are generated like so:
 
 ```bash
 $ bin/docs
 ```
 
-Generating docs also runs a cursory test, ensuring that every documented function *is* a function that can be called.
+Generating docs also runs a cursory test, ensuring that every documented
+function *is* a function that can be called.
 
 ### Running tests
 
