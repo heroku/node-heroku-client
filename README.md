@@ -2,6 +2,19 @@
 
 A wrapper around the [v3 Heroku API][platform-api-reference].
 
+- [Install](#install)
+- [Documentation](#documentation)
+- [Usage](#usage)
+  - [Generic Requests](#generic-requests)
+  - [Promises](#promises)
+  - [Generators](#generators)
+  - [HTTP Proxies](#http-proxies)
+- [Caching](#caching)
+- [Contributing](#contributing)
+  - [Updating resources](#updating-resources)
+  - [Generating documentation](#generating-documentation)
+  - [Running tests](#running-tests)
+
 ## Install
 
 ```sh
