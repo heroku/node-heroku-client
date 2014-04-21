@@ -6,11 +6,11 @@ An app feature represents a Heroku labs capability that can be enabled or disabl
 
 ### `info`
 
-`heroku.apps({app_id_or_name}).features({app_id_or_name}).info({callback});`
+`heroku.apps({app_id_or_name}).features({app-feature_id_or_name}).info({callback});`
 
 Method | Path
 --- | ---
-GET | /apps/{app_id_or_name}/features/{app_id_or_name}
+GET | /apps/{app_id_or_name}/features/{app-feature_id_or_name}
 
 ### `list`
 
@@ -22,9 +22,9 @@ GET | /apps/{app_id_or_name}/features
 
 ### `update`
 
-`heroku.apps({app_id_or_name}).features({app_id_or_name}).update({attributes}, {callback});`
+`heroku.apps({app_id_or_name}).features({app-feature_id_or_name}).update({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /apps/{app_id_or_name}/features/{app_id_or_name}
+PATCH | /apps/{app_id_or_name}/features/{app-feature_id_or_name}
 
