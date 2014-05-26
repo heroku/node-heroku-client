@@ -12,9 +12,9 @@ Method | Path
 --- | ---
 GET | /organizations
 
-### `updateDefault`
+### `update`
 
-`heroku.organizations({organization_name}).updateDefault({attributes}, {callback});`
+`heroku.organizations({organization_name}).update({attributes}, {callback});`
 
 Method | Path
 --- | ---

@@ -6,19 +6,35 @@ An organization app encapsulates the organization specific functionality of Hero
 
 ### `create`
 
-`heroku.organizations({organization_name}).apps().create({attributes}, {callback});`
+`heroku.organizations().apps().create({attributes}, {callback});`
 
 Method | Path
 --- | ---
-POST | /organizations/{organization_name}/apps
+POST | /organizations/apps
 
 ### `list`
 
-`heroku.organizations({organization_name}).apps().list({callback});`
+`heroku.organizations().apps().list({callback});`
+
+Method | Path
+--- | ---
+GET | /organizations/apps
+
+### `listForOrganization`
+
+`heroku.organizations({organization_name}).apps().listForOrganization({callback});`
 
 Method | Path
 --- | ---
 GET | /organizations/{organization_name}/apps
+
+### `info`
+
+`heroku.organizations().apps({app_id_or_name}).info({callback});`
+
+Method | Path
+--- | ---
+GET | /organizations/apps/{app_id_or_name}
 
 ### `updateLocked`
 
