@@ -187,6 +187,13 @@ describe('request', function() {
       });
     });
 
+    it('accepts a host', function(done) {
+      makeRequest('/apps', { host: 'api.example.com' }, function() {
+        expect(https.request.mostRecentCall.args[0].host).toEqual('api.example.com');
+        done();
+      });
+    });
+
     it('extends the default headers with custom headers', function(done) {
       var expectedHeaders = {
         'Arbitrary': 'header',
