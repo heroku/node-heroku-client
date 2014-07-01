@@ -1,6 +1,8 @@
-var Heroku  = require('../../lib/heroku'),
-    Request = require('../../lib/request'),
-    heroku  = new Heroku({ token: '12345' });
+'use strict';
+
+var Heroku  = require('../../lib/heroku');
+var Request = require('../../lib/request');
+var heroku  = new Heroku({ token: '12345' });
 
 describe('Heroku', function() {
   beforeEach(function() {
@@ -10,7 +12,7 @@ describe('Heroku', function() {
   });
 
   it('can create a client with .createClient', function() {
-    heroku = Heroku.createClient({ token: '12345' })
+    heroku = Heroku.createClient({ token: '12345' });
     expect(heroku.constructor.name).toEqual('Heroku');
   });
 

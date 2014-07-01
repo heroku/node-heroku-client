@@ -1,21 +1,25 @@
 #!/usr/bin/env node
 
-var assert     = require('assert'),
-    fs         = require('fs'),
-    Heroku     = require('../lib/heroku'),
-    heroku     = new Heroku({}),
-    inflection = require('inflection'),
-    path       = require('path'),
-    resources  = require('../lib/schema').definitions,
-    resource,
-    resourceName;
+'use strict';
+
+// Ignore unused `heroku` var that's called in `eval` below
+// jshint -W098
+
+var assert     = require('assert');
+var fs         = require('fs');
+var Heroku     = require('../lib/heroku');
+var heroku     = new Heroku({});
+var inflection = require('inflection');
+var path       = require('path');
+var resources  = require('../lib/schema').definitions;
+var resource, resourceName;
 
 for (resourceName in resources) {
   resource = resources[resourceName];
   createDocumentation(resourceName, resource);
 }
 
-function createDocumentation (resourceName, resource) {
+function createDocumentation(resourceName, resource) {
   var file = createFile(resourceName);
 
   process.stdout.write('\nBuilding docs for ' + resourceName + ':\n');
@@ -31,20 +35,17 @@ function getName(name) {
   name = name.toLowerCase();
   name = inflection.dasherize(name).replace(/-/g, '_');
   name = inflection.camelize(name, true);
-
   return name;
 }
 
-function createFile (resourceName) {
-  var fileName = getName(resourceName),
-      file     = path.join(__dirname, '../docs/' + fileName + '.md');
-
+function createFile(resourceName) {
+  var fileName = getName(resourceName);
+  var file     = path.join(__dirname, '../docs/' + fileName + '.md');
   fs.writeFileSync(file, '');
-
   return file;
 }
 
-function addActions (file, actions) {
+function addActions(file, actions) {
   var action, actionName, i;
 
   process.stdout.write('  Building actions:');
@@ -59,7 +60,7 @@ function addActions (file, actions) {
   }
 }
 
-function addAction (file, actionName, action) {
+function addAction(file, actionName, action) {
   fs.appendFileSync(file, '### `' + getName(actionName) + '`\n\n');
   fs.appendFileSync(file, '`' + getFunctionCall(actionName, action) + '`\n\n');
   fs.appendFileSync(file, 'Method | ');
@@ -73,12 +74,11 @@ function addAction (file, actionName, action) {
   checkAction(actionName, action);
 }
 
-function getFunctionCall (actionName, action) {
-  var path = action.href.split(/\//),
-      segments = path.slice(1, path.length),
-      functionCall = 'heroku',
-      i,
-      segment;
+function getFunctionCall(actionName, action) {
+  var path = action.href.split(/\//);
+  var segments = path.slice(1, path.length);
+  var functionCall = 'heroku';
+  var i, segment;
 
   for (i = 0; i < segments.length; i ++) {
     segment = segments[i];
@@ -107,17 +107,17 @@ function getFunctionCall (actionName, action) {
   return functionCall;
 }
 
-function prettifyHref (href) {
+function prettifyHref(href) {
   var segments = href.split(/\//);
   segments = segments.slice(1, segments.length);
-  segments = segments.map(prettifySegment)
+  segments = segments.map(prettifySegment);
   href = '/' + segments.join('/');
   return href;
 }
 
-function prettifySegment (segment) {
-  var unescaped = unescape(segment),
-      identities;
+function prettifySegment(segment) {
+  var unescaped = unescape(segment);
+  var identities;
 
   if (unescaped === segment) {
     return segment;
@@ -128,8 +128,8 @@ function prettifySegment (segment) {
 }
 
 function getIdentitiesFromParam(param) {
-  var identities = param.replace(/[{}()#]/g, '').split("/"),
-      resourceName;
+  var identities = param.replace(/[{}()#]/g, '').split("/");
+  var resourceName;
 
   identities = identities.slice(1, identities.length);
   identities = resources[identities[1]].definitions.identity.anyOf;
@@ -137,7 +137,7 @@ function getIdentitiesFromParam(param) {
   identities = identities.map(function (identity) {
     var parts = identity.$ref.split('/');
     resourceName = parts[2];
-    return parts.slice(-1)[0]
+    return parts.slice(-1)[0];
   });
 
   identities.unshift(resourceName);
@@ -145,7 +145,7 @@ function getIdentitiesFromParam(param) {
   return identities;
 }
 
-function addActionAttributes (file, action) {
+function addActionAttributes(file, action) {
   if (!action.attributes) return;
 
   addActionAttributeGroup(file, action.attributes.optional, 'Optional');
@@ -155,7 +155,7 @@ function addActionAttributes (file, action) {
   fs.appendFileSync(file, '\n');
 }
 
-function addActionAttributeGroup (file, attributes, type) {
+function addActionAttributeGroup(file, attributes, type) {
   if (!attributes) return;
 
   fs.appendFileSync(file, '#### ' + type + ' Attributes\n\n');
@@ -165,7 +165,7 @@ function addActionAttributeGroup (file, attributes, type) {
   });
 }
 
-function addAttributes (file, attributes) {
+function addAttributes(file, attributes) {
   var attributeName, attribute;
 
   if (!attributes) return;
@@ -179,7 +179,7 @@ function addAttributes (file, attributes) {
   }
 }
 
-function addAttribute (file, attributeName, attribute) {
+function addAttribute(file, attributeName, attribute) {
   fs.appendFileSync(file, '### `' + attributeName + '`\n\n');
 
   fs.appendFileSync(file, '*' + attribute.description + '*\n\n');
@@ -195,8 +195,10 @@ function addAttribute (file, attributeName, attribute) {
   fs.appendFileSync(file, attribute.type + '\n\n');
 }
 
-function checkAction (actionName, action) {
-  var functionToTest = getFunctionCall(actionName, action).replace(/{.*}/g, '').slice(0, -3)
+function checkAction(actionName, action) {
+  // Ignore eval for testing
+  // jshint -W061
+  var functionToTest = getFunctionCall(actionName, action).replace(/{.*}/g, '').slice(0, -3);
   assert.equal(eval('typeof ' + functionToTest), 'function', functionToTest + ' is not a Function');
   process.stdout.write(' ' + String.fromCharCode(0x2713));
 }

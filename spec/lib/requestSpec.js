@@ -1,16 +1,18 @@
-var http         = require('http'),
-    https        = require('https'),
-    encryptor    = require('../../lib/encryptor');
-    Request      = require('../../lib/request'),
-    memjs        = require('memjs'),
-    MockCache    = require('../helpers/mockCache'),
-    MockRequest  = require('../helpers/mockRequest'),
-    MockResponse = require('../helpers/mockResponse');
+'use strict';
+
+var http         = require('http');
+var https        = require('https');
+var encryptor    = require('../../lib/encryptor');
+var Request      = require('../../lib/request');
+var memjs        = require('memjs');
+var MockCache    = require('../helpers/mockCache');
+var MockRequest  = require('../helpers/mockRequest');
+var MockResponse = require('../helpers/mockResponse');
 
 describe('request', function() {
   it('uses the v3 API', function(done) {
     makeRequest('/apps', {}, function() {
-      expect(https.request.mostRecentCall.args[0].headers['Accept']).toEqual('application/vnd.heroku+json; version=3');
+      expect(https.request.mostRecentCall.args[0].headers.Accept).toEqual('application/vnd.heroku+json; version=3');
       done();
     });
   });
@@ -23,7 +25,7 @@ describe('request', function() {
   });
 
   it('accepts a timeout', function(done) {
-    makeRequest('/apps', { timeout: 1 }, function(err, body) {
+    makeRequest('/apps', { timeout: 1 }, function(err) {
       expect(err.message).toEqual('Request took longer than 1ms to complete.');
       done();
     }, { timeout: 10 });
@@ -97,8 +99,8 @@ describe('request', function() {
 
       it('uses the defined port', function(done) {
         makeRequest('/apps', {}, function() {
-          expect(http.request.mostRecentCall.args[0].port).toEqual('8000');;
-          done()
+          expect(http.request.mostRecentCall.args[0].port).toEqual('8000');
+          done();
         });
       });
     });
@@ -106,8 +108,8 @@ describe('request', function() {
     describe('when a proxy port is not defined', function() {
       it('defaults to port 8080', function(done) {
         makeRequest('/apps', {}, function() {
-          expect(http.request.mostRecentCall.args[0].port).toEqual(8080);;
-          done()
+          expect(http.request.mostRecentCall.args[0].port).toEqual(8080);
+          done();
         });
       });
     });
@@ -124,7 +126,7 @@ describe('request', function() {
     it('makes a request to port 443', function(done) {
       makeRequest('/apps', {}, function() {
         expect(https.request.mostRecentCall.args[0].port).toEqual(443);
-        done()
+        done();
       });
     });
   });
@@ -133,26 +135,26 @@ describe('request', function() {
     it('sends a successful response to the callback', function(done) {
       makeRequest('/apps', {}, function(err, body) {
         expect(body).toEqual(JSON.parse('{ "message": "ok" }'));
-        done()
+        done();
       });
     });
 
     it('sends an error to the callback', function(done) {
-      makeRequest('/apps', {}, function(err, body) {
+      makeRequest('/apps', {}, function(err) {
         expect(err.message).toEqual('Expected response to be successful, got 404');
-        done()
+        done();
       }, { response: { statusCode: 404 } });
     });
 
     it('resolves a promise when successful', function(done) {
       makeRequest('/apps', {}).then(function(body) {
         expect(body).toEqual({ "message": "ok" });
-        done()
+        done();
       });
     });
 
     it('rejects a promise when there is an error on the request object', function() {
-      makeRequest('/apps', {}, function (err, res) {
+      makeRequest('/apps', {}, function(err) {
         expect(err.message).toEqual('there was an error');
       }, { emitError: 'there was an error' });
     });
@@ -160,7 +162,7 @@ describe('request', function() {
     it('rejects a promise when there is an error from an unexpected response', function(done) {
       makeRequest('/apps', {}, null, { response: { statusCode: 404 } }).fail(function(err) {
         expect(err.message).toEqual('Expected response to be successful, got 404');
-        done()
+        done();
       });
     });
   });
@@ -200,7 +202,7 @@ describe('request', function() {
         'Accept': 'application/vnd.heroku+json; version=3',
         'Content-type': 'application/json',
         'Range': 'id ]..; max=1000'
-      }
+      };
 
       makeRequest('/apps', { headers: { 'Arbitrary': 'header' } }, function() {
         expect(https.request.mostRecentCall.args[0].headers).toEqual(expectedHeaders);
@@ -214,27 +216,27 @@ describe('request', function() {
       makeRequest('/apps', {}, function(err) {
         expect(err.message).toEqual('Expected response to be successful, got 404');
         done();
-      }, { response: { statusCode: 404 } })
+      }, { response: { statusCode: 404 } });
     });
   });
 
   describe('handling Range headers', function() {
     it('sends a default Range header', function() {
-      makeRequest('/apps', {}, function (err, body) {
-        expect(https.request.mostRecentCall.args[0].headers['Range']).toEqual('id ]..; max=1000');
+      makeRequest('/apps', {}, function() {
+        expect(https.request.mostRecentCall.args[0].headers.Range).toEqual('id ]..; max=1000');
       });
     });
 
     describe('when receiving a Next-Range header', function() {
       it('sends the Next-Range header on the next request', function(done) {
-        makeRequest('/apps', {}, function (err, body) {
-          expect(https.request.mostRecentCall.args[0].headers['Range']).toEqual('id abcdefg..; max=1000');
+        makeRequest('/apps', {}, function() {
+          expect(https.request.mostRecentCall.args[0].headers.Range).toEqual('id abcdefg..; max=1000');
           done();
         }, { response: { headers: { 'next-range': 'id abcdefg..; max=1000' } } });
       });
 
       it('aggregates response bodies', function(done) {
-        makeRequest('/apps', {}, function (err, body) {
+        makeRequest('/apps', {}, function(err, body) {
           expect(body).toEqual([{ message: 'ok' }, { message: 'ok' }]);
           done();
         }, { returnArray: true, response: { headers: { 'next-range': 'id abcdefg..; max=1000' } } });
@@ -253,7 +255,7 @@ describe('request', function() {
     });
 
     it('sends an etag from the cache', function(done) {
-      makeRequest('/apps', {}, function(err, body) {
+      makeRequest('/apps', {}, function() {
         expect(https.request.mostRecentCall.args[0].headers['If-None-Match']).toEqual('123');
         done();
       }, { response: { statusCode: 304 } });
@@ -262,7 +264,7 @@ describe('request', function() {
     it('gets with a postfix', function(done) {
       spyOn(cache, 'get').andCallThrough();
 
-      makeRequest('/apps', { token: 'api-token' }, function(err, body) {
+      makeRequest('/apps', { token: 'api-token' }, function() {
         expect(cache.get).toHaveBeenCalledWith(encryptor.encrypt('/appsid ]..; max=1000api-token'), jasmine.any(Function));
         done();
       });
@@ -278,7 +280,7 @@ describe('request', function() {
     it('writes to the cache when necessary', function(done) {
       spyOn(cache, 'set');
 
-      makeRequest('/apps', { token: 'api-token' }, function(err, body) {
+      makeRequest('/apps', { token: 'api-token' }, function() {
         var expectedCache = JSON.stringify({
           body: { message: 'ok' },
           etag: '123'
@@ -292,7 +294,7 @@ describe('request', function() {
 });
 
 function makeRequest(path, options, callback, testOptions) {
-  testOptions || (testOptions = {});
+  testOptions = testOptions || {};
   options.path = path;
 
   spyOn(https, 'request').andCallFake(fakeRequest);
@@ -303,12 +305,12 @@ function makeRequest(path, options, callback, testOptions) {
       testOptions.response.headers['next-range'] = undefined;
     }
 
-    var req = new MockRequest(),
-        res = new MockResponse(testOptions.response || {});
+    var req = new MockRequest();
+    var res = new MockResponse(testOptions.response || {});
 
     requestCallback(res);
 
-    setTimeout(function () {
+    setTimeout(function() {
       if (testOptions.returnArray) {
         res.emit('data', '[{ "message": "ok" }]');
       } else {
@@ -326,7 +328,7 @@ function makeRequest(path, options, callback, testOptions) {
     return req;
   }
 
-  return Request.request(options, function (err, body) {
+  return Request.request(options, function(err, body) {
     if (callback) callback(err, body);
   });
-};
+}
