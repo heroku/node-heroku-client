@@ -10,6 +10,8 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
   - [Generators](#generators)
   - [HTTP Proxies](#http-proxies)
 - [Caching](#caching)
+  - [Caching with memjs](#caching-with-memjs)
+  - [Custom caching](#custom-caching)
 - [Contributing](#contributing)
   - [Updating resources](#updating-resources)
   - [Generating documentation](#generating-documentation)
@@ -198,7 +200,7 @@ To tell heroku-client to perform caching, call the `configure` function.
 
 Caching requires an encryption key to encrypt the results prior to caching.
 This must be set in the environment variable HEROKU_CLIENT_ENCRYPTION_SECRET.
-HEROKU_CLIENT_ENCRYPTION_SECRET` should be a long, random string of characters.
+`HEROKU_CLIENT_ENCRYPTION_SECRET` should be a long, random string of characters.
 heroku-client includes [`bin/secret`][bin_secret] as one way of generating
 values for this variable. **Do not publish this secret or commit it to source
 control. If it's compromised, flush your memcache and generate a new encryption
@@ -226,7 +228,7 @@ that memjs looks for is
 will work with any memcache server that speaks the binary protocol.
 
 ### Custom caching
-Alternatively you can specify a custom cache implementation. Your custom implementation should define `get(key, cb(err, value))` and `set(key, value)` functions.
+Alternatively you can specify a custom cache implementation. Your custom implementation must define `get(key, cb(err, value))` and `set(key, value)` functions.
 
 Here's a sample implementation that uses Redis to cache API responses for 5-minutes each:
 
