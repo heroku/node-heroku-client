@@ -3,7 +3,8 @@
 set -e
 
 echo "Fetching latest API schema..."
-echo -n "module.exports = " > lib/schema.js
+echo "// jshint ignore:start" > lib/schema.js
+echo -n "module.exports = " >> lib/schema.js
 curl -s -H "Accept: application/vnd.heroku+json; version=3" https://api.heroku.com/schema >> lib/schema.js
 echo "" >> lib/schema.js
 
