@@ -206,8 +206,8 @@ values for this variable. **Do not publish this secret or commit it to source
 control. If it's compromised, flush your memcache and generate a new encryption
 secret.**
 
-
 ### Caching with memjs
+
 If `cache` is the boolean value `true` then heroku-client will use `memjs` for caching.
 
 Example:
@@ -228,14 +228,15 @@ that memjs looks for is
 will work with any memcache server that speaks the binary protocol.
 
 ### Custom caching
+
 Alternatively you can specify a custom cache implementation. Your custom implementation must define `get(key, cb(err, value))` and `set(key, value)` functions.
 
 Here's a sample implementation that uses Redis to cache API responses for 5-minutes each:
 
 ```javascript
-var redis = require('redis');
-var client = redis.createClient();
-var cacheTtlSecs = 5 * 60; // 5-minutes
+var redis        = require('redis');
+var client       = redis.createClient();
+var cacheTtlSecs = 5 * 60; // 5 minutes
 
 var redisCache = {
   get: function(key, cb) {
@@ -243,6 +244,7 @@ var redisCache = {
     var redisKey = 'heroku:api:' + key;
     client.GET(redisKey, cb);
   },
+
   set: function(key, value) {
     // Namespace the keys:
     var redisKey = 'heroku:api:' + key;
