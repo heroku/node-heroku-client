@@ -1,6 +1,6 @@
 # plan
 
-Plans represent different configurations of add-ons that may be added to apps.
+Plans represent different configurations of add-ons that may be added to apps. Endpoints under add-on services can be accessed without authentication.
 
 ## Actions
 

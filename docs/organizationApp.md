@@ -30,33 +30,33 @@ GET | /organizations/{organization_name}/apps
 
 ### `info`
 
-`heroku.organizations().apps({app_id_or_name}).info({callback});`
+`heroku.organizations().apps({app_name}).info({callback});`
 
 Method | Path
 --- | ---
-GET | /organizations/apps/{app_id_or_name}
+GET | /organizations/apps/{app_name}
 
 ### `updateLocked`
 
-`heroku.organizations().apps({app_id_or_name}).updateLocked({attributes}, {callback});`
+`heroku.organizations().apps({app_name}).updateLocked({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /organizations/apps/{app_id_or_name}
+PATCH | /organizations/apps/{app_name}
 
 ### `transferToAccount`
 
-`heroku.organizations().apps({app_id_or_name}).transferToAccount({attributes}, {callback});`
+`heroku.organizations().apps({app_name}).transferToAccount({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /organizations/apps/{app_id_or_name}
+PATCH | /organizations/apps/{app_name}
 
 ### `transferToOrganization`
 
-`heroku.organizations().apps({app_id_or_name}).transferToOrganization({attributes}, {callback});`
+`heroku.organizations().apps({app_name}).transferToOrganization({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /organizations/apps/{app_id_or_name}
+PATCH | /organizations/apps/{app_name}
 

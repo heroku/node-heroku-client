@@ -1,6 +1,6 @@
 # addon-service
 
-Add-on services represent add-ons that may be provisioned for apps.
+Add-on services represent add-ons that may be provisioned for apps. Endpoints under add-on services can be accessed without authentication.
 
 ## Actions
 
