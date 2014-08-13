@@ -20,7 +20,7 @@ describe('request', function() {
 
   it('makes a request to a given path', function(done) {
     makeRequest('/apps', {}, function() {
-      expect(https.request.mostRecentCall.args[0].path).toEqual("/apps");
+      expect(https.request.mostRecentCall.args[0].path).toEqual('/apps');
       done();
     });
   });
@@ -149,7 +149,7 @@ describe('request', function() {
 
     it('resolves a promise when successful', function(done) {
       makeRequest('/apps', {}).then(function(body) {
-        expect(body).toEqual({ "message": "ok" });
+        expect(body).toEqual({ 'message': 'ok' });
         done();
       });
     });
@@ -246,13 +246,13 @@ describe('request', function() {
   });
 
   describe('caching', function() {
-    var encryptor = require('simple-encryptor')(process.env.HEROKU_CLIENT_ENCRYPTION_SECRET);
-    var cache = new MockCache();
+    var secret    = process.env.HEROKU_CLIENT_ENCRYPTION_SECRET;
+    var encryptor = require('simple-encryptor')(secret);
+    var cache     = new MockCache();
 
-    /*
     beforeEach(function() {
       spyOn(memjs.Client, 'create').andReturn(cache);
-      Request.connectCacheClient({cache: cache});
+      Request.connectCacheClient({ cache: cache, key: secret });
     });
 
     it('sends an etag from the cache', function(done) {
@@ -266,7 +266,8 @@ describe('request', function() {
       spyOn(cache, 'get').andCallThrough();
 
       makeRequest('/apps', { token: 'api-token' }, function() {
-        expect(cache.get).toHaveBeenCalledWith(encryptor.encrypt('/appsid ]..; max=1000api-token'), jasmine.any(Function));
+        var key = JSON.stringify(['/apps', 'id ]..; max=1000', 'api-token']);
+        expect(cache.get).toHaveBeenCalledWith(encryptor.hmac(key), jasmine.any(Function));
         done();
       });
     });
@@ -282,16 +283,18 @@ describe('request', function() {
       spyOn(cache, 'set');
 
       makeRequest('/apps', { token: 'api-token' }, function() {
-        var expectedCache = JSON.stringify({
+        var expectedKey = JSON.stringify(['/apps', 'id ]..; max=1000', 'api-token']);
+
+        var expectedValue = {
           body: { message: 'ok' },
           etag: '123'
-        });
+        };
 
-        expect(cache.set).toHaveBeenCalledWith(encryptor.encrypt('/appsid ]..; max=1000api-token'), encryptor.encrypt(expectedCache));
+        expect(cache.set).toHaveBeenCalledWith(encryptor.hmac(expectedKey), jasmine.any(String));
+        expect(encryptor.decrypt(cache.set.mostRecentCall.args[1])).toEqual(expectedValue);
         done();
       }, { response: { headers: { etag: '123' } } });
     });
-    */
   });
 });
 
@@ -324,13 +327,13 @@ function makeRequest(path, options, callback, testOptions) {
         req.abort();
       }
 
-      if (!req.isAborted) res.emit('end');
+      if (!req.isAborted) { res.emit('end'); }
     }, testOptions.timeout || 0);
 
     return req;
   }
 
   return Request.request(options, function(err, body) {
-    if (callback) callback(err, body);
+    if (callback) { callback(err, body); }
   });
 }

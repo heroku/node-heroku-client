@@ -9,10 +9,13 @@ function MockResponse(options) {
   this.headers = {};
 
   for (var key in options) {
-    this[key] = options[key];
+    if (options.hasOwnProperty(key)) {
+      this[key] = options[key];
+    }
   }
 }
 
 for (var key in Stream.prototype) {
+  // jshint -W089
   MockResponse.prototype[key] = Stream.prototype[key];
 }

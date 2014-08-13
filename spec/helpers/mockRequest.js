@@ -1,14 +1,15 @@
 'use strict';
 
-var EventEmitter = require("events").EventEmitter;
+var EventEmitter = require('events').EventEmitter;
 
 module.exports = MockRequest;
 
-function MockRequest() {
-}
+function MockRequest() {}
 
 for (var key in EventEmitter.prototype) {
-  MockRequest.prototype[key] = EventEmitter.prototype[key];
+  if (EventEmitter.prototype.hasOwnProperty(key)) {
+    MockRequest.prototype[key] = EventEmitter.prototype[key];
+  }
 }
 
 MockRequest.prototype.write = function(body) {
