@@ -2,7 +2,7 @@
 
 module.exports = MockCache;
 
-var encryptor = require('../../lib/encryptor');
+var encryptor = require('simple-encryptor')(process.env.HEROKU_CLIENT_ENCRYPTION_SECRET);
 
 function MockCache() {
 }
