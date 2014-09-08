@@ -35,10 +35,10 @@
     "inflection": "~1.2.6",
     "concat-stream": "~1.1.0",
     "path-proxy": "~1.0",
-    "simple-encryptor": "^1.0.2"
+    "simple-encryptor": "^1.0.2",
+    "logfmt": "^1.1.2"
   },
   "jshintConfig": {
-    "camelcase": true,
     "curly": true,
     "eqeqeq": true,
     "forin": true,
