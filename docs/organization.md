@@ -12,6 +12,14 @@ Method | Path
 --- | ---
 GET | /organizations
 
+### `info`
+
+`heroku.organizations({organization_name}).info({callback});`
+
+Method | Path
+--- | ---
+GET | /organizations/{organization_name}
+
 ### `update`
 
 `heroku.organizations({organization_name}).update({attributes}, {callback});`
