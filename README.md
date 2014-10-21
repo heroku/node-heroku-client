@@ -115,7 +115,8 @@ heroku.request({
   path: '/apps',
   headers: {
     'Foo': 'Bar'
-  }
+  },
+  parseJSON: false
 }, function (err, responseBody) {
 });
 ```

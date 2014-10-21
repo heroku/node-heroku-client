@@ -190,6 +190,20 @@ describe('request', function() {
       });
     });
 
+    it('parses JSON by default', function(done) {
+      makeRequest('/apps', {}, function(err, body) {
+        expect(body).toEqual({ message: 'ok' });
+        done();
+      });
+    });
+
+    it('can accept `false` to parseJSON', function(done) {
+      makeRequest('/apps', { parseJSON: false }, function(err, body) {
+        expect(body).toEqual('{ "message": "ok" }');
+        done();
+      });
+    });
+
     it('accepts a host', function(done) {
       makeRequest('/apps', { host: 'api.example.com' }, function() {
         expect(https.request.mostRecentCall.args[0].host).toEqual('api.example.com');
