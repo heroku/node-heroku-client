@@ -176,6 +176,13 @@ describe('request', function() {
       });
     });
 
+    it('uses auth if provided explicitly', function(done) {
+      makeRequest('/apps', { auth: 'user:pass'}, function() {
+        expect(https.request.mostRecentCall.args[0].auth).toEqual('user:pass');
+        done();
+      });
+    });
+
     it('GETs by default', function(done) {
       makeRequest('/apps', {}, function() {
         expect(https.request.mostRecentCall.args[0].method).toEqual('GET');
