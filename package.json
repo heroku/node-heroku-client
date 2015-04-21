@@ -13,17 +13,17 @@
     "Sehrope Sarkuni"
   ],
   "dependencies": {
-    "concat-stream": "~1.1.0",
-    "inflection": "~1.2.6",
-    "lazy.js": "~0.3.2",
+    "concat-stream": "^1.4.8",
+    "inflection": "^1.7.0",
+    "lazy.js": "^0.4.0",
     "logfmt": "^1.1.2",
-    "memjs": "~0.6.0",
-    "path-proxy": "~1.0",
-    "q": "~0.9.6",
+    "memjs": "^0.8.5",
+    "path-proxy": "^1.0",
+    "q": "^1.2.0",
     "simple-encryptor": "^1.0.2"
   },
   "devDependencies": {
-    "jasmine-node": "~1.14.5",
+    "jasmine-node": "^1.14.5",
     "jshint": "^2.5.3"
   },
   "jshintConfig": {
