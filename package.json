@@ -1,52 +1,35 @@
 {
   "name": "heroku-client",
-  "version": "1.9.1",
   "description": "A wrapper for the Heroku v3 API",
-  "main": "./lib/heroku.js",
-  "scripts": {
-    "test": "jasmine-node spec && jshint lib spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-heroku-client"
-  },
-  "keywords": [
-    "heroku"
-  ],
+  "version": "1.9.1",
   "author": "Jonathan Clem",
+  "bugs": {
+    "url": "https://github.com/heroku/node-heroku-client/issues"
+  },
   "contributors": [
     "Jonathan Clem",
     "Ray McDermott",
     "Bob Zoller",
     "Sehrope Sarkuni"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/heroku/node-heroku-client/issues"
+  "dependencies": {
+    "concat-stream": "~1.1.0",
+    "inflection": "~1.2.6",
+    "lazy.js": "~0.3.2",
+    "logfmt": "^1.1.2",
+    "memjs": "~0.6.0",
+    "path-proxy": "~1.0",
+    "q": "~0.9.6",
+    "simple-encryptor": "^1.0.2"
   },
   "devDependencies": {
     "jasmine-node": "~1.14.5",
     "jshint": "^2.5.3"
   },
-  "dependencies": {
-    "q": "~0.9.6",
-    "lazy.js": "~0.3.2",
-    "memjs": "~0.6.0",
-    "inflection": "~1.2.6",
-    "concat-stream": "~1.1.0",
-    "path-proxy": "~1.0",
-    "simple-encryptor": "^1.0.2",
-    "logfmt": "^1.1.2"
-  },
   "jshintConfig": {
     "curly": true,
     "eqeqeq": true,
     "forin": true,
-    "globalstrict": true,
-    "node": true,
-    "quotmark": "single",
-    "undef": true,
-    "unused": true,
     "globals": {
       "afterEach": false,
       "before": false,
@@ -56,6 +39,23 @@
       "it": false,
       "jasmine": false,
       "spyOn": false
-    }
+    },
+    "globalstrict": true,
+    "node": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": true
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "license": "MIT",
+  "main": "./lib/heroku.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-heroku-client"
+  },
+  "scripts": {
+    "test": "jasmine-node spec && jshint lib spec"
   }
 }
