@@ -278,7 +278,7 @@ release.
 ### Generating documentation
 
 Documentation for heroku-client is auto-generated from
-[the API schema](https://github.com/jclem/node-heroku-client/blob/development/lib/schema.js).
+[the API schema](https://github.com/jclem/node-heroku-client/blob/master/lib/schema.js).
 
 Docs are generated like so:
 
@@ -300,7 +300,7 @@ $ npm test
 [platform-api-reference]: https://devcenter.heroku.com/articles/platform-api-reference
 [q]: https://github.com/kriskowal/q
 [memjs]: https://github.com/alevy/memjs
-[bin_secret]: https://github.com/heroku/node-heroku-client/blob/development/bin/secret
+[bin_secret]: https://github.com/heroku/node-heroku-client/blob/master/bin/secret
 [memcachier]: https://www.memcachier.com
 [jasmine-node]: https://github.com/mhevery/jasmine-node
 [generators]: https://github.com/JustinDrake/node-es6-examples#generators
