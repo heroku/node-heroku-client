@@ -278,7 +278,7 @@ release.
 ### Generating documentation
 
 Documentation for heroku-client is auto-generated from
-[the API schema](https://github.com/jclem/node-heroku-client/blob/master/lib/schema.js).
+[the API schema](https://github.com/heroku/node-heroku-client/blob/master/lib/schema.js).
 
 Docs are generated like so:
 
