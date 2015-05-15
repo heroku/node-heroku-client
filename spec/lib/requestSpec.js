@@ -222,6 +222,7 @@ describe('request', function() {
       var expectedHeaders = {
         'Arbitrary': 'header',
         'Accept': 'application/vnd.heroku+json; version=3',
+        'User-Agent': 'node-heroku-client/'+require('../../package.json').version,
         'Content-type': 'application/json',
         'Range': 'id ]..; max=1000'
       };
