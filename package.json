@@ -17,10 +17,8 @@
     "inflection": "^1.7.0",
     "lazy.js": "^0.4.0",
     "logfmt": "^1.1.2",
-    "memjs": "^0.8.5",
     "path-proxy": "^1.0",
-    "q": "^1.2.0",
-    "simple-encryptor": "^1.0.2"
+    "q": "^1.2.0"
   },
   "devDependencies": {
     "jasmine-node": "^1.14.5",
