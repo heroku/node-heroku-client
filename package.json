@@ -15,7 +15,6 @@
   "dependencies": {
     "concat-stream": "^1.4.8",
     "inflection": "^1.7.0",
-    "lazy.js": "^0.4.0",
     "logfmt": "^1.1.2",
     "path-proxy": "^1.0",
     "q": "^1.2.0"
