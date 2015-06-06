@@ -13,7 +13,6 @@
     "Sehrope Sarkuni"
   ],
   "dependencies": {
-    "concat-stream": "^1.4.8",
     "inflection": "^1.7.0",
     "logfmt": "^1.1.2",
     "path-proxy": "^1.0",
