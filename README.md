@@ -10,7 +10,6 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
   - [Generators](#generators)
   - [HTTP Proxies](#http-proxies)
 - [Caching](#caching)
-  - [Caching with memjs](#caching-with-memjs)
   - [Custom caching](#custom-caching)
 - [Contributing](#contributing)
   - [Updating resources](#updating-resources)
