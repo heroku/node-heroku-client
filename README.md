@@ -184,6 +184,66 @@ If you'd like to make requests through an HTTP proxy, set the
 will then make requests through this proxy instead of directly to
 api.heroku.com.
 
+## Caching
+
+heroku-client can optionally perform caching of API requests.
+
+heroku-client will cache any response from the Heroku API that comes with an
+`ETag` header, and each response is cached individually (i.e. even though the
+client might make multiple calls for a user's apps and then aggregate them into
+a single JSON array, each required API call is individually cached). For each
+API request it performs, heroku-client sends an `If-None-Match` header if there
+is a cached response for the API request. If API returns a 304 response code,
+heroku-client returns the cached response. Otherwise, it writes the new API
+response to the cache and returns that.
+
+To tell heroku-client to perform caching, add a config object to the options
+with store and encryptor objects. These can be instances of memjs and
+simple-encryptor, respectively.
+
+```js
+var Heroku    = require('heroku-client');
+var memjs     = require('memjs').Client.create();
+var encryptor = require('simple-encryptor')(SECRET_CACHE_KEY);
+var hk        = new Heroku({
+  cache: { store: memjs, encryptor: encryptor }
+});
+```
+
+### Custom caching
+
+Alternatively you can specify a custom cache implementation. Your custom implementation must define `get(key, cb(err, value))` and `set(key, value)` functions.
+
+Here's a sample implementation that uses Redis to cache API responses for 5-minutes each:
+
+```javascript
+var redis        = require('redis');
+var client       = redis.createClient();
+var cacheTtlSecs = 5 * 60; // 5 minutes
+
+var redisStore = {
+  get: function(key, cb) {
+    // Namespace the keys:
+    var redisKey = 'heroku:api:' + key;
+    client.GET(redisKey, cb);
+  },
+
+  set: function(key, value) {
+    // Namespace the keys:
+    var redisKey = 'heroku:api:' + key;
+    client.SETEX(redisKey, cacheTtlSecs, value, function(err) {
+      // ignore errors on set
+    });
+  }
+};
+
+var encryptor = require('simple-encryptor')(SECRET_CACHE_KEY);
+var Heroku = require('heroku-client');
+var hk     = new Heroku({
+  cache: {store: redisStore, encryptor: encryptor}
+});
+```
+
 ## Contributing
 
 ### Updating resources

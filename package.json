@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "jasmine-node": "^1.14.5",
-    "jshint": "^2.5.3"
+    "jshint": "^2.5.3",
+    "simple-encryptor": "^1.0.3"
   },
   "jshintConfig": {
     "curly": true,
