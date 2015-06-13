@@ -238,8 +238,8 @@ var redisStore = {
 };
 
 var encryptor = require('simple-encryptor')(SECRET_CACHE_KEY);
-var Heroku = require('heroku-client');
-var hk     = new Heroku({
+var Heroku    = require('heroku-client');
+var hk        = new Heroku({
   cache: {store: redisStore, encryptor: encryptor}
 });
 ```
