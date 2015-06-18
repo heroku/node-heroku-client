@@ -10,7 +10,6 @@ A wrapper around the [v3 Heroku API][platform-api-reference].
   - [Generators](#generators)
   - [HTTP Proxies](#http-proxies)
 - [Caching](#caching)
-  - [Caching with memjs](#caching-with-memjs)
   - [Custom caching](#custom-caching)
 - [Contributing](#contributing)
   - [Updating resources](#updating-resources)
@@ -197,36 +196,18 @@ is a cached response for the API request. If API returns a 304 response code,
 heroku-client returns the cached response. Otherwise, it writes the new API
 response to the cache and returns that.
 
-To tell heroku-client to perform caching, call the `configure` function.
+To tell heroku-client to perform caching, add a config object to the options
+with store and encryptor objects. These can be instances of memjs and
+simple-encryptor, respectively.
 
-Caching requires an encryption key to encrypt the results prior to caching.
-This must be set in the environment variable HEROKU_CLIENT_ENCRYPTION_SECRET.
-`HEROKU_CLIENT_ENCRYPTION_SECRET` should be a long, random string of characters.
-heroku-client includes [`bin/secret`][bin_secret] as one way of generating
-values for this variable. **Do not publish this secret or commit it to source
-control. If it's compromised, flush your memcache and generate a new encryption
-secret.**
-
-### Caching with memjs
-
-If `cache` is the boolean value `true` then heroku-client will use `memjs` for caching.
-
-Example:
-
-```javascript
-var Heroku = require('heroku').configure({ cache: true });
+```js
+var Heroku    = require('heroku-client');
+var memjs     = require('memjs').Client.create();
+var encryptor = require('simple-encryptor')(SECRET_CACHE_KEY);
+var hk        = new Heroku({
+  cache: { store: memjs, encryptor: encryptor }
+});
 ```
-
-This requires a `MEMCACHIER_SERVERS` environment variable, as well as a
-`HEROKU_CLIENT_ENCRYPTION_SECRET` environment variable that heroku-client uses
-to build cache keys and encrypt cache contents.
-
-`MEMCACHIER_SERVERS` can be a single `hostname:port` memache address, or a
-comma-separated list of memcache addresses, e.g.
-`example.com:11211,example.net:11211`. Note that while the environment variable
-that memjs looks for is
-[named for the MemCachier service it was originally built for][memcachier], it
-will work with any memcache server that speaks the binary protocol.
 
 ### Custom caching
 
@@ -239,7 +220,7 @@ var redis        = require('redis');
 var client       = redis.createClient();
 var cacheTtlSecs = 5 * 60; // 5 minutes
 
-var redisCache = {
+var redisStore = {
   get: function(key, cb) {
     // Namespace the keys:
     var redisKey = 'heroku:api:' + key;
@@ -255,9 +236,10 @@ var redisCache = {
   }
 };
 
-var Heroku = require('heroku-client');
-Heroku.configure({
-  cache: redisCache
+var encryptor = require('simple-encryptor')(SECRET_CACHE_KEY);
+var Heroku    = require('heroku-client');
+var hk        = new Heroku({
+  cache: {store: redisStore, encryptor: encryptor}
 });
 ```
 

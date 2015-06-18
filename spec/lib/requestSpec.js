@@ -1,14 +1,11 @@
 'use strict';
 
-process.env.HEROKU_CLIENT_ENCRYPTION_SECRET = 'abcd1234abcd1234';
-
 var http         = require('http');
 var https        = require('https');
 var Request      = require('../../lib/request');
-var memjs        = require('memjs');
-var MockCache    = require('../helpers/mockCache');
 var MockRequest  = require('../helpers/mockRequest');
 var MockResponse = require('../helpers/mockResponse');
+var MockCache    = require('../helpers/mockCache');
 
 describe('request', function() {
   it('uses the v3 API', function(done) {
@@ -268,43 +265,40 @@ describe('request', function() {
   });
 
   describe('caching', function() {
-    var secret    = process.env.HEROKU_CLIENT_ENCRYPTION_SECRET;
-    var encryptor = require('simple-encryptor')(secret);
-    var cache     = new MockCache();
-
-    beforeEach(function() {
-      spyOn(memjs.Client, 'create').andReturn(cache);
-      Request.connectCacheClient({ cache: cache, key: secret });
-    });
+    var key = 'SECRET_CACHE_KEY';
+    var cache = {
+      store:  new MockCache(key),
+      encryptor: require('simple-encryptor')(key)
+    };
 
     it('sends an etag from the cache', function(done) {
-      makeRequest('/apps', {}, function() {
+      makeRequest('/apps', {cache: cache}, function() {
         expect(https.request.mostRecentCall.args[0].headers['If-None-Match']).toEqual('123');
         done();
       }, { response: { statusCode: 304 } });
     });
 
     it('gets with a postfix', function(done) {
-      spyOn(cache, 'get').andCallThrough();
+      spyOn(cache.store, 'get').andCallThrough();
 
-      makeRequest('/apps', { token: 'api-token' }, function() {
+      makeRequest('/apps', { cache: cache, token: 'api-token' }, function() {
         var key = JSON.stringify(['/apps', 'id ]..; max=1000', 'api-token']);
-        expect(cache.get).toHaveBeenCalledWith(encryptor.hmac(key), jasmine.any(Function));
+        expect(cache.store.get).toHaveBeenCalledWith(cache.encryptor.hmac(key), jasmine.any(Function));
         done();
       });
     });
 
     it('returns a cached body', function(done) {
-      makeRequest('/apps', {}, function(err, body) {
+      makeRequest('/apps', {cache: cache}, function(err, body) {
         expect(body).toEqual({ cachedFoo: 'bar' });
         done();
       }, { response: { statusCode: 304 } });
     });
 
     it('writes to the cache when necessary', function(done) {
-      spyOn(cache, 'set');
+      spyOn(cache.store, 'set');
 
-      makeRequest('/apps', { token: 'api-token' }, function() {
+      makeRequest('/apps', { cache: cache, token: 'api-token' }, function() {
         var expectedKey = JSON.stringify(['/apps', 'id ]..; max=1000', 'api-token']);
 
         var expectedValue = {
@@ -312,8 +306,8 @@ describe('request', function() {
           etag: '123'
         };
 
-        expect(cache.set).toHaveBeenCalledWith(encryptor.hmac(expectedKey), jasmine.any(String));
-        expect(encryptor.decrypt(cache.set.mostRecentCall.args[1])).toEqual(expectedValue);
+        expect(cache.store.set).toHaveBeenCalledWith(cache.encryptor.hmac(expectedKey), jasmine.any(String));
+        expect(cache.encryptor.decrypt(cache.store.set.mostRecentCall.args[1])).toEqual(expectedValue);
         done();
       }, { response: { headers: { etag: '123' } } });
     });
