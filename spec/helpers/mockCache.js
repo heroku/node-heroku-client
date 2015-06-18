@@ -2,15 +2,15 @@
 
 module.exports = MockCache;
 
-var encryptor = require('simple-encryptor')(process.env.HEROKU_CLIENT_ENCRYPTION_SECRET);
-
-function MockCache() {}
+function MockCache(key) {
+  this.encryptor = require('simple-encryptor')(key);
+}
 
 MockCache.prototype.get = function(key, callback) {
   var body  = { cachedFoo: 'bar' };
   var value = { etag: '123', body: body };
 
-  value = encryptor.encrypt(value);
+  value = this.encryptor.encrypt(value);
   callback(null, value);
 };
 
