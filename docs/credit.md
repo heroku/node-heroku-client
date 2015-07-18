@@ -4,6 +4,14 @@ A credit represents value that will be used up before further charges are assign
 
 ## Actions
 
+### `create`
+
+`heroku.account().credits().create({attributes}, {callback});`
+
+Method | Path
+--- | ---
+POST | /account/credits
+
 ### `info`
 
 `heroku.account().credits({credit_id}).info({callback});`

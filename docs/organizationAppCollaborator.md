@@ -28,6 +28,14 @@ Method | Path
 --- | ---
 GET | /organizations/apps/{app_name}/collaborators/{collaborator_email}
 
+### `update`
+
+`heroku.organizations().apps({app_name}).collaborators({collaborator_email}).update({attributes}, {callback});`
+
+Method | Path
+--- | ---
+PATCH | /organizations/apps/{app_name}/collaborators/{collaborator_email}
+
 ### `list`
 
 `heroku.organizations().apps({app_name}).collaborators().list({callback});`
