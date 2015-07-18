@@ -36,3 +36,11 @@ Method | Path
 --- | ---
 GET | /oauth/authorizations
 
+### `regenerate`
+
+`heroku.oauth().authorizations({oauth-authorization_id}).actions().regenerateTokens().regenerate({attributes}, {callback});`
+
+Method | Path
+--- | ---
+POST | /oauth/authorizations/{oauth-authorization_id}/actions/regenerate-tokens
+
