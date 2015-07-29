@@ -36,3 +36,51 @@ Method | Path
 --- | ---
 PATCH | /account
 
+### `delete`
+
+`heroku.account().delete({callback});`
+
+Method | Path
+--- | ---
+DELETE | /account
+
+### `info`
+
+`heroku.users({account_email_or_id}).info({callback});`
+
+Method | Path
+--- | ---
+GET | /users/{account_email_or_id}
+
+### `update`
+
+`heroku.users({account_email_or_id}).update({attributes}, {callback});`
+
+Method | Path
+--- | ---
+PATCH | /users/{account_email_or_id}
+
+### `changeEmail`
+
+`heroku.users({account_email_or_id}).changeEmail({attributes}, {callback});`
+
+Method | Path
+--- | ---
+PATCH | /users/{account_email_or_id}
+
+### `changePassword`
+
+`heroku.users({account_email_or_id}).changePassword({attributes}, {callback});`
+
+Method | Path
+--- | ---
+PATCH | /users/{account_email_or_id}
+
+### `delete`
+
+`heroku.users({account_email_or_id}).delete({callback});`
+
+Method | Path
+--- | ---
+DELETE | /users/{account_email_or_id}
+
