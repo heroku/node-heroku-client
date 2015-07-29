@@ -30,7 +30,23 @@ GET | /apps/{app_id_or_name}/addons/{addon_id_or_name}
 
 ### `list`
 
-`heroku.apps({app_id_or_name}).addons().list({callback});`
+`heroku.addons().list({callback});`
+
+Method | Path
+--- | ---
+GET | /addons
+
+### `info`
+
+`heroku.addons({addon_id_or_name}).info({callback});`
+
+Method | Path
+--- | ---
+GET | /addons/{addon_id_or_name}
+
+### `listByApp`
+
+`heroku.apps({app_id_or_name}).addons().listByApp({callback});`
 
 Method | Path
 --- | ---
