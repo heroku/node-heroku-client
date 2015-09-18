@@ -12,3 +12,11 @@ Method | Path
 --- | ---
 POST | /oauth/tokens
 
+### `delete`
+
+`heroku.oauth().tokens({oauth-token_id}).delete({callback});`
+
+Method | Path
+--- | ---
+DELETE | /oauth/tokens/{oauth-token_id}
+

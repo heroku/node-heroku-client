@@ -1,4 +1,4 @@
-# invoice_address
+# invoice-address
 
 An invoice address represents the address that should be listed on an invoice.
 

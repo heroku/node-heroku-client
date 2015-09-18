@@ -1,6 +1,6 @@
 # buildpack-installation
 
-An buildpack installtion represents a buildpack that will be run against an app.
+A buildpack installation represents a buildpack that will be run against an app.
 
 ## Actions
 
