@@ -1,6 +1,6 @@
 # addon
 
-Add-ons represent add-ons that have been provisioned for an app.
+Add-ons represent add-ons that have been provisioned and attached to one or more apps.
 
 ## Actions
 
