@@ -14,11 +14,11 @@ PUT | /organizations/{organization_name}/members
 
 ### `delete`
 
-`heroku.organizations({organization_name}).members({organization-member_email}).delete({callback});`
+`heroku.organizations({organization_name}).members({app_email_or_id}).delete({callback});`
 
 Method | Path
 --- | ---
-DELETE | /organizations/{organization_name}/members/{organization-member_email}
+DELETE | /organizations/{organization_name}/members/{app_email_or_id}
 
 ### `list`
 

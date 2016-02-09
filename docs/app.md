@@ -36,6 +36,14 @@ Method | Path
 --- | ---
 GET | /apps
 
+### `listOwnedAndCollaborated`
+
+`heroku.users({account_email_or_id_or_self}).apps().listOwnedAndCollaborated({callback});`
+
+Method | Path
+--- | ---
+GET | /users/{account_email_or_id_or_self}/apps
+
 ### `update`
 
 `heroku.apps({app_id_or_name}).update({attributes}, {callback});`
