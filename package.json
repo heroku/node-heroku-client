@@ -37,7 +37,6 @@
       "jasmine": false,
       "spyOn": false
     },
-    "globalstrict": true,
     "node": true,
     "quotmark": "single",
     "undef": true,
