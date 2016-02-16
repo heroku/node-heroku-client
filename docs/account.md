@@ -46,41 +46,41 @@ DELETE | /account
 
 ### `info`
 
-`heroku.users({account_email_or_id}).info({callback});`
+`heroku.users({account_email_or_id_or_self}).info({callback});`
 
 Method | Path
 --- | ---
-GET | /users/{account_email_or_id}
+GET | /users/{account_email_or_id_or_self}
 
 ### `update`
 
-`heroku.users({account_email_or_id}).update({attributes}, {callback});`
+`heroku.users({account_email_or_id_or_self}).update({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /users/{account_email_or_id}
+PATCH | /users/{account_email_or_id_or_self}
 
 ### `changeEmail`
 
-`heroku.users({account_email_or_id}).changeEmail({attributes}, {callback});`
+`heroku.users({account_email_or_id_or_self}).changeEmail({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /users/{account_email_or_id}
+PATCH | /users/{account_email_or_id_or_self}
 
 ### `changePassword`
 
-`heroku.users({account_email_or_id}).changePassword({attributes}, {callback});`
+`heroku.users({account_email_or_id_or_self}).changePassword({attributes}, {callback});`
 
 Method | Path
 --- | ---
-PATCH | /users/{account_email_or_id}
+PATCH | /users/{account_email_or_id_or_self}
 
 ### `delete`
 
-`heroku.users({account_email_or_id}).delete({callback});`
+`heroku.users({account_email_or_id_or_self}).delete({callback});`
 
 Method | Path
 --- | ---
-DELETE | /users/{account_email_or_id}
+DELETE | /users/{account_email_or_id_or_self}
 
