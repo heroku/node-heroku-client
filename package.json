@@ -26,6 +26,9 @@
     "nyc": "6.4.2",
     "standard": "7.0.1"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "keywords": [
     "heroku"
   ],
