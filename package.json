@@ -8,6 +8,7 @@
   },
   "contributors": [
     "Jonathan Clem",
+    "Jeff Dickey",
     "Ray McDermott",
     "Bob Zoller",
     "Sehrope Sarkuni"
@@ -19,41 +20,20 @@
     "tunnel-agent": "^0.4.0"
   },
   "devDependencies": {
+    "ava": "0.14.0",
     "codecov": "1.0.1",
-    "jasmine-node": "^1.14.5",
-    "jshint": "^2.5.3",
     "nyc": "6.4.2",
-    "simple-encryptor": "^1.0.3"
-  },
-  "jshintConfig": {
-    "curly": true,
-    "eqeqeq": true,
-    "forin": true,
-    "globals": {
-      "afterEach": false,
-      "before": false,
-      "beforeEach": false,
-      "describe": false,
-      "expect": false,
-      "it": false,
-      "jasmine": false,
-      "spyOn": false
-    },
-    "node": true,
-    "quotmark": "single",
-    "undef": true,
-    "unused": true
+    "standard": "7.0.1"
   },
   "keywords": [
     "heroku"
   ],
   "license": "MIT",
-  "main": "./lib/heroku.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/heroku/node-heroku-client"
   },
   "scripts": {
-    "test": "nyc jasmine-node spec && jshint lib spec"
+    "test": "nyc ava && standard"
   }
 }
