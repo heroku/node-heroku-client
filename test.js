@@ -57,3 +57,15 @@ test('put /apps', t => {
   return heroku.put('/apps', {body: {name: 'myapp'}})
   .then(() => api.done())
 })
+
+test('non-http', t => {
+  let api = nock('http://api.heroku.com')
+  .get('/apps')
+  .reply(200, [{name: 'myapp'}])
+
+  return heroku.get('/apps', {host: 'http://api.heroku.com'})
+  .then(apps => {
+    t.is(apps[0].name, 'myapp')
+  })
+  .then(() => api.done())
+})
