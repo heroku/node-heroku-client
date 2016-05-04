@@ -19,8 +19,10 @@
     "tunnel-agent": "^0.4.0"
   },
   "devDependencies": {
+    "codecov": "1.0.1",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.5.3",
+    "nyc": "6.4.2",
     "simple-encryptor": "^1.0.3"
   },
   "jshintConfig": {
@@ -52,6 +54,6 @@
     "url": "https://github.com/heroku/node-heroku-client"
   },
   "scripts": {
-    "test": "jasmine-node spec && jshint lib spec"
+    "test": "nyc jasmine-node spec && jshint lib spec"
   }
 }
