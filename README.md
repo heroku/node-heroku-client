@@ -1,4 +1,7 @@
-# heroku-client [![Build Status](https://travis-ci.org/heroku/node-heroku-client.png?branch=master)](https://travis-ci.org/heroku/node-heroku-client)
+# heroku-client
+
+[![Build Status](https://travis-ci.org/heroku/node-heroku-client.png?branch=master)](https://travis-ci.org/heroku/node-heroku-client)
+[![codecov](https://codecov.io/gh/heroku/node-heroku-client/branch/master/graph/badge.svg)](https://codecov.io/gh/heroku/node-heroku-client)
 
 A wrapper around the [v3 Heroku API][platform-api-reference].
 
