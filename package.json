@@ -1,7 +1,7 @@
 {
   "name": "heroku-client",
   "description": "A wrapper for the Heroku v3 API",
-  "version": "3.0.0-alpha2",
+  "version": "3.0.0-alpha3",
   "author": "Jeff Dickey",
   "bugs": {
     "url": "https://github.com/heroku/node-heroku-client/issues"
