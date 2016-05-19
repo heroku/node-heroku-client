@@ -14,9 +14,6 @@
     "Sehrope Sarkuni"
   ],
   "dependencies": {
-    "inflection": "^1.7.0",
-    "path-proxy": "^1.0",
-    "q": "^1.2.0",
     "tunnel-agent": "^0.4.0"
   },
   "devDependencies": {
