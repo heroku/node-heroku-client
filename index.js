@@ -1,13 +1,12 @@
 'use strict'
 
-var Request = require('./lib/request')
-
 class Heroku {
   constructor (options) {
     this.options = options || {}
   }
 
   request (options) {
+    var Request = require('./lib/request')
     options = options || {}
     options.headers = Object.assign(Object.assign({}, this.options.headers), options.headers)
     options = Object.assign({}, this.options, options)
