@@ -69,3 +69,14 @@ test('non-http', t => {
   })
   .then(() => api.done())
 })
+
+test('url: https', t => {
+  const url = require('./lib/url')
+  t.true(url('https://api.heroku.com').secure)
+  t.true(url('api.heroku.com').secure)
+})
+
+test('url: http', t => {
+  const url = require('./lib/url')
+  t.false(url('http://api.heroku.com').secure)
+})
