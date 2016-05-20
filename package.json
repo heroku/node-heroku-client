@@ -14,6 +14,7 @@
     "Sehrope Sarkuni"
   ],
   "dependencies": {
+    "is-retry-allowed": "^1.0.0",
     "tunnel-agent": "^0.4.0"
   },
   "devDependencies": {
