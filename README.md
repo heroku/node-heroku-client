@@ -172,7 +172,7 @@ release.
 
 ### Running tests
 
-heroku-client uses [ava][https://github.com/avajs/ava] for tests:
+heroku-client uses [ava](https://github.com/avajs/ava) for tests:
 
 ```bash
 $ npm test
