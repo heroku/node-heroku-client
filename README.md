@@ -7,7 +7,6 @@
 A wrapper around the [v3 Heroku API][platform-api-reference].
 
 - [Install](#install)
-- [Documentation](#documentation)
 - [Usage](#usage)
   - [Generators](#generators)
   - [HTTP Proxies](#http-proxies)
