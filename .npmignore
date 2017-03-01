@@ -1,4 +1,7 @@
-test.js
-circle.yml
+.npmignore
 .nyc_output
+.travis.yml
+circle.yml
 coverage
+spec
+test.js
