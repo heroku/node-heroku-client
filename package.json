@@ -14,7 +14,7 @@
     "Sehrope Sarkuni"
   ],
   "dependencies": {
-    "debug": "^2.2.0",
+    "debug": "^3.0.0",
     "is-retry-allowed": "^1.0.0",
     "tunnel-agent": "^0.6.0"
   },
@@ -22,8 +22,8 @@
     "ava": "^0.18.0",
     "codecov": "^1.0.0",
     "nock": "^9.0.0",
-    "nyc": "^10.0.0",
-    "standard": "^8.0.0"
+    "nyc": "^11.1.0",
+    "standard": "^10.0.3"
   },
   "engines": {
     "node": ">=4.0.0"
