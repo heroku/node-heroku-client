@@ -19,7 +19,7 @@
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.18.0",
     "nock": "^9.1.4",
     "nyc": "^11.3.0",
     "standard": "^10.0.3"
