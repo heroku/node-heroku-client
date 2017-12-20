@@ -14,15 +14,14 @@
     "Sehrope Sarkuni"
   ],
   "dependencies": {
-    "debug": "^3.0.0",
+    "debug": "^3.1.0",
     "is-retry-allowed": "^1.0.0",
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
-    "codecov": "^1.0.0",
-    "nock": "^9.0.0",
-    "nyc": "^11.1.0",
+    "ava": "^0.24.0",
+    "nock": "^9.1.4",
+    "nyc": "^11.3.0",
     "standard": "^10.0.3"
   },
   "engines": {
