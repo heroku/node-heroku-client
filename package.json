@@ -27,10 +27,14 @@
   "engines": {
     "node": ">=4.0.0"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "heroku"
   ],
   "license": "MIT",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/heroku/node-heroku-client"
