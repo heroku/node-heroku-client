@@ -1,7 +1,7 @@
 {
   "name": "heroku-client",
   "description": "A wrapper for the Heroku v3 API",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "author": "Heroku",
   "bugs": {
     "url": "https://github.com/heroku/node-heroku-client/issues"
@@ -18,11 +18,11 @@
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
+    "ava": "^6.4.1",
     "debug": "^3.1.0",
     "nock": "^11.7.0",
-    "nyc": "^11.3.0",
-    "standard": "^10.0.3",
+    "nyc": "^17.1.0",
+    "standard": "^17.1.2",
     "stdout-stderr": "^0.1.9"
   },
   "engines": {
@@ -41,6 +41,10 @@
     "url": "https://github.com/heroku/node-heroku-client"
   },
   "scripts": {
-    "test": "nyc ava && standard"
+    "test": "nyc ava && standard",
+    "test:comprehensive": "ava test/comprehensive.test.js --verbose",
+    "test:upgrade": "ava test/upgrade-verification.test.js --verbose",
+    "test:post-upgrade": "ava test/post-upgrade.test.js --verbose",
+    "verify-upgrade": "node scripts/test-upgrade.js"
   }
 }
