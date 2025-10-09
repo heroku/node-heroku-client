@@ -15,7 +15,7 @@
     "debug": "^3.1.0",
     "nock": "^11.7.0",
     "nyc": "^11.3.0",
-    "standard": "^10.0.3",
+    "standard": "^17.0.0",
     "stdout-stderr": "^0.1.9"
   },
   "engines": {
