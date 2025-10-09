@@ -1,7 +1,7 @@
 'use strict'
 
-const ava = require('ava')
-const test = ava.test
+const test = require('ava')
+// const test = ava.test
 const Heroku = require('.')
 const heroku = new Heroku()
 const nock = require('nock')
