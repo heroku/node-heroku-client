@@ -1,0 +1,24 @@
+name: CI Test Suite
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: ['20.x', '22.x']
+        os: [ubuntu-latest, macos-latest, windows-latest]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: yarn
+      - run: yarn --immutable --network-timeout 1000000
+      - name: Unit tests
+        run: yarn test

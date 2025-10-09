@@ -6,13 +6,6 @@
   "bugs": {
     "url": "https://github.com/heroku/node-heroku-client/issues"
   },
-  "contributors": [
-    "Jonathan Clem",
-    "Jeff Dickey",
-    "Ray McDermott",
-    "Bob Zoller",
-    "Sehrope Sarkuni"
-  ],
   "dependencies": {
     "is-retry-allowed": "^1.0.0",
     "tunnel-agent": "^0.6.0"
