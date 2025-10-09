@@ -11,11 +11,11 @@
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
-    "debug": "^3.1.0",
-    "nock": "^11.7.0",
-    "nyc": "^11.3.0",
-    "standard": "^10.0.3",
+    "ava": "^6.4.1",
+    "debug": "^4.4.3",
+    "nock": "^14.0.10",
+    "nyc": "^17.1.0",
+    "standard": "^17.1.2",
     "stdout-stderr": "^0.1.9"
   },
   "engines": {
