@@ -29,6 +29,9 @@ test('post /apps', t => {
   .reply(201)
 
   return heroku.post('/apps', {body: {name: 'myapp'}})
+  .then(apps => {
+    t.deepEqual(apps, {})
+  })
   .then(() => api.done())
 })
 
@@ -38,6 +41,9 @@ test('delete /apps', t => {
   .reply(201)
 
   return heroku.delete('/apps', {body: {name: 'myapp'}})
+  .then(apps => {
+    t.deepEqual(apps, {})
+  })
   .then(() => api.done())
 })
 
@@ -47,6 +53,9 @@ test('patch /apps', t => {
   .reply(201)
 
   return heroku.patch('/apps', {body: {name: 'myapp'}})
+  .then(apps => {
+    t.deepEqual(apps, {})
+  })
   .then(() => api.done())
 })
 
@@ -56,6 +65,9 @@ test('put /apps', t => {
   .reply(201)
 
   return heroku.put('/apps', {body: {name: 'myapp'}})
+  .then(apps => {
+    t.deepEqual(apps, {})
+  })
   .then(() => api.done())
 })
 
