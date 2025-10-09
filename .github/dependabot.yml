@@ -22,8 +22,3 @@ updates:
       patch-dependencies:
         update-types:
           - "patch"
-    ignore:
-      - dependency-name: "@oclif/core"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "typescript"
-        update-types: ["version-update:semver-major"]
