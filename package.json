@@ -13,10 +13,10 @@
   "devDependencies": {
     "ava": "^6.4.1",
     "debug": "^3.1.0",
-    "nock": "^11.7.0",
-    "nyc": "^11.3.0",
+    "nock": "^13.5.1",
+    "nyc": "^17.1.0",
     "standard": "^17.0.0",
-    "stdout-stderr": "^0.1.9"
+    "stdout-stderr": "^0.1.13"
   },
   "engines": {
     "node": ">=6.0.0"
