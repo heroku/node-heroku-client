@@ -22,7 +22,7 @@ $ npm install heroku-client --save
 
 ## Usage
 
-To begin, require the Heroku module and create a client, passing in an API
+To begin, require the Heroku module and create a client, passing in an API.
 token:
 
 ```javascript
