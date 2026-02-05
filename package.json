@@ -35,5 +35,10 @@
   },
   "scripts": {
     "test": "nyc ava && standard"
+  },
+  "standard": {
+    "ignore": [
+      "workflows-repo/**"
+    ]
   }
 }
