@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.1.2](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.1...heroku-client-v3.1.2) (2026-06-12)
+
+
+### Bug Fixes
+
+* **deps:** bump flatted from 3.3.4 to 3.4.2 ([#165](https://github.com/heroku/node-heroku-client/issues/165)) ([0bf46f7](https://github.com/heroku/node-heroku-client/commit/0bf46f76f2d90bea1b7115bb1d540d652fcdbbda))
+* **deps:** bump lodash from 4.17.23 to 4.18.1 ([#166](https://github.com/heroku/node-heroku-client/issues/166)) ([b3c4eb0](https://github.com/heroku/node-heroku-client/commit/b3c4eb0e56c30fcb4159cb3656ef29a65b4b4359))
+* **deps:** bump tar from 7.5.10 to 7.5.11 ([#163](https://github.com/heroku/node-heroku-client/issues/163)) ([39f4f16](https://github.com/heroku/node-heroku-client/commit/39f4f16e3fe9e6fac3d4d86f7d336c0b2459e99f))
+
+
+### Dependencies
+
+* resolve audit vulns and tune dependabot/release configs ([#171](https://github.com/heroku/node-heroku-client/issues/171)) ([69404e8](https://github.com/heroku/node-heroku-client/commit/69404e813f87cd4a417531148174f37573350a13))
+
 ## [3.1.1](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.0...heroku-client-v3.1.1) (2026-02-05)
 
 
