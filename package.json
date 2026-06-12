@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "ava": "^6.4.1",
-    "debug": "^3.1.0",
+    "debug": "^4.4.3",
     "nock": "^13.5.1",
     "nyc": "^18.0.0",
     "standard": "^17.0.0",
