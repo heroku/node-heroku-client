@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.3](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.2...heroku-client-v3.1.3) (2026-07-17)
+
+
+### Dependencies
+
+* bump @babel/core from 7.29.0 to 7.29.7 ([#176](https://github.com/heroku/node-heroku-client/issues/176)) ([cc0f40c](https://github.com/heroku/node-heroku-client/commit/cc0f40c68a8cbb54c52b20378edbd1f0fe13294d))
+* bump tar from 7.5.11 to 7.5.16 ([#175](https://github.com/heroku/node-heroku-client/issues/175)) ([0359ec1](https://github.com/heroku/node-heroku-client/commit/0359ec14833bebf0b35669586c3e2130b19309ac))
+
 ## [3.1.2](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.1...heroku-client-v3.1.2) (2026-06-12)
 
 
