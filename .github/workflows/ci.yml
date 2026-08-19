@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node_version }}
-          cache: yarn
-      - run: yarn --immutable --network-timeout 1000000
+          cache: npm
+      - run: npm ci
       - name: Unit tests
-        run: yarn test
+        run: npm test
