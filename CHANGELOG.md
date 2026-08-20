@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.4](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.3...heroku-client-v3.1.4) (2026-08-20)
+
+
+### Dependencies
+
+* bump tar from 7.5.16 to 7.5.22 ([#180](https://github.com/heroku/node-heroku-client/issues/180)) ([2be15b5](https://github.com/heroku/node-heroku-client/commit/2be15b592052bc406274e94ed87a82edf8c6b1da))
+
 ## [3.1.3](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.2...heroku-client-v3.1.3) (2026-07-17)
 
 
