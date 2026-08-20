@@ -1,103 +1,106 @@
 'use strict'
 
-const test = require('ava')
-const Heroku = require('.')
-const heroku = new Heroku()
-const nock = require('nock')
-const stdMock = require('stdout-stderr')
+import { test, expect, beforeAll, vi } from 'vitest'
+import nock from 'nock'
+import Heroku from '../lib/index.js'
+import url from '../lib/url.js'
 
-test.before(() => {
+const heroku = new Heroku()
+
+beforeAll(() => {
   nock.disableNetConnect()
 })
 
-test('get /apps', t => {
+test('get /apps', () => {
   const api = nock('https://api.heroku.com')
     .get('/apps')
     .reply(200, [{ name: 'myapp' }])
 
   return heroku.get('/apps')
     .then(apps => {
-      t.is(apps[0].name, 'myapp')
+      expect(apps[0].name).toBe('myapp')
     })
     .then(() => api.done())
 })
 
-test('post /apps', t => {
+test('post /apps', () => {
   const api = nock('https://api.heroku.com')
     .post('/apps', { name: 'myapp' })
     .reply(201)
 
   return heroku.post('/apps', { body: { name: 'myapp' } })
     .then(apps => {
-      t.deepEqual(apps, {})
+      expect(apps).toEqual({})
     })
     .then(() => api.done())
 })
 
-test('delete /apps', t => {
+test('delete /apps', () => {
   const api = nock('https://api.heroku.com')
     .delete('/apps', { name: 'myapp' })
     .reply(201)
 
   return heroku.delete('/apps', { body: { name: 'myapp' } })
     .then(apps => {
-      t.deepEqual(apps, {})
+      expect(apps).toEqual({})
     })
     .then(() => api.done())
 })
 
-test('patch /apps', t => {
+test('patch /apps', () => {
   const api = nock('https://api.heroku.com')
     .patch('/apps', { name: 'myapp' })
     .reply(201)
 
   return heroku.patch('/apps', { body: { name: 'myapp' } })
     .then(apps => {
-      t.deepEqual(apps, {})
+      expect(apps).toEqual({})
     })
     .then(() => api.done())
 })
 
-test('put /apps', t => {
+test('put /apps', () => {
   const api = nock('https://api.heroku.com')
     .put('/apps', { name: 'myapp' })
     .reply(201)
 
   return heroku.put('/apps', { body: { name: 'myapp' } })
     .then(apps => {
-      t.deepEqual(apps, {})
+      expect(apps).toEqual({})
     })
     .then(() => api.done())
 })
 
-test('non-http', t => {
+test('non-http', () => {
   const api = nock('http://api.heroku.com')
     .get('/apps')
     .reply(200, [{ name: 'myapp' }])
 
   return heroku.get('/apps', { host: 'http://api.heroku.com' })
     .then(apps => {
-      t.is(apps[0].name, 'myapp')
+      expect(apps[0].name).toBe('myapp')
     })
     .then(() => api.done())
 })
 
-test('url: https', t => {
-  const url = require('./lib/url')
-  t.true(url('https://api.heroku.com').secure)
-  t.true(url('api.heroku.com').secure)
+test('url: https', () => {
+  expect(url('https://api.heroku.com').secure).toBe(true)
+  expect(url('api.heroku.com').secure).toBe(true)
 })
 
-test('url: http', t => {
-  const url = require('./lib/url')
-  t.false(url('http://api.heroku.com').secure)
+test('url: http', () => {
+  expect(url('http://api.heroku.com').secure).toBe(false)
 })
 
-test('request does not produce any stderr', async t => {
+test('request does not produce any stderr', async () => {
   // this relates to leaky node deprecation warnings hitting
   // the console
 
-  stdMock.stderr.start()
+  const writes = []
+  const spy = vi.spyOn(process.stderr, 'write').mockImplementation(chunk => {
+    writes.push(chunk.toString())
+    return true
+  })
 
   const api = nock('https://api.heroku.com')
     .get('/apps')
@@ -106,7 +109,8 @@ test('request does not produce any stderr', async t => {
   await heroku.get('/apps')
 
   api.done()
-  stdMock.stderr.stop()
+  spy.mockRestore()
 
-  t.is(stdMock.stderr.output, '', 'no stderr errors from running the client')
+  // no stderr errors from running the client
+  expect(writes.join('')).toBe('')
 })
