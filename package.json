@@ -11,11 +11,11 @@
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
-    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/coverage-v8": "^5.0.0",
     "debug": "^3.1.0",
     "nock": "^13.5.1",
     "standard": "^17.0.0",
-    "vitest": "^3.2.4"
+    "vitest": "^5.0.0"
   },
   "engines": {
     "node": ">=6.0.0"
