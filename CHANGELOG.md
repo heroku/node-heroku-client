@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.5](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.4...heroku-client-v3.1.5) (2026-09-22)
+
+
+### Dependencies
+
+* bump @vitest/mocker, @vitest/coverage-v8 and vitest ([#186](https://github.com/heroku/node-heroku-client/issues/186)) ([74b8509](https://github.com/heroku/node-heroku-client/commit/74b85090c45074d65ed6c76051caf25ec696fa77))
+
 ## [3.1.4](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.3...heroku-client-v3.1.4) (2026-08-20)
 
 
