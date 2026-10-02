@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.6](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.5...heroku-client-v3.1.6) (2026-10-02)
+
+
+### Bug Fixes
+
+* replace deprecated url.parse() with new URL() ([#192](https://github.com/heroku/node-heroku-client/issues/192)) ([4deb8ba](https://github.com/heroku/node-heroku-client/commit/4deb8ba21f50da98bb60cdcc4bee57ba387fe0d3)), closes [#170](https://github.com/heroku/node-heroku-client/issues/170)
+
 ## [3.1.5](https://github.com/heroku/node-heroku-client/compare/heroku-client-v3.1.4...heroku-client-v3.1.5) (2026-09-22)
 
 
